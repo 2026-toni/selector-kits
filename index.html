@@ -237,10 +237,10 @@ function filterDB(ctx){
   else if(c.includes('chasis')||c.match(/\bkf\b/)) f=f.filter(r=>r.kit_type==='Kit chasis');
   const brands=['RENAULT','FIAT','IVECO','FORD','MERCEDES','VW','OPEL','NISSAN','PEUGEOT','CITROEN','MAN','DAF','VOLVO','TOYOTA','MITSUBISHI'];
   for(const b of brands){if(c.includes(b.toLowerCase())){f=f.filter(r=>r.brand&&r.brand.toUpperCase().includes(b));break;}}
-  if(f.length>600){
+  if(f.length>80){
     const seen=new Set();const deduped=[];
     for(const r of f){if(!seen.has(r.code)){seen.add(r.code);deduped.push(r);}}
-    return deduped.slice(0,600);
+    return deduped.slice(0,80);
   }
   return f;
 }
