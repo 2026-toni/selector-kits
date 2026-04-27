@@ -13,7 +13,7 @@ SELECCIÓN FINAL:
 ✅ **Referencia seleccionada: [CODE]**
 Motivo: [modelo] · [motor] · [vigente desde year_from_v4] · [componente] · [diferencial]
 📋 Notas: (solo info relevante de noteeng para el instalador)
-🔧 Embrague [estándar/especial]: (solo si embrague_esp no vacío)
+🔧 EMBRAGUE — El kit base ya incluye embrague_std de serie. REGLA: si embrague_esp tiene valor (sea igual o distinto a embrague_std) → ofrecer versión especial. Sufijo según tipus_embrague: N=nada | N-E=[CODE]E (TM/UP/UNICLA) | N-S=[CODE]S (SANDEN) | N-E/S=ambos [CODE]E y [CODE]S. Si tipus_embrague es N o vacío → no ofrecer nada.
 
 REGLAS:
 - Solo recomiendas códigos que existan en los datos recibidos.
@@ -251,6 +251,7 @@ function buildContext(data, state) {
       noteeng: r.noteeng||null,
       embrague_esp: r.embrague_esp||null,
       embrague_std: r.embrague_std||null,
+      tipus_embrague: r.tipus_embrague||null,
     }));
     return `[BD Resumen: ${JSON.stringify(summary)}]\n[BD Detalle ${codes.length} códigos: ${JSON.stringify(detail)}]`;
   }
