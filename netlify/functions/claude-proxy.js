@@ -19,6 +19,8 @@ REGLAS:
 - Solo recomiendas códigos que existan en los datos recibidos.
 - No inventas datos. Una pregunta por turno.
 - Excluye STANDARD BRACKET y COMPRESSOR BRACKET.
+- Si el usuario pide un componente que SÍ aparece en los datos, úsalo aunque tenga formato distinto (ej: "TM15" = "TM 15 / QP 15").
+- NUNCA digas que un componente no existe si aparece en la lista de componentes disponibles.
 
 FLUJO (detente al llegar a 1 código único):
 
@@ -33,7 +35,7 @@ FLUJO (detente al llegar a 1 código único):
 
 4. TRACCIÓN — inmediatamente tras confirmar modelo, si hay variantes RWD/FWD en los datos:
    "¿Tracción trasera (RWD) o delantera (FWD)?"
-   Si solo hay una opción, omite.
+   Si solo hay una opción de tracción, omite.
 
 5. ¿VEHÍCULO NUEVO? — tras modelo y tracción:
    "¿Es un vehículo de matriculación reciente?"
@@ -48,6 +50,7 @@ FLUJO (detente al llegar a 1 código único):
 7. MOTOR — si quedan varios. Muestra opciones reales de engine_clean.
 
 8. COMPONENTE — agrupa por tipo. Muestra opciones reales de nom_opcio_compressor.
+   El usuario puede escribir de forma abreviada: TM15=TM 15/QP 15, TM13=TM 13/QP 13, etc.
 
 9. FLAGS KIT (solo si varían entre candidatos, en orden):
    flag_gearbox_v3: ok=auto OK, not=NO auto, vacío=ambas → NO preguntar si todos vacíos
@@ -61,27 +64,79 @@ FLUJO (detente al llegar a 1 código único):
 10. A/C — solo si ac_filter mezcla yes/no: "¿Tiene A/C de fábrica?"
     ac_filter=any → NO preguntar.`;
 
-// Extract structured state from conversation
+// Map user input to exact DB component names
+function normalizeComponent(text) {
+  const compMap = [
+    [/TM\s*43/i, 'TM 43'],
+    [/TM\s*31/i, 'TM 31 / QP 31'],
+    [/TM\s*21/i, 'TM 21 / QP 21'],
+    [/TM\s*16/i, 'TM 16 / QP 16'],
+    [/TM\s*15/i, 'TM 15 / QP 15'],
+    [/TM\s*13/i, 'TM 13 / QP 13'],
+    [/TM\s*08|TM\s*8\b/i, 'TM 08 / QP 08'],
+    [/QP\s*25/i, 'QP 25'],
+    [/UP\s*170|UPF\s*170/i, 'UP 170 / UPF 170'],
+    [/UP\s*150|UPF\s*150/i, 'UP 150 / UPF 150'],
+    [/UP\s*120|UPF\s*120/i, 'UP 120 / UPF 120'],
+    [/UPF\s*200/i, 'UPF 200'],
+    [/UP\s*90/i, 'UP 90'],
+    [/SD7H15/i, 'SD7H15'],
+    [/SD7L15/i, 'SD7L15'],
+    [/SD5H14/i, 'SD5H14'],
+    [/SD5L14/i, 'SD5L14'],
+    [/SD5H09/i, 'SD5H09'],
+    [/CS\s*150/i, 'CS150'],
+    [/CS\s*90/i, 'CS90'],
+    [/CS\s*55/i, 'CS55'],
+    [/CR\s*150/i, 'CR150'],
+    [/CR\s*90/i, 'CR90'],
+    [/SALAMI/i, 'SALAMI'],
+    [/SALAMI\s*16|16\s*cc/i, '16 cc SALAMI'],
+    [/SALAMI\s*12|12\s*cc/i, '12 cc SALAMI'],
+    [/SALAMI\s*8|8\s*cc/i, '8 cc SALAMI'],
+    [/MG\s*29|Mahle.*200A|200A.*14V/i, 'Mahle MG 29 (200A 14V)'],
+    [/MG\s*142|Mahle.*100A|100A.*28V/i, 'Mahle MG 142 (100A 28V)'],
+    [/Valeo|140A\s*14V/i, 'Valeo 140A 14V'],
+    [/SEG|150A\s*28V/i, 'SEG 150A 28V'],
+    [/G4.*400|400V.*G4/i, 'Generator "G4-400V"'],
+    [/G4.*230|230V.*G4/i, 'Generator "G4-230V"'],
+    [/G3.*400|400V.*G3/i, 'Generator "G3-400V"'],
+    [/G3.*230|230V.*G3/i, 'Generator "G3-230V"'],
+    [/HPI\s*15/i, 'HPI 15cc'],
+    [/HPI\s*12/i, 'HPI 12cc'],
+    [/HPI\s*8/i, 'HPI 8cc'],
+    [/TK.?315/i, 'TK-315'],
+    [/TK.?312/i, 'TK-312'],
+    [/BITZER/i, 'BITZER 4UFC'],
+    [/BOCK/i, 'BOCK FK40'],
+    [/Xarios/i, 'Xarios Integrated'],
+  ];
+  for (const [re, name] of compMap) {
+    if (re.test(text)) return name;
+  }
+  return null;
+}
+
 function extractState(messages) {
   const text = messages.map(m => typeof m.content === 'string' ? m.content : '').join(' ');
   const s = {};
 
   // Kit type
-  if (/compresor\s*a\/c|kb\b/i.test(text)) s.kit_type = 'Kit compresor A/C';
-  else if (/fr[ií]o\s*industrial|kc\b/i.test(text)) s.kit_type = 'Kit compresor frío industrial';
-  else if (/alternador|ka\b/i.test(text)) s.kit_type = 'Kit alternador';
-  else if (/bomba|kh\b/i.test(text)) s.kit_type = 'Kit bomba hidráulica';
-  else if (/generador|kg\b/i.test(text)) s.kit_type = 'Kit generador';
-  else if (/chasis|kf\b/i.test(text)) s.kit_type = 'Kit chasis';
+  if (/compresor\s*a\/c|\bkb\b/i.test(text)) s.kit_type = 'Kit compresor A/C';
+  else if (/fr[ií]o\s*industrial|\bkc\b/i.test(text)) s.kit_type = 'Kit compresor frío industrial';
+  else if (/alternador|\bka\b/i.test(text)) s.kit_type = 'Kit alternador';
+  else if (/bomba\s*hidráulica|\bkh\b/i.test(text)) s.kit_type = 'Kit bomba hidráulica';
+  else if (/generador|\bkg\b/i.test(text)) s.kit_type = 'Kit generador';
+  else if (/chasis|\bkf\b/i.test(text)) s.kit_type = 'Kit chasis';
 
   // Brand
   const brandMap = [
     [/sprinter|vito|actros|atego|arocs|antos|axor|econic/i, 'MERCEDES'],
-    [/ducato|scudo|talento|doblo/i, 'FIAT'],
+    [/ducato|scudo|talento|doblò|doblo/i, 'FIAT'],
     [/transit|tourneo/i, 'FORD'],
     [/\bmaster\b|trafic|kangoo/i, 'RENAULT'],
     [/\bdaily\b|eurocargo|stralis|trakker/i, 'IVECO'],
-    [/\bbox[e]?r\b|expert|partner/i, 'PEUGEOT'],
+    [/\bboxer\b|expert|partner/i, 'PEUGEOT'],
     [/jumper|jumpy|berlingo/i, 'CITROEN'],
     [/crafter|transporter|\btge\b/i, 'VW'],
     [/movano|vivaro|\bcombo\b/i, 'OPEL'],
@@ -103,15 +158,16 @@ function extractState(messages) {
   if (/\bfwd\b|tracci[oó]n\s*delantera|front\s*wheel/i.test(text)) s.flag_fwd = true;
 
   // New vehicle
-  if (/nuevo|reciente|nueva\s*matriculaci/i.test(text)) s.new_vehicle = true;
+  if (/nuevo|reciente|nueva\s*matriculaci|es\s*nuevo|si.*nuevo/i.test(text)) s.new_vehicle = true;
 
-  // Year
-  const ym = text.match(/\b(19[89]\d|20[012]\d)\b/);
-  if (ym && !s.new_vehicle) s.year = parseInt(ym[1]);
+  // Year - only if not new vehicle
+  if (!s.new_vehicle) {
+    const ym = text.match(/\b(19[89]\d|20[012]\d)\b/);
+    if (ym) s.year = parseInt(ym[1]);
+  }
 
-  // Component
-  const cm = text.match(/\b(TM\s*\d+|UP\s*\d+|SD[57][HL]\d+|CS\s*\d+|G[34]-[24]\d+V)/i);
-  if (cm) s.component = cm[1].replace(/\s+/,'');
+  // Component - use normalized name
+  s.component = normalizeComponent(text);
 
   return s;
 }
@@ -122,6 +178,7 @@ async function queryDB(s) {
     'kit_type=neq.Otro',
     'model_clean=neq.STANDARD%20BRACKET',
     'model_clean=neq.COMPRESSOR%20BRACKET',
+    'limit=150',
   ];
 
   if (s.kit_type) parts.push(`kit_type=eq.${encodeURIComponent(s.kit_type)}`);
@@ -130,97 +187,75 @@ async function queryDB(s) {
   if (s.engine_clean) parts.push(`engine_clean=eq.${encodeURIComponent(s.engine_clean)}`);
   if (s.flag_rwd) parts.push('flag_rwd=eq.Yes');
   if (s.flag_fwd) parts.push('flag_fwd=eq.Yes');
+
   if (s.new_vehicle) {
     parts.push('year_to_int=is.null');
   } else if (s.year) {
     parts.push(`year_from_int=lte.${s.year}`);
     parts.push(`or=(year_to_int.is.null,year_to_int.gte.${s.year})`);
   }
-  if (s.component) parts.push(`nom_opcio_compressor=ilike.*${encodeURIComponent(s.component)}*`);
 
-  // Limit aggressively - we only need enough to show options
-  parts.push('limit=100');
+  // Use exact normalized component name
+  if (s.component) {
+    parts.push(`nom_opcio_compressor=eq.${encodeURIComponent(s.component)}`);
+  }
 
   const url = `${SUPABASE_URL}/rest/v1/kits?${parts.join('&')}`;
   const r = await fetch(url, {
     headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
   });
-  if (!r.ok) throw new Error(`DB error ${r.status}`);
+  if (!r.ok) throw new Error(`DB ${r.status}`);
   return r.json();
 }
 
-function summarizeDB(data, state) {
-  if (!data || data.length === 0) return { summary: 'Sin datos', data: [] };
+function buildContext(data, state) {
+  if (!data || data.length === 0) return '[BD: Sin resultados para los filtros actuales]';
 
-  // Deduplicate by code for counting
   const byCode = {};
   for (const row of data) {
     if (!byCode[row.code]) byCode[row.code] = row;
   }
   const codes = Object.values(byCode);
+  const uniq = arr => [...new Set(arr.filter(Boolean))];
 
-  // Build compact summary - only unique values per field
-  const uniq = (arr) => [...new Set(arr.filter(Boolean))];
-
+  // Always send summary
   const summary = {
     total_codes: codes.length,
-    kit_types: uniq(codes.map(r => r.kit_type)),
-    brands: uniq(codes.map(r => r.brand)),
     models: uniq(codes.map(r => r.model_clean)),
     engines: uniq(codes.map(r => r.engine_clean)),
-    year_ranges: uniq(codes.map(r => r.year_from_v4 ? `desde ${r.year_from_v4}${r.year_to_v4 ? ` hasta ${r.year_to_v4}` : ''}` : null)),
     components: uniq(data.map(r => r.nom_opcio_compressor)),
-    tractions: {
-      rwd: codes.filter(r => r.flag_rwd === 'Yes').length,
-      fwd: codes.filter(r => r.flag_fwd === 'Yes').length,
-    },
-    flags_present: {
-      auto_tensioner: codes.some(r => r.flag_auto_tensioner === 'Yes'),
-      n63_pulley_yes: codes.some(r => r.flag_n63_pulley_yes === 'Yes'),
-      n63_pulley_no: codes.some(r => r.flag_n63_pulley_no === 'Yes'),
-      n63_full: codes.some(r => r.flag_n63_full_option === 'Yes'),
-      pfmot_yes: codes.some(r => r.flag_pfmot_yes === 'Yes'),
-      pfmot_no: codes.some(r => r.flag_pfmot_no === 'Yes'),
-      urban: codes.some(r => r.flag_urban_kit === 'Yes'),
-      sanden: codes.some(r => r.flag_sanden === 'Yes'),
-      gearbox_v3_mixed: uniq(codes.map(r => r.flag_gearbox_v3)).length > 1,
-      awd: codes.some(r => r.flag_awd === 'Yes'),
-    },
-    ac_values: uniq(codes.map(r => r.ac_filter)),
+    tractions: { rwd: codes.filter(r=>r.flag_rwd==='Yes').length, fwd: codes.filter(r=>r.flag_fwd==='Yes').length },
+    new_vehicle_filter: state.new_vehicle || false,
+    active_filters: state,
   };
 
-  // If few codes left, include full detail
-  let detail = [];
-  if (codes.length <= 10) {
-    detail = codes.map(r => ({
+  // Send full detail only when ≤8 codes
+  if (codes.length <= 8) {
+    const detail = codes.map(r => ({
       code: r.code,
       model: r.model_clean,
       engine: r.engine_clean,
-      year_from: r.year_from_v4,
-      year_to: r.year_to_v4,
-      component: data.filter(d => d.code === r.code).map(d => d.nom_opcio_compressor),
-      flag_rwd: r.flag_rwd,
-      flag_fwd: r.flag_fwd,
-      flag_awd: r.flag_awd,
-      flag_auto_tensioner: r.flag_auto_tensioner,
-      flag_n63_pulley_yes: r.flag_n63_pulley_yes,
-      flag_n63_pulley_no: r.flag_n63_pulley_no,
-      flag_n63_full_option: r.flag_n63_full_option,
-      flag_pfmot_yes: r.flag_pfmot_yes,
-      flag_pfmot_no: r.flag_pfmot_no,
-      flag_urban_kit: r.flag_urban_kit,
-      flag_sanden: r.flag_sanden,
-      flag_gearbox_v3: r.flag_gearbox_v3,
-      flag_himatic: r.flag_himatic,
-      flag_ind_belt: r.flag_ind_belt,
-      ac_filter: r.ac_filter,
-      noteeng: r.noteeng,
-      embrague_esp: r.embrague_esp,
-      embrague_std: r.embrague_std,
+      year_from_v4: r.year_from_v4,
+      year_to_v4: r.year_to_v4 || null,
+      components: uniq(data.filter(d=>d.code===r.code).map(d=>d.nom_opcio_compressor)),
+      flag_rwd: r.flag_rwd||null, flag_fwd: r.flag_fwd||null, flag_awd: r.flag_awd||null,
+      flag_auto_tensioner: r.flag_auto_tensioner||null,
+      flag_n63_pulley_yes: r.flag_n63_pulley_yes||null,
+      flag_n63_pulley_no: r.flag_n63_pulley_no||null,
+      flag_n63_full_option: r.flag_n63_full_option||null,
+      flag_pfmot_yes: r.flag_pfmot_yes||null, flag_pfmot_no: r.flag_pfmot_no||null,
+      flag_urban_kit: r.flag_urban_kit||null, flag_ind_belt: r.flag_ind_belt||null,
+      flag_sanden: r.flag_sanden||null, flag_gearbox_v3: r.flag_gearbox_v3||null,
+      flag_himatic: r.flag_himatic||null, flag_not_18t: r.flag_not_18t||null,
+      ac_filter: r.ac_filter||null,
+      noteeng: r.noteeng||null,
+      embrague_esp: r.embrague_esp||null,
+      embrague_std: r.embrague_std||null,
     }));
+    return `[BD Resumen: ${JSON.stringify(summary)}]\n[BD Detalle ${codes.length} códigos: ${JSON.stringify(detail)}]`;
   }
 
-  return { summary, detail };
+  return `[BD Resumen: ${JSON.stringify(summary)}]`;
 }
 
 exports.handler = async function(event) {
@@ -231,33 +266,27 @@ exports.handler = async function(event) {
   try {
     const body = JSON.parse(event.body);
     const messages = body.messages || [];
-
     const state = extractState(messages);
-    let dbResult = { summary: 'Sin datos aún', detail: [] };
 
+    let ctx = '[BD: Sin datos aún]';
     try {
       const data = await queryDB(state);
-      dbResult = summarizeDB(data, state);
+      ctx = buildContext(data, state);
     } catch(e) {
-      console.error('DB error:', e.message);
+      console.error('DB:', e.message);
+      ctx = `[BD Error: ${e.message}]`;
     }
-
-    const ctx = `\n\n[BD - Filtros activos: ${JSON.stringify(state)}]\n[Resumen: ${JSON.stringify(dbResult.summary)}]\n${dbResult.detail.length > 0 ? '[Detalle códigos: ' + JSON.stringify(dbResult.detail) + ']' : ''}`;
 
     const msgsWithCtx = [...messages];
     const last = msgsWithCtx[msgsWithCtx.length - 1];
     msgsWithCtx[msgsWithCtx.length - 1] = {
       ...last,
-      content: (typeof last.content === 'string' ? last.content : '') + ctx
+      content: (typeof last.content === 'string' ? last.content : '') + '\n\n' + ctx
     };
 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-api-key': API_KEY,
-        'anthropic-version': '2023-06-01'
-      },
+      headers: { 'Content-Type': 'application/json', 'x-api-key': API_KEY, 'anthropic-version': '2023-06-01' },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
         max_tokens: 800,
