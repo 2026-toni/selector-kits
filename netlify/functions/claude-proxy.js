@@ -1,227 +1,255 @@
 const SUPABASE_URL = "https://wuizpohykpvppmydfcng.supabase.co";
 const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Ind1aXpwb2h5a3B2cHBteWRmY25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcyNDI1NDQsImV4cCI6MjA5MjgxODU0NH0.xFLEDRLmpvjR1oFZE9TetyT8706W_BQPr7vTrNR9sj8";
 
-const SYSTEM_PROMPT = `Eres un asistente comercial experto en selección de kits para vehículos de frío industrial y furgonetas.
+const SYSTEM_PROMPT = `Eres un asistente comercial experto en selección de kits para vehículos.
 
-ESTILO DE RESPUESTA — MUY IMPORTANTE:
-- Responde en texto natural y conversacional. NUNCA uses títulos con ## o ###.
-- No muestres "PASO X" ni estructuras de pasos. Habla como un experto comercial.
-- Sé conciso y directo. Máximo 3-4 líneas por respuesta salvo cuando muestres opciones.
-- Usa formato de lista solo para mostrar opciones de selección.
-- Cuando confirmes un dato del usuario, di "✓ [dato]" brevemente y pasa a la siguiente pregunta.
-- Para la selección final usa exactamente este formato:
-  ✅ **Referencia seleccionada: [CODE]**
-  Motivo: [modelo] · [motor] · [desde año] · [componente] · [diferencial si aplica]
+ESTILO:
+- Texto natural y conversacional. NUNCA uses ## o ### ni "PASO X".
+- Conciso: máximo 3-4 líneas por respuesta salvo cuando muestres opciones.
+- Confirma datos con "✓ [dato]" y pasa a la siguiente pregunta.
+- Una sola pregunta por turno.
 
-REGLAS DE DATOS:
-- Solo recomiendas códigos que existan en los datos proporcionados en cada mensaje.
-- No inventas productos, referencias ni datos técnicos.
-- Una sola pregunta por turno, nunca dos preguntas seguidas.
-- Si algo no está en los datos disponibles, dilo claramente.
-- Excluye siempre STANDARD BRACKET y COMPRESSOR BRACKET salvo petición explícita.
-
-DEFINICIÓN DE "VEHÍCULO NUEVO":
-- Un vehículo nuevo = usar SOLO los kits que tienen year_to_int NULO (sin fecha de fin).
-- Estos kits están vigentes y son aplicables a cualquier vehículo actual, independientemente del año de inicio (year_from_int).
-- NO filtres por year_from_int cuando el usuario dice "vehículo nuevo". Filtra SOLO por year_to_int nulo.
-- Los datos ya llegan pre-filtrados con esta lógica desde el servidor.
-
-FLUJO DE SELECCIÓN (sigue este orden, detente cuando quede 1 código único):
-
-1. TIPO DE KIT — Primera pregunta siempre. Opciones:
-   · Kit compresor A/C (KB) — aire acondicionado de cabina
-   · Kit compresor frío industrial (KC) — frío de transporte
-   · Kit alternador (KA) — alternador auxiliar
-   · Kit bomba hidráulica (KH) — bomba hidráulica
-   · Kit generador (KG) — generador eléctrico
-   · Kit chasis (KF) — adaptación de chasis
-
-2. MARCA — Pide la marca del vehículo.
-   💡 España/UE: Permiso de circulación, campo D.1 Marca
-
-3. MODELO — Muestra 4-8 opciones reales del campo model_clean de los datos.
-   💡 España/UE: Permiso, campos D.2 Tipo y D.3 Denominación comercial
-
-4. TRACCIÓN — Pregunta inmediatamente después de confirmar el modelo si los datos tienen variantes RWD/FWD:
-   "¿El vehículo es de tracción trasera (RWD) o delantera (FWD)?"
-   Usa flag_rwd y flag_fwd para filtrar. Si solo hay una opción de tracción en los datos, omite esta pregunta.
-   💡 Inspección física bajo el vehículo, o campo Variante del permiso de circulación
-
-5. ¿VEHÍCULO NUEVO? — Después de confirmar modelo y tracción:
-   "¿Es un vehículo de matriculación reciente (nuevo)?"
-   Si SÍ: usa SOLO los kits con year_to_int NULO de los datos (vigentes sin fecha de fin).
-   Si NO: pide el año exacto.
-
-6. AÑO — Solo si el usuario NO dijo "nuevo". Pregunta: "¿Sabes el año de fabricación o primera matriculación?"
-   Filtra: year_from_int <= año Y (year_to_int nulo O year_to_int >= año)
-   💡 España/UE: Permiso, campo B. Fecha de primera matriculación
-
-7. MOTOR — Si todavía quedan varios candidatos, pregunta por el motor.
-   Muestra opciones reales del campo engine_clean.
-   💡 España/UE: Permiso campo P.5 o etiqueta en tapa de válvulas
-
-8. COMPONENTE — Pregunta qué compresor/componente necesita.
-   Agrupa por tipo con ejemplos reales de nom_opcio_compressor.
-
-9. FLAGS DE KIT — Solo si varían entre candidatos. Orden de prioridad:
-   a. flag_gearbox_v3: ok=compatible automática, not=NO compatible, vacío=válido para ambas → NO preguntar si todos vacíos
-   b. flag_auto_tensioner → "¿Tensor automático o estándar?"
-   c. flag_pfmot_yes/no → "¿Tiene opción PTO/PFMot de fábrica?"
-   d. flag_urban_kit → "¿Opera en entorno urbano o alta temperatura?"
-   e. flag_ind_belt → "¿Kit con correa independiente?"
-   f. flag_n63_pulley_yes/no + flag_n63_full_option → "¿Lleva polea cigüeñal N62/N63?"
-   g. flag_sanden → "¿El compresor original es SANDEN?"
-   h. Resto de flags si siguen quedando candidatos
-
-10. A/C — Solo si ac_filter varía y hay mix de yes/no:
-    "¿Tiene aire acondicionado de fábrica?"
-    (ac_filter=any → NO preguntar, siempre válido)
-
-SELECCIÓN FINAL cuando queda 1 código:
+SELECCIÓN FINAL:
 ✅ **Referencia seleccionada: [CODE]**
-Motivo: [modelo] · [motor] · [desde year_from_v4] · [componente] · [diferencial]
+Motivo: [modelo] · [motor] · [vigente desde year_from_v4] · [componente] · [diferencial]
+📋 Notas: (solo info relevante de noteeng para el instalador)
+🔧 Embrague [estándar/especial]: (solo si embrague_esp no vacío)
 
-📋 Notas importantes: (solo si hay datos relevantes en noteeng para el instalador)
-· [nota 1]
+REGLAS:
+- Solo recomiendas códigos que existan en los datos recibidos.
+- No inventas datos. Una pregunta por turno.
+- Excluye STANDARD BRACKET y COMPRESSOR BRACKET.
 
-🔧 Opción con embrague [estándar/especial]: (solo si embrague_esp no está vacío)
-[contenido de embrague_esp]
-¿Quieres la versión con embrague?
+FLUJO (detente al llegar a 1 código único):
 
-Si hay 1 código pero varios componentes disponibles:
-✅ **Código seleccionado: [CODE]**
-Componentes disponibles:
-· [nom_opcio_compressor 1]
-· [nom_opcio_compressor 2]
-¿Cuál necesitas?`;
+1. TIPO DE KIT — siempre primera:
+   KB=compresor A/C · KC=frío industrial · KA=alternador · KH=bomba · KG=generador · KF=chasis
 
-async function querySupabase(params) {
-  const parts = [
-    `brand=neq.ACCESSORY`,
-    `kit_type=neq.Otro`,
-    `model_clean=neq.STANDARD%20BRACKET`,
-    `model_clean=neq.COMPRESSOR%20BRACKET`,
-    `limit=200`
-  ];
+2. MARCA — campo brand.
+   💡 Permiso circulación campo D.1
 
-  if (params.kit_type) parts.push(`kit_type=eq.${encodeURIComponent(params.kit_type)}`);
-  if (params.brand) parts.push(`brand=eq.${encodeURIComponent(params.brand)}`);
-  if (params.model_clean) parts.push(`model_clean=eq.${encodeURIComponent(params.model_clean)}`);
-  if (params.engine_clean) parts.push(`engine_clean=eq.${encodeURIComponent(params.engine_clean)}`);
+3. MODELO — muestra opciones reales de model_clean (4-8 ejemplos).
+   💡 Permiso campos D.2 y D.3
 
-  // NEW VEHICLE LOGIC: filter year_to_int IS NULL (open-ended, vigent kits)
-  if (params.new_vehicle) {
-    parts.push(`year_to_int=is.null`);
-  } else if (params.year) {
-    // Normal year filter
-    parts.push(`year_from_int=lte.${params.year}`);
-    parts.push(`or=(year_to_int.is.null,year_to_int.gte.${params.year})`);
-  }
+4. TRACCIÓN — inmediatamente tras confirmar modelo, si hay variantes RWD/FWD en los datos:
+   "¿Tracción trasera (RWD) o delantera (FWD)?"
+   Si solo hay una opción, omite.
 
-  if (params.nom_opcio_compressor) {
-    parts.push(`nom_opcio_compressor=ilike.*${encodeURIComponent(params.nom_opcio_compressor)}*`);
-  }
-  if (params.flag_rwd) parts.push(`flag_rwd=eq.Yes`);
-  if (params.flag_fwd) parts.push(`flag_fwd=eq.Yes`);
+5. ¿VEHÍCULO NUEVO? — tras modelo y tracción:
+   "¿Es un vehículo de matriculación reciente?"
+   SÍ = usa kits con year_to_int NULO (vigentes, sin fecha fin).
+   NO = pide año exacto.
 
-  const url = `${SUPABASE_URL}/rest/v1/kits?${parts.join('&')}`;
-  const resp = await fetch(url, {
-    headers: {
-      'apikey': SUPABASE_KEY,
-      'Authorization': `Bearer ${SUPABASE_KEY}`
-    }
-  });
-  if (!resp.ok) throw new Error(`Supabase ${resp.status}`);
-  return resp.json();
-}
+6. AÑO — solo si no dijo nuevo:
+   "¿Año de fabricación o primera matriculación?"
+   Filtro: year_from_int <= año Y (year_to_int nulo O year_to_int >= año)
+   💡 Permiso campo B
 
-function extractParams(messages) {
+7. MOTOR — si quedan varios. Muestra opciones reales de engine_clean.
+
+8. COMPONENTE — agrupa por tipo. Muestra opciones reales de nom_opcio_compressor.
+
+9. FLAGS KIT (solo si varían entre candidatos, en orden):
+   flag_gearbox_v3: ok=auto OK, not=NO auto, vacío=ambas → NO preguntar si todos vacíos
+   flag_auto_tensioner → tensor auto vs estándar
+   flag_pfmot_yes/no → PTO/PFMot
+   flag_urban_kit → entorno urbano
+   flag_ind_belt → correa independiente
+   flag_n63_pulley_yes/no + flag_n63_full_option → polea N62/N63
+   flag_sanden → compresor SANDEN
+
+10. A/C — solo si ac_filter mezcla yes/no: "¿Tiene A/C de fábrica?"
+    ac_filter=any → NO preguntar.`;
+
+// Extract structured state from conversation
+function extractState(messages) {
   const text = messages.map(m => typeof m.content === 'string' ? m.content : '').join(' ');
-  const lower = text.toLowerCase();
-  const params = {};
+  const s = {};
 
   // Kit type
-  if (/compresor a\/c|kb\b/i.test(text)) params.kit_type = 'Kit compresor A/C';
-  else if (/fr[ií]o industrial|kc\b/i.test(text)) params.kit_type = 'Kit compresor frío industrial';
-  else if (/alternador|ka\b/i.test(text)) params.kit_type = 'Kit alternador';
-  else if (/bomba|kh\b/i.test(text)) params.kit_type = 'Kit bomba hidráulica';
-  else if (/generador|kg\b/i.test(text)) params.kit_type = 'Kit generador';
-  else if (/chasis|kf\b/i.test(text)) params.kit_type = 'Kit chasis';
+  if (/compresor\s*a\/c|kb\b/i.test(text)) s.kit_type = 'Kit compresor A/C';
+  else if (/fr[ií]o\s*industrial|kc\b/i.test(text)) s.kit_type = 'Kit compresor frío industrial';
+  else if (/alternador|ka\b/i.test(text)) s.kit_type = 'Kit alternador';
+  else if (/bomba|kh\b/i.test(text)) s.kit_type = 'Kit bomba hidráulica';
+  else if (/generador|kg\b/i.test(text)) s.kit_type = 'Kit generador';
+  else if (/chasis|kf\b/i.test(text)) s.kit_type = 'Kit chasis';
 
-  // Brand detection
-  const brandMap = {
-    'sprinter|vito|actros|atego|arocs|antos|axor|econic': 'MERCEDES',
-    'ducato|scudo|talento|doblo': 'FIAT',
-    'transit|tourneo': 'FORD',
-    'master|trafic|kangoo': 'RENAULT',
-    'daily|eurocargo|stralis|trakker': 'IVECO',
-    'boxer|expert|partner': 'PEUGEOT',
-    'jumper|jumpy|berlingo': 'CITROEN',
-    'crafter|transporter|caddy': 'VW',
-    'movano|vivaro|combo': 'OPEL',
-    'nv400|nv300|interstar|primastar': 'NISSAN',
-    'tgl|tgm|tgs|tgx': 'MAN',
-    'canter|fuso': 'MITSUBISHI',
-    'promaster': 'FIAT',
-  };
-  for (const [pattern, brand] of Object.entries(brandMap)) {
-    if (new RegExp(pattern, 'i').test(text)) { params.brand = brand; break; }
+  // Brand
+  const brandMap = [
+    [/sprinter|vito|actros|atego|arocs|antos|axor|econic/i, 'MERCEDES'],
+    [/ducato|scudo|talento|doblo/i, 'FIAT'],
+    [/transit|tourneo/i, 'FORD'],
+    [/\bmaster\b|trafic|kangoo/i, 'RENAULT'],
+    [/\bdaily\b|eurocargo|stralis|trakker/i, 'IVECO'],
+    [/\bbox[e]?r\b|expert|partner/i, 'PEUGEOT'],
+    [/jumper|jumpy|berlingo/i, 'CITROEN'],
+    [/crafter|transporter|\btge\b/i, 'VW'],
+    [/movano|vivaro|\bcombo\b/i, 'OPEL'],
+    [/nv400|nv300|interstar|primastar/i, 'NISSAN'],
+    [/\btgl\b|\btgm\b|\btgs\b|\btgx\b/i, 'MAN'],
+    [/canter|fuso/i, 'MITSUBISHI'],
+    [/\bvolvo\b/i, 'VOLVO'],
+    [/\bdaf\b/i, 'DAF'],
+  ];
+  for (const [re, brand] of brandMap) {
+    if (re.test(text)) { s.brand = brand; break; }
   }
   for (const b of ['RENAULT','FIAT','IVECO','FORD','MERCEDES','VW','OPEL','NISSAN','PEUGEOT','CITROEN','MAN','DAF','VOLVO','TOYOTA','MITSUBISHI']) {
-    if (lower.includes(b.toLowerCase())) { params.brand = b; break; }
+    if (new RegExp('\\b'+b+'\\b','i').test(text)) { s.brand = b; break; }
   }
-
-  // Year
-  const yearMatch = text.match(/\b(19[89]\d|20[012]\d)\b/);
-  if (yearMatch) params.year = parseInt(yearMatch[1]);
 
   // Traction
-  if (/\brwd\b|tracci[oó]n trasera|rear wheel/i.test(text)) params.flag_rwd = true;
-  if (/\bfwd\b|tracci[oó]n delantera|front wheel/i.test(text)) params.flag_fwd = true;
+  if (/\brwd\b|tracci[oó]n\s*trasera|rear\s*wheel/i.test(text)) s.flag_rwd = true;
+  if (/\bfwd\b|tracci[oó]n\s*delantera|front\s*wheel/i.test(text)) s.flag_fwd = true;
 
-  // New vehicle — key logic change: just flag it, query will use year_to_int IS NULL
-  if (/veh[ií]culo nuevo|es nuevo|si.*nuevo|nuevo.*si|matriculaci[oó]n reciente|nuevo.*matricul|reciente/i.test(text)) {
-    params.new_vehicle = true;
-    params.year = null; // clear year filter when new vehicle
-  }
+  // New vehicle
+  if (/nuevo|reciente|nueva\s*matriculaci/i.test(text)) s.new_vehicle = true;
+
+  // Year
+  const ym = text.match(/\b(19[89]\d|20[012]\d)\b/);
+  if (ym && !s.new_vehicle) s.year = parseInt(ym[1]);
 
   // Component
-  const compMatch = text.match(/\b(TM\s*\d+|UP\s*\d+|SD[57][HL]\d+|CS\s*\d+|QP\s*\d+|MG\s*\d+|Mahle|Valeo|SEG|SALAMI|G[34]-[24])/i);
-  if (compMatch) params.nom_opcio_compressor = compMatch[1];
+  const cm = text.match(/\b(TM\s*\d+|UP\s*\d+|SD[57][HL]\d+|CS\s*\d+|G[34]-[24]\d+V)/i);
+  if (cm) s.component = cm[1].replace(/\s+/,'');
 
-  return params;
+  return s;
+}
+
+async function queryDB(s) {
+  const parts = [
+    'brand=neq.ACCESSORY',
+    'kit_type=neq.Otro',
+    'model_clean=neq.STANDARD%20BRACKET',
+    'model_clean=neq.COMPRESSOR%20BRACKET',
+  ];
+
+  if (s.kit_type) parts.push(`kit_type=eq.${encodeURIComponent(s.kit_type)}`);
+  if (s.brand) parts.push(`brand=eq.${encodeURIComponent(s.brand)}`);
+  if (s.model_clean) parts.push(`model_clean=eq.${encodeURIComponent(s.model_clean)}`);
+  if (s.engine_clean) parts.push(`engine_clean=eq.${encodeURIComponent(s.engine_clean)}`);
+  if (s.flag_rwd) parts.push('flag_rwd=eq.Yes');
+  if (s.flag_fwd) parts.push('flag_fwd=eq.Yes');
+  if (s.new_vehicle) {
+    parts.push('year_to_int=is.null');
+  } else if (s.year) {
+    parts.push(`year_from_int=lte.${s.year}`);
+    parts.push(`or=(year_to_int.is.null,year_to_int.gte.${s.year})`);
+  }
+  if (s.component) parts.push(`nom_opcio_compressor=ilike.*${encodeURIComponent(s.component)}*`);
+
+  // Limit aggressively - we only need enough to show options
+  parts.push('limit=100');
+
+  const url = `${SUPABASE_URL}/rest/v1/kits?${parts.join('&')}`;
+  const r = await fetch(url, {
+    headers: { 'apikey': SUPABASE_KEY, 'Authorization': `Bearer ${SUPABASE_KEY}` }
+  });
+  if (!r.ok) throw new Error(`DB error ${r.status}`);
+  return r.json();
+}
+
+function summarizeDB(data, state) {
+  if (!data || data.length === 0) return { summary: 'Sin datos', data: [] };
+
+  // Deduplicate by code for counting
+  const byCode = {};
+  for (const row of data) {
+    if (!byCode[row.code]) byCode[row.code] = row;
+  }
+  const codes = Object.values(byCode);
+
+  // Build compact summary - only unique values per field
+  const uniq = (arr) => [...new Set(arr.filter(Boolean))];
+
+  const summary = {
+    total_codes: codes.length,
+    kit_types: uniq(codes.map(r => r.kit_type)),
+    brands: uniq(codes.map(r => r.brand)),
+    models: uniq(codes.map(r => r.model_clean)),
+    engines: uniq(codes.map(r => r.engine_clean)),
+    year_ranges: uniq(codes.map(r => r.year_from_v4 ? `desde ${r.year_from_v4}${r.year_to_v4 ? ` hasta ${r.year_to_v4}` : ''}` : null)),
+    components: uniq(data.map(r => r.nom_opcio_compressor)),
+    tractions: {
+      rwd: codes.filter(r => r.flag_rwd === 'Yes').length,
+      fwd: codes.filter(r => r.flag_fwd === 'Yes').length,
+    },
+    flags_present: {
+      auto_tensioner: codes.some(r => r.flag_auto_tensioner === 'Yes'),
+      n63_pulley_yes: codes.some(r => r.flag_n63_pulley_yes === 'Yes'),
+      n63_pulley_no: codes.some(r => r.flag_n63_pulley_no === 'Yes'),
+      n63_full: codes.some(r => r.flag_n63_full_option === 'Yes'),
+      pfmot_yes: codes.some(r => r.flag_pfmot_yes === 'Yes'),
+      pfmot_no: codes.some(r => r.flag_pfmot_no === 'Yes'),
+      urban: codes.some(r => r.flag_urban_kit === 'Yes'),
+      sanden: codes.some(r => r.flag_sanden === 'Yes'),
+      gearbox_v3_mixed: uniq(codes.map(r => r.flag_gearbox_v3)).length > 1,
+      awd: codes.some(r => r.flag_awd === 'Yes'),
+    },
+    ac_values: uniq(codes.map(r => r.ac_filter)),
+  };
+
+  // If few codes left, include full detail
+  let detail = [];
+  if (codes.length <= 10) {
+    detail = codes.map(r => ({
+      code: r.code,
+      model: r.model_clean,
+      engine: r.engine_clean,
+      year_from: r.year_from_v4,
+      year_to: r.year_to_v4,
+      component: data.filter(d => d.code === r.code).map(d => d.nom_opcio_compressor),
+      flag_rwd: r.flag_rwd,
+      flag_fwd: r.flag_fwd,
+      flag_awd: r.flag_awd,
+      flag_auto_tensioner: r.flag_auto_tensioner,
+      flag_n63_pulley_yes: r.flag_n63_pulley_yes,
+      flag_n63_pulley_no: r.flag_n63_pulley_no,
+      flag_n63_full_option: r.flag_n63_full_option,
+      flag_pfmot_yes: r.flag_pfmot_yes,
+      flag_pfmot_no: r.flag_pfmot_no,
+      flag_urban_kit: r.flag_urban_kit,
+      flag_sanden: r.flag_sanden,
+      flag_gearbox_v3: r.flag_gearbox_v3,
+      flag_himatic: r.flag_himatic,
+      flag_ind_belt: r.flag_ind_belt,
+      ac_filter: r.ac_filter,
+      noteeng: r.noteeng,
+      embrague_esp: r.embrague_esp,
+      embrague_std: r.embrague_std,
+    }));
+  }
+
+  return { summary, detail };
 }
 
 exports.handler = async function(event) {
   if (event.httpMethod !== 'POST') return { statusCode: 405, body: 'Method Not Allowed' };
-
   const API_KEY = process.env.ANTHROPIC_API_KEY;
-  if (!API_KEY) return { statusCode: 500, body: JSON.stringify({ error: 'API key no configurada en Netlify' }) };
+  if (!API_KEY) return { statusCode: 500, body: JSON.stringify({ error: 'API key no configurada' }) };
 
   try {
     const body = JSON.parse(event.body);
     const messages = body.messages || [];
 
-    const params = extractParams(messages);
-    let dbData = [];
+    const state = extractState(messages);
+    let dbResult = { summary: 'Sin datos aún', detail: [] };
+
     try {
-      dbData = await querySupabase(params);
+      const data = await queryDB(state);
+      dbResult = summarizeDB(data, state);
     } catch(e) {
-      console.error('Supabase error:', e.message);
+      console.error('DB error:', e.message);
     }
 
-    const dataContext = dbData.length > 0
-      ? `\n\n[DATOS BD: ${dbData.length} registros filtrados. Filtros activos: ${JSON.stringify(params)}]\n${JSON.stringify(dbData)}`
-      : `\n\n[DATOS BD: Sin filtros suficientes aún — inicia el flujo de selección]`;
+    const ctx = `\n\n[BD - Filtros activos: ${JSON.stringify(state)}]\n[Resumen: ${JSON.stringify(dbResult.summary)}]\n${dbResult.detail.length > 0 ? '[Detalle códigos: ' + JSON.stringify(dbResult.detail) + ']' : ''}`;
 
     const msgsWithCtx = [...messages];
-    if (msgsWithCtx.length > 0) {
-      const last = msgsWithCtx[msgsWithCtx.length - 1];
-      msgsWithCtx[msgsWithCtx.length - 1] = {
-        ...last,
-        content: (typeof last.content === 'string' ? last.content : '') + dataContext
-      };
-    }
+    const last = msgsWithCtx[msgsWithCtx.length - 1];
+    msgsWithCtx[msgsWithCtx.length - 1] = {
+      ...last,
+      content: (typeof last.content === 'string' ? last.content : '') + ctx
+    };
 
     const resp = await fetch('https://api.anthropic.com/v1/messages', {
       method: 'POST',
@@ -232,30 +260,17 @@ exports.handler = async function(event) {
       },
       body: JSON.stringify({
         model: 'claude-haiku-4-5-20251001',
-        max_tokens: 1000,
+        max_tokens: 800,
         system: SYSTEM_PROMPT,
         messages: msgsWithCtx
       })
     });
 
     const data = await resp.json();
-    if (!resp.ok) return {
-      statusCode: resp.status,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: data.error?.message || 'Error API' })
-    };
-
-    return {
-      statusCode: 200,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(data)
-    };
+    if (!resp.ok) return { statusCode: resp.status, headers: {'Content-Type':'application/json'}, body: JSON.stringify({ error: data.error?.message }) };
+    return { statusCode: 200, headers: {'Content-Type':'application/json'}, body: JSON.stringify(data) };
 
   } catch(err) {
-    return {
-      statusCode: 500,
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ error: err.message })
-    };
+    return { statusCode: 500, headers: {'Content-Type':'application/json'}, body: JSON.stringify({ error: err.message }) };
   }
 };
