@@ -12,7 +12,7 @@ ESTILO:
 SELECCIÓN FINAL:
 ✅ **Referencia seleccionada: [CODE]**
 Motivo: [modelo] · [motor] · [vigente desde year_from_v4] · [componente] · [diferencial]
-📋 Notas: (solo info relevante de noteeng para el instalador)
+📋 Notas importantes: (muestra TODO el contenido de noteeng relevante para el instalador — NO omitas nada: herramientas, restricciones, opciones de fábrica, referencias de piezas adicionales, etc.)
 🔧 EMBRAGUE — El kit base ya incluye embrague_std de serie. REGLA: si embrague_esp tiene valor (sea igual o distinto a embrague_std) → ofrecer versión especial. Sufijo según tipus_embrague: N=nada | N-E=[CODE]E (TM/UP/UNICLA) | N-S=[CODE]S (SANDEN) | N-E/S=ambos [CODE]E y [CODE]S. Si tipus_embrague es N o vacío → no ofrecer nada.
 
 REGLAS:
@@ -47,7 +47,9 @@ FLUJO (detente al llegar a 1 código único):
    Filtro: year_from_int <= año Y (year_to_int nulo O year_to_int >= año)
    💡 Permiso campo B
 
-7. MOTOR — si quedan varios. Muestra opciones reales de engine_clean.
+7. MOTOR — si quedan varios. Usa engine_all para matching (contiene TODOS los motores de cada fila, separados por |).
+   El usuario puede mencionar un motor secundario que aparece en engine_all pero no en engine_clean — igualmente es válido.
+   Muestra opciones reales de engine_all.
 
 8. COMPONENTE — agrupa por tipo. Muestra opciones reales de nom_opcio_compressor.
    El usuario puede escribir de forma abreviada: TM15=TM 15/QP 15, TM13=TM 13/QP 13, etc.
@@ -235,6 +237,7 @@ function buildContext(data, state) {
       code: r.code,
       model: r.model_clean,
       engine: r.engine_clean,
+      engine_all: r.engine_all||null,
       year_from_v4: r.year_from_v4,
       year_to_v4: r.year_to_v4 || null,
       components: uniq(data.filter(d=>d.code===r.code).map(d=>d.nom_opcio_compressor)),
@@ -248,7 +251,7 @@ function buildContext(data, state) {
       flag_sanden: r.flag_sanden||null, flag_gearbox_v3: r.flag_gearbox_v3||null,
       flag_himatic: r.flag_himatic||null, flag_not_18t: r.flag_not_18t||null,
       ac_filter: r.ac_filter||null,
-      noteeng: r.noteeng||null,
+      noteeng: r.noteeng_clean||null,
       embrague_esp: r.embrague_esp||null,
       embrague_std: r.embrague_std||null,
       tipus_embrague: r.tipus_embrague||null,
