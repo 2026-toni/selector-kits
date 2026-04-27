@@ -20,6 +20,12 @@ REGLAS DE DATOS:
 - Si algo no está en los datos disponibles, dilo claramente.
 - Excluye siempre STANDARD BRACKET y COMPRESSOR BRACKET salvo petición explícita.
 
+DEFINICIÓN DE "VEHÍCULO NUEVO":
+- Un vehículo nuevo = usar SOLO los kits que tienen year_to_int NULO (sin fecha de fin).
+- Estos kits están vigentes y son aplicables a cualquier vehículo actual, independientemente del año de inicio (year_from_int).
+- NO filtres por year_from_int cuando el usuario dice "vehículo nuevo". Filtra SOLO por year_to_int nulo.
+- Los datos ya llegan pre-filtrados con esta lógica desde el servidor.
+
 FLUJO DE SELECCIÓN (sigue este orden, detente cuando quede 1 código único):
 
 1. TIPO DE KIT — Primera pregunta siempre. Opciones:
@@ -38,15 +44,15 @@ FLUJO DE SELECCIÓN (sigue este orden, detente cuando quede 1 código único):
 
 4. TRACCIÓN — Pregunta inmediatamente después de confirmar el modelo si los datos tienen variantes RWD/FWD:
    "¿El vehículo es de tracción trasera (RWD) o delantera (FWD)?"
-   Usa flag_rwd y flag_fwd para filtrar. Si solo hay una opción de tracción, omite esta pregunta.
+   Usa flag_rwd y flag_fwd para filtrar. Si solo hay una opción de tracción en los datos, omite esta pregunta.
    💡 Inspección física bajo el vehículo, o campo Variante del permiso de circulación
 
-5. ¿VEHÍCULO NUEVO? — Pregunta solo después de confirmar modelo y tracción:
+5. ¿VEHÍCULO NUEVO? — Después de confirmar modelo y tracción:
    "¿Es un vehículo de matriculación reciente (nuevo)?"
-   Si SÍ: filtra usando solo year_from_int = model_max_year de los datos.
-   Si NO: continúa al paso de año.
+   Si SÍ: usa SOLO los kits con year_to_int NULO de los datos (vigentes sin fecha de fin).
+   Si NO: pide el año exacto.
 
-6. AÑO — Pregunta: "¿Sabes el año de fabricación o primera matriculación?"
+6. AÑO — Solo si el usuario NO dijo "nuevo". Pregunta: "¿Sabes el año de fabricación o primera matriculación?"
    Filtra: year_from_int <= año Y (year_to_int nulo O year_to_int >= año)
    💡 España/UE: Permiso, campo B. Fecha de primera matriculación
 
@@ -55,7 +61,7 @@ FLUJO DE SELECCIÓN (sigue este orden, detente cuando quede 1 código único):
    💡 España/UE: Permiso campo P.5 o etiqueta en tapa de válvulas
 
 8. COMPONENTE — Pregunta qué compresor/componente necesita.
-   Agrupa por tipo (compresor A/C, alternador, generador...) con ejemplos reales de nom_opcio_compressor.
+   Agrupa por tipo con ejemplos reales de nom_opcio_compressor.
 
 9. FLAGS DE KIT — Solo si varían entre candidatos. Orden de prioridad:
    a. flag_gearbox_v3: ok=compatible automática, not=NO compatible, vacío=válido para ambas → NO preguntar si todos vacíos
@@ -77,7 +83,6 @@ Motivo: [modelo] · [motor] · [desde year_from_v4] · [componente] · [diferenc
 
 📋 Notas importantes: (solo si hay datos relevantes en noteeng para el instalador)
 · [nota 1]
-· [nota 2]
 
 🔧 Opción con embrague [estándar/especial]: (solo si embrague_esp no está vacío)
 [contenido de embrague_esp]
@@ -94,8 +99,8 @@ async function querySupabase(params) {
   const parts = [
     `brand=neq.ACCESSORY`,
     `kit_type=neq.Otro`,
-    `model_clean=neq.STANDARD BRACKET`,
-    `model_clean=neq.COMPRESSOR BRACKET`,
+    `model_clean=neq.STANDARD%20BRACKET`,
+    `model_clean=neq.COMPRESSOR%20BRACKET`,
     `limit=200`
   ];
 
@@ -103,18 +108,21 @@ async function querySupabase(params) {
   if (params.brand) parts.push(`brand=eq.${encodeURIComponent(params.brand)}`);
   if (params.model_clean) parts.push(`model_clean=eq.${encodeURIComponent(params.model_clean)}`);
   if (params.engine_clean) parts.push(`engine_clean=eq.${encodeURIComponent(params.engine_clean)}`);
-  if (params.year) {
+
+  // NEW VEHICLE LOGIC: filter year_to_int IS NULL (open-ended, vigent kits)
+  if (params.new_vehicle) {
+    parts.push(`year_to_int=is.null`);
+  } else if (params.year) {
+    // Normal year filter
     parts.push(`year_from_int=lte.${params.year}`);
     parts.push(`or=(year_to_int.is.null,year_to_int.gte.${params.year})`);
   }
+
   if (params.nom_opcio_compressor) {
     parts.push(`nom_opcio_compressor=ilike.*${encodeURIComponent(params.nom_opcio_compressor)}*`);
   }
   if (params.flag_rwd) parts.push(`flag_rwd=eq.Yes`);
   if (params.flag_fwd) parts.push(`flag_fwd=eq.Yes`);
-  if (params.new_vehicle && params.model_max_year) {
-    parts.push(`year_from_int=eq.${params.model_max_year}`);
-  }
 
   const url = `${SUPABASE_URL}/rest/v1/kits?${parts.join('&')}`;
   const resp = await fetch(url, {
@@ -142,26 +150,23 @@ function extractParams(messages) {
 
   // Brand detection
   const brandMap = {
-    'sprinter|vito|actros|atego|arocs|antos|axor': 'MERCEDES',
+    'sprinter|vito|actros|atego|arocs|antos|axor|econic': 'MERCEDES',
     'ducato|scudo|talento|doblo': 'FIAT',
     'transit|tourneo': 'FORD',
     'master|trafic|kangoo': 'RENAULT',
     'daily|eurocargo|stralis|trakker': 'IVECO',
-    'boxer|expert|partner|proace': 'PEUGEOT',
-    'jumper|jumpy|berlingo|dispatch': 'CITROEN',
-    'crafter|transporter|caddy|tge': 'VW',
+    'boxer|expert|partner': 'PEUGEOT',
+    'jumper|jumpy|berlingo': 'CITROEN',
+    'crafter|transporter|caddy': 'VW',
     'movano|vivaro|combo': 'OPEL',
     'nv400|nv300|interstar|primastar': 'NISSAN',
     'tgl|tgm|tgs|tgx': 'MAN',
-    'fh|fm|fl|fe': 'VOLVO',
-    'xf|cf|lf': 'DAF',
     'canter|fuso': 'MITSUBISHI',
     'promaster': 'FIAT',
   };
   for (const [pattern, brand] of Object.entries(brandMap)) {
     if (new RegExp(pattern, 'i').test(text)) { params.brand = brand; break; }
   }
-  // Direct brand names
   for (const b of ['RENAULT','FIAT','IVECO','FORD','MERCEDES','VW','OPEL','NISSAN','PEUGEOT','CITROEN','MAN','DAF','VOLVO','TOYOTA','MITSUBISHI']) {
     if (lower.includes(b.toLowerCase())) { params.brand = b; break; }
   }
@@ -174,13 +179,14 @@ function extractParams(messages) {
   if (/\brwd\b|tracci[oó]n trasera|rear wheel/i.test(text)) params.flag_rwd = true;
   if (/\bfwd\b|tracci[oó]n delantera|front wheel/i.test(text)) params.flag_fwd = true;
 
-  // New vehicle
-  if (/veh[ií]culo nuevo|es nuevo|si.*nuevo|nuevo.*si|matriculaci[oó]n reciente/i.test(text)) {
+  // New vehicle — key logic change: just flag it, query will use year_to_int IS NULL
+  if (/veh[ií]culo nuevo|es nuevo|si.*nuevo|nuevo.*si|matriculaci[oó]n reciente|nuevo.*matricul|reciente/i.test(text)) {
     params.new_vehicle = true;
+    params.year = null; // clear year filter when new vehicle
   }
 
   // Component
-  const compMatch = text.match(/\b(TM\s*\d+|UP\s*\d+|SD[57][HL]\d+|CS\s*\d+|QP\s*\d+|MG\s*\d+|Mahle|Valeo|SEG|SALAMI|SANDEN|G[34]-[24])/i);
+  const compMatch = text.match(/\b(TM\s*\d+|UP\s*\d+|SD[57][HL]\d+|CS\s*\d+|QP\s*\d+|MG\s*\d+|Mahle|Valeo|SEG|SALAMI|G[34]-[24])/i);
   if (compMatch) params.nom_opcio_compressor = compMatch[1];
 
   return params;
@@ -196,7 +202,6 @@ exports.handler = async function(event) {
     const body = JSON.parse(event.body);
     const messages = body.messages || [];
 
-    // Extract filters and query Supabase
     const params = extractParams(messages);
     let dbData = [];
     try {
@@ -205,12 +210,10 @@ exports.handler = async function(event) {
       console.error('Supabase error:', e.message);
     }
 
-    // Build context
     const dataContext = dbData.length > 0
-      ? `\n\n[DATOS BD: ${dbData.length} registros filtrados]\n${JSON.stringify(dbData)}`
-      : `\n\n[DATOS BD: Sin filtros aplicados aún — inicia el flujo de selección]`;
+      ? `\n\n[DATOS BD: ${dbData.length} registros filtrados. Filtros activos: ${JSON.stringify(params)}]\n${JSON.stringify(dbData)}`
+      : `\n\n[DATOS BD: Sin filtros suficientes aún — inicia el flujo de selección]`;
 
-    // Inject context into last user message
     const msgsWithCtx = [...messages];
     if (msgsWithCtx.length > 0) {
       const last = msgsWithCtx[msgsWithCtx.length - 1];
