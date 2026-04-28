@@ -42,7 +42,7 @@ tr:nth-child(even) td { background:#f8fafc; }
 
 @st.cache_data
 def load_db():
-    with open("db.json","r",encoding="utf-8") as f:
+    with open(os.path.join(os.path.dirname(__file__), "db.json"),"r",encoding="utf-8") as f:
         return json.load(f)
 
 DB = load_db()
@@ -186,7 +186,7 @@ if 'messages' not in st.session_state: st.session_state.messages=[]
 
 # Header
 c1,c2,c3=st.columns([3,2,1])
-with c1: st.image("logo.jpg",width=200)
+with c1: st.image(os.path.join(os.path.dirname(__file__), "logo.jpg"),width=200)
 with c2:
     st.markdown('<div class="ot-agent-name">Joan P.</div><div class="ot-agent-sub">Kit Selector · OT M&DK</div>',unsafe_allow_html=True)
 with c3:
