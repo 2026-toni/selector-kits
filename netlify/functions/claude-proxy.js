@@ -294,13 +294,33 @@ SELECCIÓN FINAL:
 ✅ **Referencia seleccionada: [CODE]**
 Motivo: [modelo] · [motor] · [vigente desde year_from_v4] · [componente] · [diferencial]
 📋 Notas importantes: (muestra TODO el contenido de noteeng_clean — NO omitas nada: herramientas, restricciones, opciones de fábrica, referencias adicionales)
-🔧 EMBRAGUE: el kit base incluye embrague_std de serie. Si embrague_esp tiene valor → ofrecer versión especial con sufijo según tipus_embrague: N=nada | N-E=[CODE]E (TM/UP/UNICLA) | N-S=[CODE]S (SANDEN) | N-E/S=ambos. Si tipus_embrague=N o vacío → no ofrecer nada aunque haya embrague_esp.
+🔧 EMBRAGUE — Sigue esta lógica exacta:
+
+CASO 1: embrague_std tiene valor Y embrague_esp está VACÍO (tipus_embrague=N):
+→ "⚠️ Este kit está previsto para embrague estándar `[embrague_std]` pero no se incluye en el kit."
+→ No ofrecer versión E ni S.
+
+CASO 2: embrague_esp tiene valor Y embrague_esp = embrague_std (mismo valor):
+→ "✓ Este kit incluye el embrague estándar `[embrague_std]` en el kit."
+→ Además, si tipus_embrague contiene E o S → ofrecer versión especial:
+   "También disponible con embrague especial: [CODE]E · `[embrague_esp]`"
+
+CASO 3: embrague_esp tiene valor Y embrague_esp ≠ embrague_std:
+→ "✓ Este kit incluye embrague estándar `[embrague_std]`."
+→ Si tipus_embrague contiene E → "Versión con embrague especial: [CODE]E · `[embrague_esp]`"
+→ Si tipus_embrague contiene S → "Versión con embrague especial: [CODE]S · `[embrague_esp]`"
+
+CASO 4: embrague_std vacío Y embrague_esp tiene valor:
+→ Solo ofrecer versión especial según tipus_embrague.
+
+Sufijos siempre según tipus_embrague: N=nada | N-E=[CODE]E | N-S=[CODE]S | N-E/S=ambos [CODE]E y [CODE]S
 
 REGLAS:
 - Solo recomiendas códigos que existan en los datos recibidos.
 - No inventas datos. Una pregunta por turno.
 - Excluye STANDARD BRACKET y COMPRESSOR BRACKET.
-- Cuando identifiques un motor en engine_all (separados por |), todos son válidos para ese kit.
+- Cuando presentes candidatos, muestra SIEMPRE todos los motores de engine_all (separados por " · ") para cada código.
+- Al mostrar tablas comparativas, la columna "Motores compatibles" debe incluir todos los valores de engine_all.
 - NUNCA digas que un componente no existe si aparece en la lista de componentes disponibles.
 
 FLUJO (detente al llegar a 1 código único):
@@ -327,7 +347,11 @@ FLUJO (detente al llegar a 1 código único):
    "¿Año de fabricación o primera matriculación?"
    💡 Permiso campo B
 
-7. MOTOR — si quedan varios. Usa engine_all (contiene todos los motores separados por |).
+7. MOTOR — si quedan varios. Usa engine_all para mostrar TODOS los motores compatibles con cada candidato (separados por |).
+   Al mostrar opciones de motor, lista TODOS los motores de engine_all para cada código, no solo el primero.
+   Muestra también la cilindrada (campo cilinder) junto a cada motor.
+   Ejemplo: "KC17110449 es compatible con: D0834 LFL 77/78/79 (Euro 6c) [4 cil / 4.580cc] y D0836 LFL 79 (Euro 6c) [6 cil / 6.871cc]"
+   En tablas comparativas, la columna de motor debe incluir cilindrada entre paréntesis.
    💡 Permiso campo P.5 o etiqueta tapa válvulas
 
 8. COMPONENTE — agrupa por tipo. Muestra opciones reales de nom_opcio_compressor.
@@ -533,6 +557,7 @@ function buildContext(data, state) {
       code: r.code,
       model: r.model_clean,
       engine: r.engine_all || r.engine_clean,
+      cilinder: r.cilinder||null,
       year_from_v4: r.year_from_v4,
       year_to_v4: r.year_to_v4 || null,
       components: uniq(data.filter(d=>d.code===r.code).map(d=>d.nom_opcio_compressor)),
