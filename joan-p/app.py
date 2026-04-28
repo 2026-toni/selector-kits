@@ -233,7 +233,7 @@ if (send or user_input) and user_input.strip():
             api_msgs.append({'role':m['role'],'content':m['content']})
         api_msgs.append({'role':'user','content':msg+'\n\n'+ctx})
         client=get_client()
-        resp=client.messages.create(model="claude-sonnet-4-20250514",max_tokens=1200,system=SYSTEM_PROMPT,messages=api_msgs)
+        resp=client.messages.create(model="claude-haiku-4-5-20251001",max_tokens=1200,system=SYSTEM_PROMPT,messages=api_msgs)
         reply=resp.content[0].text
     st.session_state.messages.append({'role':'assistant','content':reply})
     st.rerun()
