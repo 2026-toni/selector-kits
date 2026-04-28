@@ -65,7 +65,9 @@ def get_client():
 
 def extract_state(messages):
     """Extract filter state from all conversation messages using Python."""
-    text = ' '.join(m.get('content','') for m in messages if isinstance(m.get('content'), str))
+    # Only extract from USER messages to avoid contamination from bot responses
+    text = ' '.join(m.get('content','') for m in messages
+                    if isinstance(m.get('content'), str) and m.get('role') == 'user')
     s = {}
 
     # Kit type
