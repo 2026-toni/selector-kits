@@ -160,15 +160,15 @@ def run_step():
     # Format question with options
     msg = question + '\n\n'
     if isinstance(options, list):
-        if options and isinstance(options[0], tuple):
-            # Engine options with cilinder
+        if options and isinstance(options[0], tuple) and len(options[0]) == 3:
+            # Kit type options (code, name, desc)
+            for code, name, desc in options:
+                msg += f"- **{code}** — {name}: {desc}\n"
+        elif options and isinstance(options[0], tuple) and len(options[0]) == 2:
+            # Engine options (eng, cil)
             for eng, cil in options:
                 cil_str = f" · {cil}" if cil else ""
                 msg += f"- **{eng}**{cil_str}\n"
-        elif options and isinstance(options[0], tuple) and len(options[0]) == 3:
-            # Kit type options
-            for code, name, desc in options:
-                msg += f"- **{code}** — {name}: {desc}\n"
         else:
             for opt in options:
                 msg += f"- {opt}\n"
