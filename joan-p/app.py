@@ -1,7 +1,9 @@
 import streamlit as st
 import os, json, re
 from anthropic import Anthropic
-from selector import apply_filters, apply_awd_filter, get_unique_codes, get_unique_values, normalize_comp, detect_brand, detect_model, DB
+from selector import (apply_filters, apply_awd_filter, get_unique_codes,
+                      get_unique_values, normalize_comp, detect_brand,
+                      detect_model, detect_year, DB)
 
 BASE = os.path.dirname(os.path.abspath(__file__))
 
@@ -30,128 +32,98 @@ tr:nth-child(even) td{background:#f8fafc}
 </style>
 """, unsafe_allow_html=True)
 
-# ── TOOL DEFINITIONS ──────────────────────────────────────────────────────────
-TOOLS = [
-    {
-        "name": "filter_kits",
-        "description": """Filtra la base de datos de kits según los criterios proporcionados y devuelve los candidatos.
-Usa esta herramienta en CADA paso de la selección para obtener los datos actualizados.
-Siempre llama a esta herramienta antes de responder al usuario.""",
-        "input_schema": {
-            "type": "object",
-            "properties": {
-                "kit_type": {"type": "string", "description": "Tipo de kit: 'Kit compresor A/C', 'Kit compresor frío industrial', 'Kit alternador', 'Kit bomba hidráulica', 'Kit generador', 'Kit chasis'"},
-                "brand": {"type": "string", "description": "Marca del vehículo: MERCEDES, FIAT, FORD, RENAULT, IVECO, PEUGEOT, CITROEN, VW, OPEL, NISSAN, MAN, MITSUBISHI, VOLVO, DAF, etc."},
-                "model_clean": {"type": "string", "description": "Modelo exacto del vehículo (debe coincidir exactamente con la BD)"},
-                "flag_rwd": {"type": "boolean", "description": "True si tracción trasera RWD"},
-                "flag_fwd": {"type": "boolean", "description": "True si tracción delantera FWD"},
-                "new_vehicle": {"type": "boolean", "description": "True si vehículo nuevo (filtra year_to_int IS NULL)"},
-                "year": {"type": "integer", "description": "Año de fabricación o primera matriculación"},
-                "engine_clean": {"type": "string", "description": "Motor exacto del vehículo"},
-                "component": {"type": "string", "description": "Componente a instalar (nombre exacto de la BD)"},
-                "flag_auto_tensioner": {"type": "boolean", "description": "True = tensor automático, False = tensor estándar"},
-                "flag_n63_full": {"type": "boolean", "description": "True = polea N63 con bracket completo"},
-                "flag_n63_only": {"type": "boolean", "description": "True = solo polea N63 sin bracket"},
-                "flag_n63_none": {"type": "boolean", "description": "True = sin polea N63"},
-                "flag_pfmot_yes": {"type": "boolean", "description": "True = tiene PFMot/PTO"},
-                "flag_pfmot_no": {"type": "boolean", "description": "True = sin PFMot/PTO"},
-                "flag_sanden": {"type": "boolean", "description": "True = compresor SANDEN"},
-                "flag_awd": {"type": "boolean", "description": "True = AWD/4x4"},
-                "ac_yes": {"type": "boolean", "description": "True = tiene A/C de fábrica"},
-                "ac_no": {"type": "boolean", "description": "True = sin A/C"},
-            },
-            "required": []
-        }
-    }
-]
-
 SYSTEM_PROMPT = """Eres Joan P., asistente comercial experto en selección de kits de OLIVA TORRAS Mount & Drive Kits.
 
-REGLA CRÍTICA: Debes llamar a la herramienta `filter_kits` en CADA respuesta, antes de contestar al usuario.
-Los datos que te devuelve la herramienta son la ÚNICA fuente de verdad. No inventes datos ni códigos.
+Se te proporciona en cada mensaje:
+1. El historial de conversación
+2. [DATOS BD]: los candidatos filtrados por Python — ESTA ES LA ÚNICA FUENTE DE VERDAD
 
-ESTILO: texto natural y conversacional. Sin ## ni "PASO X". Conciso (3-4 líneas máximo salvo tablas). Una pregunta por turno. Confirma con "✓ [dato]".
+ESTILO: texto natural. Sin ## ni "PASO X". Conciso (3-4 líneas máximo salvo tablas). Una pregunta por turno. Confirma con "✓ [dato]".
 
-FLUJO OBLIGATORIO (sigue este orden exacto, detente cuando quede 1 código):
+FLUJO OBLIGATORIO — sigue este orden exacto, detente al llegar a 1 código:
 
-1. TIPO DE KIT — primera pregunta siempre:
-   KB=compresor A/C · KC=frío industrial · KA=alternador · KH=bomba · KG=generador · KF=chasis
+1. TIPO DE KIT: KB=A/C · KC=frío industrial · KA=alternador · KH=bomba · KG=generador · KF=chasis
+2. MARCA · 3. MODELO (4-8 opciones de available_models) · 4. TRACCIÓN (si has_rwd Y has_fwd)
+5. ¿VEHÍCULO NUEVO? SÍ=vigentes · NO=pide año
+6. AÑO (si no nuevo) · 7. MOTOR (usa available_engines con cilindrada)
+8. COMPONENTE (agrupa por tipo, opciones de available_components)
+9. FLAGS (solo si varían en los candidatos): tensor · pfmot · n63 · sanden · awd · gearbox · man_option
+10. A/C (solo si ac_values tiene yes Y no)
 
-2. MARCA — campo brand del resultado.
-   💡 España/UE: Permiso circulación campo D.1
-
-3. MODELO — muestra 4-8 opciones reales de model_clean del resultado.
-   💡 Permiso campos D.2 y D.3
-
-4. TRACCIÓN — si el resultado tiene tanto flag_rwd como flag_fwd en distintos códigos:
-   "¿Tracción trasera (RWD) o delantera (FWD)?"
-   💡 Árbol de transmisión trasero = RWD
-
-5. ¿VEHÍCULO NUEVO? — "¿Es un vehículo de matriculación reciente?"
-   SÍ → usa new_vehicle=true en la herramienta (filtra vigentes sin fecha fin)
-   NO → pide año exacto
-
-6. AÑO — "¿Año de fabricación o primera matriculación?"
-   💡 Permiso campo B
-
-7. MOTOR — usa engine_all del resultado. Muestra TODOS los motores con cilindrada.
-   💡 Permiso campo P.5 o etiqueta tapa válvulas
-
-8. COMPONENTE — agrupa por tipo. Muestra opciones reales.
-   TM15=TM 15/QP 15, TM13=TM 13/QP 13, etc.
-
-9. FLAGS KIT (solo si varían entre candidatos del resultado):
-   - tensor: flag_auto_tensioner → "¿Tensor automático o estándar?"
-   - PFMot: flag_pfmot_yes/no → "¿Tiene PTO/PFMot de fábrica?"
-   - N63: flag_n63 → "¿Lleva polea cigüeñal N62/N63?"
-   - SANDEN: flag_sanden → "¿Compresor original SANDEN?"
-   - AWD: flag_awd → "¿Es AWD/4x4?"
-   - Caja: flag_gearbox_v3 (ok/not/vacío) → "¿Caja automática?" (solo si hay mezcla)
-   - Opción MAN: flag_man_option → "¿Tiene opción fábrica MAN 120FF/0P0GP?"
-
-10. A/C — solo si ac_filter mezcla yes/no en el resultado:
-    "¿Tiene A/C de fábrica?" (ac_filter=any → NO preguntar)
-
-SELECCIÓN FINAL (cuando el resultado tiene 1 código):
+SELECCIÓN FINAL (total_codes=1):
 ✅ **Referencia seleccionada: [CODE]**
-Motivo: [modelo] · [motor + cilindrada] · [desde year_from_v4] · [componente] · [diferencial]
+Motivo: [model] · [engine + cilinder] · [desde year_from_v4] · [component] · [diferencial]
+📋 **Notas importantes:** (TODO el noteeng, sin omitir nada)
+🔧 **Embrague:** (según lógica embrague_esp/embrague_std/tipus_embrague)
 
-📋 **Notas importantes:** (muestra TODO el noteeng — no omitas nada)
+REGLAS: Solo usa datos de [DATOS BD]. No inventes. Una pregunta por turno. Excluye STANDARD BRACKET."""
 
-🔧 **Embrague:**
-- embrague_esp vacío (tipus=N): "⚠️ Previsto para embrague estándar `[embrague_std]` — no incluido en el kit."
-- embrague_esp = embrague_std: "✓ Incluye embrague estándar `[embrague_std]`." + si N-E → "También: **[CODE]E**" + si N-S → "**[CODE]S**"
-- embrague_esp ≠ embrague_std: "✓ Estándar incluido: `[embrague_std]`. Versión especial: **[CODE]E/S** `[embrague_esp]`"
+@st.cache_resource
+def get_client():
+    api_key = os.environ.get('ANTHROPIC_API_KEY') or st.secrets.get('ANTHROPIC_API_KEY', '')
+    return Anthropic(api_key=api_key)
 
-IMPORTANTE: Excluye STANDARD BRACKET y COMPRESSOR BRACKET. Si no hay resultados, informa y pide más datos."""
+def extract_state(messages):
+    """Extract filter state from all conversation messages using Python."""
+    text = ' '.join(m.get('content','') for m in messages if isinstance(m.get('content'), str))
+    s = {}
 
-def run_tool(tool_input):
-    """Execute the filter_kits tool with Python logic."""
-    state = {}
+    # Kit type
+    if re.search(r'compresor\s*a/c|\bkb\b', text, re.I): s['kit_type'] = 'Kit compresor A/C'
+    elif re.search(r'fr[ií]o\s*industrial|\bkc\b', text, re.I): s['kit_type'] = 'Kit compresor frío industrial'
+    elif re.search(r'alternador|\bka\b', text, re.I): s['kit_type'] = 'Kit alternador'
+    elif re.search(r'bomba|\bkh\b', text, re.I): s['kit_type'] = 'Kit bomba hidráulica'
+    elif re.search(r'generador|\bkg\b', text, re.I): s['kit_type'] = 'Kit generador'
+    elif re.search(r'chasis|\bkf\b', text, re.I): s['kit_type'] = 'Kit chasis'
 
-    if tool_input.get('kit_type'): state['kit_type'] = tool_input['kit_type']
-    if tool_input.get('brand'): state['brand'] = tool_input['brand']
-    if tool_input.get('model_clean'): state['model_clean'] = tool_input['model_clean']
-    if tool_input.get('flag_rwd'): state['flag_rwd'] = True
-    if tool_input.get('flag_fwd'): state['flag_fwd'] = True
-    if tool_input.get('new_vehicle'): state['new_vehicle'] = True
-    if tool_input.get('year'): state['year'] = int(tool_input['year'])
-    if tool_input.get('engine_clean'): state['engine_clean'] = tool_input['engine_clean']
-    if tool_input.get('component'): state['component'] = tool_input['component']
-    if tool_input.get('flag_auto_tensioner') is True: state['flag_auto_tensioner'] = 1
-    if tool_input.get('flag_auto_tensioner') is False: state['flag_auto_tensioner_no'] = True
-    if tool_input.get('flag_n63_full'): state['n63_full'] = True
-    if tool_input.get('flag_n63_only'): state['n63_only'] = True
-    if tool_input.get('flag_n63_none'): state['n63_none'] = True
-    if tool_input.get('flag_pfmot_yes'): state['flag_pfmot_yes'] = 1
-    if tool_input.get('flag_pfmot_no'): state['flag_pfmot_no'] = 1
-    if tool_input.get('flag_sanden') is True: state['flag_sanden'] = 1
-    if tool_input.get('flag_sanden') is False: state['flag_sanden'] = 0
-    if tool_input.get('flag_awd') is True: state['is_awd'] = True
-    if tool_input.get('flag_awd') is False: state['is_awd'] = False
-    if tool_input.get('ac_yes'): state['ac_filter'] = 'yes'
-    if tool_input.get('ac_no'): state['ac_filter'] = 'no'
+    # Brand
+    brand = detect_brand(text)
+    if brand: s['brand'] = brand
 
+    # Model
+    model = detect_model(text)
+    if model: s['model_clean'] = model
+
+    # Traction
+    if re.search(r'\brwd\b|tracci[oó]n\s*trasera|rear\s*wheel', text, re.I): s['flag_rwd'] = True
+    if re.search(r'\bfwd\b|tracci[oó]n\s*delantera|front\s*wheel', text, re.I): s['flag_fwd'] = True
+
+    # New vehicle
+    if re.search(r'\bsí\b.*nuevo|si\b.*nuevo|es\s*nuevo|matriculaci[oó]n\s*reciente|veh[ií]culo\s*nuevo', text, re.I):
+        s['new_vehicle'] = True
+    elif re.search(r'no.*nuevo|tengo\s*el\s*año|año\s*exacto', text, re.I):
+        s['new_vehicle'] = False
+
+    # Year
+    if not s.get('new_vehicle'):
+        yr = detect_year(text)
+        if yr: s['year'] = yr
+
+    # Component
+    comp = normalize_comp(text)
+    if comp: s['component'] = comp
+
+    # Flags from conversation
+    if re.search(r'tensor\s*autom[áa]tico|auto\s*tensor', text, re.I): s['flag_auto_tensioner'] = 1
+    if re.search(r'tensor\s*est[áa]ndar|tensor\s*manual|tensor\s*normal', text, re.I): s['flag_auto_tensioner_no'] = True
+    if re.search(r'con\s*bracket|bracket\s*original|opci[oó]n\s*n63\s*completa', text, re.I): s['n63_full'] = True
+    if re.search(r'solo\s*la\s*polea|solo\s*polea|sin\s*bracket', text, re.I): s['n63_only'] = True
+    if re.search(r'sin\s*polea|no\s*lleva\s*polea|no\s*tiene\s*polea', text, re.I): s['n63_none'] = True
+    if re.search(r'con\s*pfmot|tiene\s*pfmot|con\s*pto|tiene\s*pto', text, re.I): s['flag_pfmot_yes'] = 1
+    if re.search(r'sin\s*pfmot|no\s*pfmot|sin\s*pto|no\s*pto', text, re.I): s['flag_pfmot_no'] = 1
+    if re.search(r'sanden|es\s*sanden|compresor\s*sanden', text, re.I): s['flag_sanden'] = 1
+    if re.search(r'no\s*sanden|no\s*es\s*sanden', text, re.I): s['flag_sanden'] = 0
+    if re.search(r'\bawd\b|4x4|tracci[oó]n\s*total|es\s*awd', text, re.I): s['is_awd'] = True
+    if re.search(r'no\s*awd|no\s*4x4|no\s*es\s*awd', text, re.I): s['is_awd'] = False
+    if re.search(r'con\s*a/c|tiene\s*a/c|s[ií]\s*a/c|a/c\s*de\s*f[áa]brica', text, re.I): s['ac_filter'] = 'yes'
+    if re.search(r'sin\s*a/c|no\s*tiene\s*a/c|no\s*a/c', text, re.I): s['ac_filter'] = 'no'
+    if re.search(r'caja\s*autom[áa]tica|cambios\s*autom[áa]ticos', text, re.I): s['flag_gearbox_ok'] = True
+    if re.search(r'man\s*120ff|0p0gp', text, re.I): s['flag_man_option'] = 1
+
+    return s
+
+def get_db_context(state, all_messages):
+    """Filter DB with Python and build context for Claude."""
     data = apply_filters(state)
     data = apply_awd_filter(data, state)
 
@@ -159,47 +131,37 @@ def run_tool(tool_input):
     for r in data:
         if r.get('code') and r['code'] not in by_code:
             by_code[r['code']] = r
-
     codes = list(by_code.values())
     uniq = lambda lst: list(dict.fromkeys(x for x in lst if x))
 
-    result = {
+    ctx = {
         'total_codes': len(codes),
-        'filters_used': {k: v for k, v in state.items()},
-        'available_models': uniq(r.get('model_clean') for r in codes),
+        'filters_active': state,
         'available_brands': uniq(r.get('brand') for r in codes),
+        'available_models': uniq(r.get('model_clean') for r in codes),
         'available_engines': [
             {'engine': r.get('engine_all') or r.get('engine_clean'), 'cilinder': r.get('cilinder')}
             for r in codes
         ],
         'available_components': uniq(r.get('nom_opcio_compressor') for r in data),
-        'traction': {
-            'has_rwd': any(r.get('flag_rwd') == 1 for r in codes),
-            'has_fwd': any(r.get('flag_fwd') == 1 for r in codes),
-        },
-        'flags_present': {
-            'auto_tensioner_yes': any(r.get('flag_auto_tensioner') == 1 for r in codes),
-            'auto_tensioner_no': any(r.get('flag_auto_tensioner') != 1 for r in codes),
-            'pfmot_yes': any(r.get('flag_pfmot_yes') == 1 for r in codes),
-            'pfmot_no': any(r.get('flag_pfmot_no') == 1 for r in codes),
-            'n63_full': any(r.get('flag_n63_full_option') == 1 for r in codes),
-            'n63_yes': any(r.get('flag_n63_pulley_yes') == 1 for r in codes),
-            'n63_no': any(r.get('flag_n63_pulley_no') == 1 for r in codes),
-            'sanden_yes': any(r.get('flag_sanden') == 1 for r in codes),
-            'sanden_no': any(r.get('flag_sanden') != 1 for r in codes),
-            'awd_yes': any(r.get('flag_awd') == 1 for r in codes),
-            'awd_no': any(r.get('flag_awd') != 1 for r in codes),
-            'man_option': any(r.get('flag_man_option') == 1 for r in codes),
-            'gearbox_ok': any(r.get('flag_gearbox_v3') == 'ok' for r in codes),
-            'gearbox_not': any(r.get('flag_gearbox_v3') == 'not' for r in codes),
-        },
+        'has_rwd': any(r.get('flag_rwd') == 1 for r in codes),
+        'has_fwd': any(r.get('flag_fwd') == 1 for r in codes),
         'ac_values': uniq(r.get('ac_filter') for r in codes),
+        'flags': {
+            'auto_tensioner_mixed': any(r.get('flag_auto_tensioner') == 1 for r in codes) and any(r.get('flag_auto_tensioner') != 1 for r in codes),
+            'pfmot_mixed': any(r.get('flag_pfmot_yes') == 1 for r in codes) and any(r.get('flag_pfmot_no') == 1 for r in codes),
+            'n63_variants': any(r.get('flag_n63_full_option') == 1 for r in codes) or (any(r.get('flag_n63_pulley_yes') == 1 for r in codes) and any(r.get('flag_n63_pulley_no') == 1 for r in codes)),
+            'sanden_mixed': any(r.get('flag_sanden') == 1 for r in codes) and any(r.get('flag_sanden') != 1 for r in codes),
+            'awd_mixed': any(r.get('flag_awd') == 1 for r in codes) and any(r.get('flag_awd') != 1 for r in codes),
+            'gearbox_mixed': len(set(r.get('flag_gearbox_v3') for r in codes if r.get('flag_gearbox_v3'))) > 0,
+            'man_option_mixed': any(r.get('flag_man_option') == 1 for r in codes) and any(r.get('flag_man_option') != 1 for r in codes),
+        }
     }
 
     if len(codes) <= 12:
-        result['candidates'] = []
+        ctx['candidates'] = []
         for r in codes:
-            result['candidates'].append({
+            ctx['candidates'].append({
                 'code': r.get('code'),
                 'model': r.get('model_clean'),
                 'engine': r.get('engine_all') or r.get('engine_clean'),
@@ -215,11 +177,11 @@ def run_tool(tool_input):
                 'flag_n63_pulley_no': r.get('flag_n63_pulley_no'),
                 'flag_pfmot_yes': r.get('flag_pfmot_yes'),
                 'flag_pfmot_no': r.get('flag_pfmot_no'),
-                'flag_urban_kit': r.get('flag_urban_kit'),
                 'flag_sanden': r.get('flag_sanden'),
                 'flag_gearbox_v3': r.get('flag_gearbox_v3'),
                 'flag_man_option': r.get('flag_man_option'),
                 'flag_not_18t': r.get('flag_not_18t'),
+                'flag_urban_kit': r.get('flag_urban_kit'),
                 'ac_filter': r.get('ac_filter'),
                 'noteeng': r.get('noteeng'),
                 'embrague_std': r.get('embrague_std'),
@@ -227,70 +189,13 @@ def run_tool(tool_input):
                 'tipus_embrague': r.get('tipus_embrague'),
             })
 
-    return json.dumps(result, ensure_ascii=False)
-
-@st.cache_resource
-def get_client():
-    api_key = os.environ.get('ANTHROPIC_API_KEY') or st.secrets.get('ANTHROPIC_API_KEY', '')
-    return Anthropic(api_key=api_key)
-
-def call_claude_with_tools(messages):
-    """Call Claude with tool_use loop."""
-    client = get_client()
-    api_messages = list(messages)
-
-    while True:
-        resp = client.messages.create(
-            model="claude-haiku-4-5-20251001",
-            max_tokens=1500,
-            system=SYSTEM_PROMPT,
-            tools=TOOLS,
-            messages=api_messages
-        )
-
-        # Check if Claude wants to use a tool
-        tool_uses = [b for b in resp.content if b.type == 'tool_use']
-
-        if not tool_uses:
-            # Claude responded without tool — return text
-            text_blocks = [b for b in resp.content if b.type == 'text']
-            return text_blocks[0].text if text_blocks else ""
-
-        # Execute all tool calls
-        tool_results = []
-        for tool_use in tool_uses:
-            if tool_use.name == 'filter_kits':
-                result = run_tool(tool_use.input)
-                tool_results.append({
-                    "type": "tool_result",
-                    "tool_use_id": tool_use.id,
-                    "content": result
-                })
-
-        # Add assistant response and tool results to messages
-        api_messages.append({"role": "assistant", "content": resp.content})
-        api_messages.append({"role": "user", "content": tool_results})
-
-        # If stop_reason is end_turn after tool use, loop again to get final response
-        if resp.stop_reason == 'end_turn':
-            break
-
-    # Final response after tool use
-    resp2 = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=1500,
-        system=SYSTEM_PROMPT,
-        tools=TOOLS,
-        messages=api_messages
-    )
-    text_blocks = [b for b in resp2.content if b.type == 'text']
-    return text_blocks[0].text if text_blocks else ""
+    return ctx
 
 # ── SESSION STATE ─────────────────────────────────────────────────────────────
 if 'messages' not in st.session_state:
-    st.session_state.messages = []  # list of {role, content} for API
+    st.session_state.messages = []
 if 'chat_display' not in st.session_state:
-    st.session_state.chat_display = []  # list of (role, text) for display
+    st.session_state.chat_display = []
 
 # ── HEADER ────────────────────────────────────────────────────────────────────
 c1, c2, c3 = st.columns([3, 2, 1])
@@ -300,7 +205,6 @@ with c2:
     st.markdown('<div class="ot-name">Joan P.</div><div class="ot-sub">Kit Selector · OT M&DK</div>', unsafe_allow_html=True)
 with c3:
     st.markdown('<div style="text-align:right;padding-top:8px"><span class="ot-dot"></span> <span style="font-size:12px;color:#555">En línea</span></div>', unsafe_allow_html=True)
-
 st.divider()
 
 # ── WELCOME ───────────────────────────────────────────────────────────────────
@@ -318,7 +222,7 @@ if not st.session_state.chat_display:
     <div class="kit-card"><div style="font-size:18px">🏗️</div><div class="kit-name">KF — Chasis</div><div class="kit-desc">Adaptación de chasis</div></div>
     </div></div>""", unsafe_allow_html=True)
 
-# ── CHAT DISPLAY ──────────────────────────────────────────────────────────────
+# ── CHAT ─────────────────────────────────────────────────────────────────────
 for role, text in st.session_state.chat_display:
     if role == 'user':
         st.markdown(f'<div class="msg-u"><div class="bubble-u">{text}</div></div>', unsafe_allow_html=True)
@@ -348,7 +252,30 @@ if send and user_input and user_input.strip():
     st.session_state.messages.append({'role': 'user', 'content': msg})
 
     with st.spinner("Joan P. está buscando..."):
-        reply = call_claude_with_tools(st.session_state.messages)
+        # 1. Python extracts state from ALL conversation
+        state = extract_state(st.session_state.messages)
+
+        # 2. Python filters DB
+        ctx = get_db_context(state, st.session_state.messages)
+
+        # 3. Build API messages with DB context injected into last user message
+        api_messages = []
+        for m in st.session_state.messages[:-1]:
+            api_messages.append({'role': m['role'], 'content': m['content']})
+        api_messages.append({
+            'role': 'user',
+            'content': msg + f'\n\n[DATOS BD]\n{json.dumps(ctx, ensure_ascii=False)}'
+        })
+
+        # 4. Claude only writes the response
+        client = get_client()
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=1200,
+            system=SYSTEM_PROMPT,
+            messages=api_messages
+        )
+        reply = resp.content[0].text
 
     st.session_state.chat_display.append(('bot', reply))
     st.session_state.messages.append({'role': 'assistant', 'content': reply})
