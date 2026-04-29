@@ -25,21 +25,45 @@ EXCLUDE_BRANDS = {'ACCESSORY'}
 EXCLUDE_KIT_TYPES = {'Otro'}
 
 
-def load_db():
-    """Load BD. Uses realpath of this script to locate the Excel reliably on Streamlit Cloud."""
+def _find_file(filename):
+    """Find a file by name trying multiple possible locations."""
     script_dir = os.path.dirname(os.path.realpath(__file__))
     candidates = [
-        os.path.join(script_dir, "bbdd_kits_v6.xlsx"),
-        os.path.join(BASE, "bbdd_kits_v6.xlsx"),
-        os.path.join(os.getcwd(), "bbdd_kits_v6.xlsx"),
-        "/mount/src/selector-kits/joan-p/bbdd_kits_v6.xlsx",
+        os.path.join(script_dir, filename),
+        os.path.join(BASE, filename),
+        os.path.join(os.getcwd(), filename),
+        os.path.join(os.getcwd(), "joan-p", filename),
+        f"/mount/src/selector-kits/joan-p/{filename}",
+        f"/mount/src/selector-kits/{filename}",
     ]
-    path = next((p for p in candidates if os.path.exists(p)), None)
-    if path is None:
-        raise FileNotFoundError(
-            f"bbdd_kits_v6.xlsx no encontrado. script_dir={script_dir}, cwd={os.getcwd()}"
-        )
-    df = pd.read_excel(path, sheet_name="Sheet1")
+    found = next((p for p in candidates if os.path.exists(p)), None)
+    if found:
+        return found
+    # Last resort: walk up from script_dir
+    d = script_dir
+    for _ in range(4):
+        p = os.path.join(d, filename)
+        if os.path.exists(p):
+            return p
+        d = os.path.dirname(d)
+    raise FileNotFoundError(
+        f"{filename} no encontrado. script_dir={script_dir}, cwd={os.getcwd()}, "
+        f"listdir={os.listdir(script_dir) if os.path.exists(script_dir) else 'N/A'}"
+    )
+
+
+def load_db():
+    """Load BD from Excel or JSON fallback."""
+    # Try Excel first
+    try:
+        path = _find_file("bbdd_kits_v6.xlsx")
+        df = pd.read_excel(path, sheet_name="Sheet1")
+    except FileNotFoundError:
+        # Fallback: try db.json (legacy format)
+        json_path = _find_file("db.json")
+        with open(json_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        df = pd.DataFrame(data)
     available = [c for c in KEY_COLS if c in df.columns]
     df = df[available]
     # Exclude invalid rows
