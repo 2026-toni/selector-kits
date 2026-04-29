@@ -50,8 +50,16 @@ tr:nth-child(even) td{background:#f8fafc}
 # ── LOAD PROMPT ────────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_prompt():
-    prompt_path = os.path.join(BASE, "prompt_selector_kits_v7.md")
-    with open(prompt_path, "r", encoding="utf-8") as f:
+    candidates = [
+        os.path.join(BASE, "prompt_selector_kits_v7.md"),
+        os.path.join(os.getcwd(), "prompt_selector_kits_v7.md"),
+        os.path.join(os.getcwd(), "joan-p", "prompt_selector_kits_v7.md"),
+        "/mount/src/selector-kits/joan-p/prompt_selector_kits_v7.md",
+    ]
+    path = next((p for p in candidates if os.path.exists(p)), None)
+    if path is None:
+        raise FileNotFoundError(f"No se encontró prompt_selector_kits_v7.md")
+    with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
 # ── CLAUDE CLIENT ──────────────────────────────────────────────────────────────
