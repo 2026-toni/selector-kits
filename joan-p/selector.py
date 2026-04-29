@@ -26,17 +26,18 @@ EXCLUDE_KIT_TYPES = {'Otro'}
 
 
 def load_db():
-    """Load and cache the BD from Excel. Robust path for Streamlit Cloud."""
+    """Load BD. Uses realpath of this script to locate the Excel reliably on Streamlit Cloud."""
+    script_dir = os.path.dirname(os.path.realpath(__file__))
     candidates = [
+        os.path.join(script_dir, "bbdd_kits_v6.xlsx"),
         os.path.join(BASE, "bbdd_kits_v6.xlsx"),
         os.path.join(os.getcwd(), "bbdd_kits_v6.xlsx"),
-        os.path.join(os.getcwd(), "joan-p", "bbdd_kits_v6.xlsx"),
         "/mount/src/selector-kits/joan-p/bbdd_kits_v6.xlsx",
     ]
     path = next((p for p in candidates if os.path.exists(p)), None)
     if path is None:
         raise FileNotFoundError(
-            f"No se encontró bbdd_kits_v6.xlsx. Rutas probadas: {candidates}"
+            f"bbdd_kits_v6.xlsx no encontrado. script_dir={script_dir}, cwd={os.getcwd()}"
         )
     df = pd.read_excel(path, sheet_name="Sheet1")
     available = [c for c in KEY_COLS if c in df.columns]
