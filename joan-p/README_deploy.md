@@ -1,52 +1,56 @@
-# Despliegue — Selector de Kits v7 (Claude-driven)
+# README · Selector de Kits — Deployment Guide
 
-## Ficheros necesarios en el repo (carpeta joan-p/)
+## Archivos del repositorio
 
-```
-joan-p/
-├── app.py                      ← NUEVO (sustituye el anterior)
-├── selector.py                 ← NUEVO (solo filtrado Python)
-├── prompt_selector_kits_v7.md  ← NUEVO (prompt que Claude lee en runtime)
-├── bbdd_kits_v6.xlsx           ← BD existente (sin cambios)
-├── logo.jpg                    ← existente (sin cambios)
-└── requirements.txt            ← ver abajo
-```
-
-## requirements.txt
-
-```
-streamlit>=1.32.0
-anthropic>=0.25.0
-pandas>=2.0.0
-openpyxl>=3.1.0
-```
-
-## Cambio de arquitectura
-
-| Antes | Ahora |
+| Archivo | Descripción |
 |---|---|
-| selector.py controla el flujo (next_question / apply_answer) | selector.py solo prefiltra la BD (filter_candidates) |
-| Claude solo formatea el resultado final | Claude gestiona TODO el flujo de selección |
-| Lógica hardcodeada en Python | Lógica en prompt v7 (editable sin tocar código) |
-| Sin soporte de imágenes/fichas técnicas | Soporta imágenes de fichas técnicas |
+| `app.py` | Front-end Streamlit |
+| `selector.py` | Lógica de negocio — carga BD + prompt + llama a Claude |
+| `bbdd_kits_v8.xlsx` | Base de datos de kits (v8) |
+| `prompt_selector_kits_v10.md` | Prompt del asistente (v10) |
+| `requirements.txt` | Dependencias Python |
+| `logo.jpg` | Logo Oliva Torras |
+| `.streamlit/config.toml` | Configuración de tema Streamlit |
 
-## Cómo funciona
+---
 
-1. Usuario escribe (o adjunta imagen de ficha técnica)
-2. `update_context()` detecta kit_type + brand + model del texto
-3. `filter_candidates()` prefiltra la BD → max ~400 filas
-4. El JSON filtrado se pasa a Claude como contexto en el system prompt
-5. Claude aplica el prompt v7 y responde con la siguiente pregunta o resultado final
-6. El contexto se actualiza con cada turno
+## Cómo actualizar la BD o el prompt en el futuro
 
-## Variables de entorno
+1. Sube el nuevo `.xlsx` o `.md` al repositorio (sustituye el archivo anterior).
+2. Edita `selector.py` y cambia las constantes en la sección `Paths`:
+   ```python
+   EXCEL_PATH  = BASE_DIR / "bbdd_kits_vX.xlsx"   # ← nuevo nombre
+   PROMPT_PATH = BASE_DIR / "prompt_selector_kits_vXX.md"  # ← nuevo nombre
+   ```
+3. Haz commit y push — Streamlit Cloud redespliega automáticamente.
 
+---
+
+## Variables de entorno requeridas en Streamlit Cloud
+
+| Variable | Valor |
+|---|---|
+| `ANTHROPIC_API_KEY` | Tu clave de API de Anthropic |
+
+Para configurarla: **Streamlit Cloud → tu app → Settings → Secrets**
+
+```toml
+# .streamlit/secrets.toml  (NO subir al repo — usar Secrets en la UI)
+ANTHROPIC_API_KEY = "sk-ant-..."
 ```
-ANTHROPIC_API_KEY = sk-ant-...
+
+---
+
+## Modelo utilizado
+
+`claude-sonnet-4-20250514` (Claude Sonnet 4 — última versión estable)
+
+---
+
+## Instalación local (desarrollo)
+
+```bash
+pip install -r requirements.txt
+export ANTHROPIC_API_KEY="sk-ant-..."
+streamlit run app.py
 ```
-
-## Notas importantes
-
-- El fichero `prompt_selector_kits_v7.md` debe estar en la misma carpeta que `app.py`
-- La BD `bbdd_kits_v6.xlsx` debe estar en la misma carpeta que `selector.py`
-- Para actualizar el prompt: editar `prompt_selector_kits_v7.md` y hacer push — sin tocar código
