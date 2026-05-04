@@ -1,197 +1,132 @@
-"""
-selector.py — Filtrado Python puro sobre la BD.
-Claude gestiona todo el flujo de selección. Python solo filtra.
-"""
+import anthropic
 import pandas as pd
-import os, re, json
-
-BASE = os.path.dirname(os.path.abspath(__file__))
-
-KEY_COLS = [
-    'code','kit_type','brand','model_clean','engine_clean','engine_all',
-    'cilinder','year_from_v4','year_to_v4','year_from_int','year_to_int',
-    'year_confidence','model_max_year','nom_opcio_compressor','noteeng_clean',
-    'ac_filter','embrague_std','embrague_esp','tipus_embrague',
-    'flag_rwd','flag_fwd','flag_awd','flag_rhd','flag_start_stop','flag_high_idle',
-    'flag_gearbox_v3','flag_auto_tensioner','flag_two_auto_tensioners',
-    'flag_pfmot_yes','flag_pfmot_no','flag_urban_kit','flag_ind_belt',
-    'flag_n63_pulley_yes','flag_n63_pulley_no','flag_n63_full_option',
-    'flag_sanden','flag_man_option','flag_not_18t','flag_himatic',
-    'flag_allison_not','flag_zf_not'
-]
-
-EXCLUDE_COMPONENTS = {'STANDARD BRACKET', 'COMPRESSOR BRACKET', 'STANDARD BOSCH'}
-EXCLUDE_BRANDS = {'ACCESSORY'}
-EXCLUDE_KIT_TYPES = {'Otro'}
+import io
+import base64
+import os
+from pathlib import Path
 
 
-def _find_file(filename):
-    """Find a file by name trying multiple possible locations."""
-    script_dir = os.path.dirname(os.path.realpath(__file__))
-    candidates = [
-        os.path.join(script_dir, filename),
-        os.path.join(BASE, filename),
-        os.path.join(os.getcwd(), filename),
-        os.path.join(os.getcwd(), "joan-p", filename),
-        f"/mount/src/selector-kits/joan-p/{filename}",
-        f"/mount/src/selector-kits/{filename}",
-    ]
-    found = next((p for p in candidates if os.path.exists(p)), None)
-    if found:
-        return found
-    # Last resort: walk up from script_dir
-    d = script_dir
-    for _ in range(4):
-        p = os.path.join(d, filename)
-        if os.path.exists(p):
-            return p
-        d = os.path.dirname(d)
-    raise FileNotFoundError(
-        f"{filename} no encontrado. script_dir={script_dir}, cwd={os.getcwd()}, "
-        f"listdir={os.listdir(script_dir) if os.path.exists(script_dir) else 'N/A'}"
+# ── Paths ────────────────────────────────────────────────────────────────────
+BASE_DIR   = Path(__file__).parent
+EXCEL_PATH = BASE_DIR / "bbdd_kits_v8.xlsx"
+PROMPT_PATH = BASE_DIR / "prompt_selector_kits_v10.md"
+
+# ── Model ─────────────────────────────────────────────────────────────────────
+MODEL = "claude-sonnet-4-20250514"
+
+
+# ── Load resources (cached at module level) ───────────────────────────────────
+def _load_prompt() -> str:
+    return PROMPT_PATH.read_text(encoding="utf-8")
+
+
+def _load_excel_as_b64() -> str:
+    """Read the Excel file and return it as a base64-encoded string."""
+    return base64.standard_b64encode(EXCEL_PATH.read_bytes()).decode("utf-8")
+
+
+def _load_excel_as_csv_text() -> str:
+    """
+    Convert the Excel to a compact CSV string so it can be injected into the
+    system prompt as plain text (token-efficient, no vision needed).
+    """
+    df = pd.read_excel(EXCEL_PATH, sheet_name=0, dtype=str)
+    df = df.fillna("")
+    buf = io.StringIO()
+    df.to_csv(buf, index=False)
+    return buf.getvalue()
+
+
+# Pre-load once when the module is imported
+_SYSTEM_PROMPT_BASE = _load_prompt()
+_EXCEL_CSV          = _load_excel_as_csv_text()
+
+# Build the full system prompt: instructions + data
+SYSTEM_PROMPT = (
+    _SYSTEM_PROMPT_BASE
+    + "\n\n---\n\n## BASE DE DATOS — bbdd_kits_v8 (CSV)\n\n"
+    + "```csv\n"
+    + _EXCEL_CSV
+    + "\n```\n"
+)
+
+
+# ── Anthropic client ──────────────────────────────────────────────────────────
+def _get_client() -> anthropic.Anthropic:
+    api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    return anthropic.Anthropic(api_key=api_key)
+
+
+# ── Public API ────────────────────────────────────────────────────────────────
+def chat(messages: list[dict]) -> str:
+    """
+    Send the conversation history to Claude and return the assistant reply.
+
+    Parameters
+    ----------
+    messages : list of {"role": "user"|"assistant", "content": str}
+        Full conversation history (NOT including the system prompt).
+
+    Returns
+    -------
+    str
+        The assistant's text reply.
+    """
+    client = _get_client()
+
+    response = client.messages.create(
+        model=MODEL,
+        max_tokens=2048,
+        system=SYSTEM_PROMPT,
+        messages=messages,
     )
 
-
-def load_db():
-    """Load BD from Excel or JSON fallback."""
-    # Try Excel first
-    try:
-        path = _find_file("bbdd_kits_v6.xlsx")
-        df = pd.read_excel(path, sheet_name="Sheet1")
-    except FileNotFoundError:
-        # Fallback: try db.json (legacy format)
-        json_path = _find_file("db.json")
-        with open(json_path, "r", encoding="utf-8") as f:
-            data = json.load(f)
-        df = pd.DataFrame(data)
-    available = [c for c in KEY_COLS if c in df.columns]
-    df = df[available]
-    # Exclude invalid rows
-    df = df[~df['kit_type'].isin(EXCLUDE_KIT_TYPES)]
-    df = df[~df['brand'].isin(EXCLUDE_BRANDS)]
-    df = df[~df['nom_opcio_compressor'].isin(EXCLUDE_COMPONENTS)]
-    return df
-
-_DB = None
-
-def get_db():
-    global _DB
-    if _DB is None:
-        _DB = load_db()
-    return _DB
+    # Extract the text block from the response
+    return response.content[0].text
 
 
-def get_kit_types():
-    """Return all available kit types."""
-    df = get_db()
-    return sorted(df['kit_type'].dropna().unique().tolist())
-
-
-def get_brands(kit_type=None):
-    """Return brands, optionally filtered by kit_type."""
-    df = get_db()
-    if kit_type:
-        df = df[df['kit_type'] == kit_type]
-    return sorted(df['brand'].dropna().unique().tolist())
-
-
-def get_models(kit_type=None, brand=None):
-    """Return models, optionally filtered."""
-    df = get_db()
-    if kit_type:
-        df = df[df['kit_type'] == kit_type]
-    if brand:
-        df = df[df['brand'] == brand]
-    return sorted(df['model_clean'].dropna().unique().tolist())
-
-
-def filter_candidates(kit_type=None, brand=None, model=None, max_rows=300):
+def chat_with_image(messages: list[dict], image_data: bytes, media_type: str = "image/jpeg") -> str:
     """
-    Pre-filter BD by kit_type + brand + model.
-    Returns a list of dicts (slim rows) for Claude to process.
-    Capped at max_rows to keep context manageable.
+    Send a conversation with an image attachment (e.g. a vehicle registration document).
+
+    Parameters
+    ----------
+    messages      : conversation history (last user message should NOT include the image yet)
+    image_data    : raw bytes of the image
+    media_type    : MIME type of the image
+
+    Returns
+    -------
+    str  – assistant reply
     """
-    df = get_db()
+    client = _get_client()
 
-    if kit_type:
-        df = df[df['kit_type'] == kit_type]
-    if brand:
-        df = df[df['brand'] == brand]
-    if model:
-        df = df[df['model_clean'] == model]
+    # Inject image into the last user turn
+    img_b64 = base64.standard_b64encode(image_data).decode("utf-8")
 
-    if len(df) > max_rows:
-        df = df.head(max_rows)
+    # Build a copy of messages with the image appended to the last user message
+    msgs = list(messages)
+    last_user_text = msgs[-1]["content"] if msgs else ""
+    msgs[-1] = {
+        "role": "user",
+        "content": [
+            {
+                "type": "image",
+                "source": {
+                    "type": "base64",
+                    "media_type": media_type,
+                    "data": img_b64,
+                },
+            },
+            {"type": "text", "text": last_user_text},
+        ],
+    }
 
-    # Convert to clean dicts, replace NaN with None
-    records = df.where(pd.notna(df), None).to_dict('records')
-    return records
+    response = client.messages.create(
+        model=MODEL,
+        max_tokens=2048,
+        system=SYSTEM_PROMPT,
+        messages=msgs,
+    )
 
-
-def candidates_to_json(records, max_chars=80000):
-    """Serialize candidate records to JSON string, truncated if needed."""
-    text = json.dumps(records, ensure_ascii=False, default=str)
-    if len(text) > max_chars:
-        # Reduce to fit
-        while len(records) > 10 and len(text) > max_chars:
-            records = records[:int(len(records)*0.8)]
-            text = json.dumps(records, ensure_ascii=False, default=str)
-    return text
-
-
-def detect_kit_type(text):
-    """Detect kit type from free text."""
-    patterns = [
-        (r'compresor\s*a/?c|\bkb\b|aire\s*acond', 'Kit compresor A/C'),
-        (r'fr[íi]o\s*industrial|\bkc\b|frigor', 'Kit compresor frío industrial'),
-        (r'alternador|\bka\b', 'Kit alternador'),
-        (r'bomba\s*hidr|\bkh\b', 'Kit bomba hidráulica'),
-        (r'generador|\bkg\b', 'Kit generador'),
-        (r'chasis|\bkf\b', 'Kit chasis'),
-    ]
-    t = text.lower()
-    for pat, kt in patterns:
-        if re.search(pat, t, re.I):
-            return kt
-    return None
-
-
-def detect_brand(text):
-    """Detect brand from free text."""
-    brand_patterns = [
-        (r'\bsprinter\b|\bvito\b|\bactros\b|\batego\b|\barocs\b|\bantos\b|\baxor\b|\beconic\b', 'MERCEDES'),
-        (r'\bducato\b|\bscudo\b|\btalento\b|\bdoblo\b', 'FIAT'),
-        (r'\btransit\b|\btourneo\b|\bford\b', 'FORD'),
-        (r'\bmaster\b|\btrafic\b|\bkangoo\b|\brenault\b', 'RENAULT'),
-        (r'\bdaily\b|\beurocargo\b|\bstralis\b|\biveco\b', 'IVECO'),
-        (r'\bboxer\b|\bexpert\b|\bpartner\b|\bpeugeot\b', 'PEUGEOT'),
-        (r'\bjumper\b|\bjumpy\b|\bberlingo\b|\bcitroen\b', 'CITROEN'),
-        (r'\bcrafter\b|\btransporter\b|\bvw\b|\bvolkswagen\b', 'VW'),
-        (r'\bmovano\b|\bvivaro\b|\bcombo\b|\bopel\b', 'OPEL'),
-        (r'\bnv400\b|\bnv300\b|\binterstar\b|\bnissan\b', 'NISSAN'),
-        (r'\btgl\b|\btgm\b|\btgs\b|\btgx\b|\bman\b', 'MAN'),
-        (r'\bcanter\b|\bfuso\b|\bmitsubishi\b', 'MITSUBISHI'),
-        (r'\bvolvo\b', 'VOLVO'),
-        (r'\bdaf\b', 'DAF'),
-        (r'\bscania\b', 'SCANIA'),
-        (r'\bisuzu\b', 'ISUZU'),
-        (r'\btoyota\b', 'TOYOTA'),
-        (r'\bvw\b|\bvolkswagen\b', 'VW'),
-        (r'\bmercedes\b', 'MERCEDES'),
-    ]
-    t = text.lower()
-    for pat, brand in brand_patterns:
-        if re.search(pat, t, re.I):
-            return brand
-    return None
-
-
-def get_model_max_year(kit_type, brand, model):
-    """Get the maximum year for a model+kit_type combination."""
-    df = get_db()
-    mask = (df['kit_type'] == kit_type) & (df['brand'] == brand) & (df['model_clean'] == model)
-    sub = df[mask]
-    if sub.empty:
-        return None
-    val = sub['model_max_year'].max()
-    return int(val) if pd.notna(val) else None
+    return response.content[0].text
