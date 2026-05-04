@@ -5,8 +5,7 @@ import os
 # ── Model ─────────────────────────────────────────────────────────────────────
 MODEL = "claude-sonnet-4-5-20250929"
 
-# ── System prompt embebido directamente (independiente de archivos .md/.csv) ──
-# Prompt v10 + bd_sel (1781 filas) + bd_notes (787 notas) = ~152K tokens
+# ── Todo embebido — no depende de ningún archivo externo ─────────────────────
 _PROMPT_V10 = """# PROMPT: SELECTOR DE KITS — v10.0
 # OLIVA TORRAS Mount & Drive Kits
 
@@ -4910,149 +4909,109 @@ _BD_NOTES = """code,noteeng_clean
 1125008000,
 1130008000,
 KA19035001,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KA19035002,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP "
+- According to bodybuilder indications, the power take off is not suitable "
 KA19045003,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP "
+- According to bodybuilder indications, the power take off is not suitable "
 KA19055004,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles
 - Not included in the kit:
-Alternator 14V- 200A P/N 1198011200
-Alternator 28V- 100A P/N 1198012100"
+Alterna"
 KA19095005,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 / 40C16 / 50"
+- Suitable for vehicles with 8-Sp"
 KA20045006,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box
-- To install this kit it is essential to use the special tool code P/N 1140000155
-- Not included in t"
+-"
 KA20085007,"- Can be fit in right hand drive vehicles
 - FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1120995007
-- Not included in the kit:
-Alternator 14"
+- For vehicles"
 KA21055008,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- Not included in the kit:
-Alternator 14V- 200A P/N 1198011200
-Alternator 28V- 100A P/N 1198012100"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KA21075009,"- Can be fit in right hand drive vehicles
-- Kit not suitable for vehicles 6x2 with directional rear axle (TA-HYDRS)
-- For vehicles not equipped with air conditioning, select also the idler pulley brac"
+- Kit not suitable for vehicles 6x2 with directional rear "
 KA21105010,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Not included in the kit:
-Alternator 14V- 200A P/N 1198011200
-Alternator 28V- 100A P/N 1198012100"
+Alterna"
 KA21125011,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equi"
+- Only "
 KA22065012,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles
-- Not included in the kit: Alternator 28V - 150A P/N 1198242150
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox"
+- Not included in the kit: Alterna"
 KA22065012-B,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles
-- Not included in the kit: Alternator 28V - 150A P/N 1198242150
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox"
+- Not included in the kit: Alterna"
 KA22105013,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles
-- Not included in the kit: Alternator 14V - 140A P/N 1198121141"
+- Not included in the kit: Alterna"
 KA23015014,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles with automatic gear box DUONIC.
-- Not included in the kit:
-Alternator 14V- 200A P/N 1198011200
-Alternator 28V- 100A P/N 1198012100"
+- "
 KA23025015,"- Can be fit in right hand drive vehicles.
-- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/STOP AND REVERSIBLE ALTERNATOR 180A)
-- If the vehicle is equipped with the Start & Stop, it is necess"
+- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/S"
 KA23035017,"- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
 - Can be fit on AWD vehicles
-- Model 35S16 / 35C16 / 40C16 / 50C16 can also be equipped with the 3.0l engine
-- Not included in the"
+-"
 KA23055018,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
-Alternador 28V - 150A P/N 1198242150"
+Alternador 28V - 150A P/N 11982"
 KA23055019,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
-Alternator Valeo 14V - 140A P/N 1198121140"
+Alternator Valeo 14V - 140A P/N"
 KA23055020,"- Can be fit in right hand drive vehicles
 - Use tool to block the flywheel P/N 1149000412
-- The kit is not suitable for vehicles 4x4
-- If the vehicle is equipped with the Start & Stop, it is necessary"
+- The kit "
 KA23055021,"- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
 - Can be fit on AWD vehicles
-- Model 35S16 / 35C16 / 40C16 / 50C16 can also be equipped with the 3.0l engine
-- Not included in the"
+-"
 KA23055022,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equi"
+- Only "
 KA23065023,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KA23105027,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KA23115029,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles with automatic gear box DUONIC.
-- Not included in the kit:
-Alternator 14V- 140A P/N 1198121141"
+- "
 KA23115030,"- RWD= Rear wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must be increased up to1.0"
+- Suitable for the automatic gearbo"
 KA23125031,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE "
 KA24015032,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE "
 KA24015033,- Can be fit in right hand drive vehicles
 KA24045035,"- Can be fit in right hand drive vehicles
 - FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- Not included in the kit:
-Alternator 28V- 150A P/N 1198242150"
+- Not included"
 KA24055038,"- Can be fit in right hand drive vehicles
 - Suitable on vehicles WITH optional mPTO NA7"
 KA24075040,- Can be fit in right hand drive vehicles
 KA24095041,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with factor"
+- Suitable for the automatic gearb"
 KA24095041-A,"- FWD= Front wheel drive
 - Suitability for right hand drive vehicles
-- Suitability for automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with fact"
+- Suitability for automatic gea"
 KA24125042,"- Can't be fit in right-hand drive vehicles.
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000514, the vehicle must be eq"
 KA25035043,"- Can be fit in right-hand drive vehicles.
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000514, the vehicle must be equi"
 KA25035044,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equi"
+- Only "
 KA25105046,"- FWD: Front wheel drive
 - Suitable with right hand drive vehicles
-- Suitable for the automatic gear box.
-To install this kit it is essential to use the special tool code:
-- P/N 1149000422 (FOR MANUAL"
+- Suitable for the automatic gear"
 KB00008000,
 KB00008000X,
 KB00008001,
@@ -5074,7 +5033,7 @@ KB09108008,"- Can be fit in right hand drive vehicles.
 KB09118009,"- FWD= Front wheel drive
 - ""E""=TM-UNICLA
 - Can be mounted with or without the PTO option.
-- Can be fit in right hand drive vehicles"
+- Can be f"
 KB09128010,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB10018011X,"- Can be fit in right hand drive vehicles.
@@ -5085,7 +5044,7 @@ KB10018013,- Can be fit in right hand drive vehicles.
 KB10028014,- Can be fit in right hand drive vehicles
 KB10038015X,"- Suitable for additional alternator.
 - Can be fit in right hand drive vehicles.
-- Fittings supplied with unit."
+- Fittings supplied"
 KB10038016,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB10038016X,"- Can be fit in right hand drive vehicles.
@@ -5099,10 +5058,10 @@ KB10038018,"- Can be fit in right hand drive vehicles.
 KB10038019,- Can be fit in right hand drive vehicles.
 KB10038020,"- Suitable for additional alternator.
 - Can be fit in right hand drive vehicles.
-- Fittings supplied with unit."
+- Fittings supplied"
 KB10078021,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Only for vehicles WITHOUT the original MAN FF120 option"
+- Only for vehicles WIT"
 KB10098022X,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB10098023,"- Can be fit in right hand drive vehicles.
@@ -5112,14 +5071,13 @@ KB10098023X,"- Can be fit in right hand drive vehicles.
 KB11018024,- Compressor fittings not supplied in the kit
 KB11028025,"- FWD= Front wheel drive
 - Can be fit in right hand drive vehicles
-- Not recommended in vehicles with automatic gear box
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- Not recommended in vehicles wit"
 KB11038026X,"- Without additional alternator.
 - Can be fit in right hand drive vehicles.
-- Fittings supplied with unit."
+- Fittings supplied with"
 KB11038027,"- Suitable for additional alternator.
 - Can be fit in right hand drive vehicles.
-- Fittings supplied with unit."
+- Fittings supplied"
 KB11068028,- Can be fit in right hand drive vehicles.
 KB11068029,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
@@ -5130,7 +5088,7 @@ KB11068030X,"- Chassis 15m.
 - Fittings supplied with unit."
 KB11078031,
 KB11078032,"- When vehicle is not equipped with the crankshaft pulley N87, request code P/N 1111008032.
-- Can be fit in right hand drive vehicles."
+- Can be"
 KB11088033,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB11088033X,"- Can be fit in right hand drive vehicles.
@@ -5144,7 +5102,7 @@ KB12018037,"- Only for vehicles with original 504180619.
 - Can be fit in right hand drive vehicles."
 KB12028038,"- ""E""=TM-UNICLA;""S""=SANDEN.
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right ha"
 KB12048040,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB12048041,"- Can be fit in right hand drive vehicles.
@@ -5156,7 +5114,7 @@ KB12078043,"- RWD:Rear wheel drive
 KB12118045,- Can be fit in right hand drive vehicles
 KB12118046,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive veh"
 KB13028047,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with unit."
 KB13038048,"- Can't be fit in right hand drive vehicles.
@@ -5166,8 +5124,7 @@ KB13058049,"- Can be fit in right hand drive vehicles
 KB13068050,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
 - Clutch references:
-LINNIG (LA16.0172) Ø180
-LANG (KK73.1.36.N-St) Ø180"
+LI"
 KB13098051,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KB13108052,"- Can be fit in right hand drive vehicles.
@@ -5177,98 +5134,77 @@ KB13108052X,"- Can be fit in right hand drive vehicles.
 KB13118055,- Can be fit in right hand drive vehicles
 KB14038057,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1121998057"
+- FOR VEHICLES EQUIPPED"
 KB14058058,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1121990356"
+- FOR VEHICLES EQUIPPED"
 KB14058059,
 KB14068060X,
 KB14078061,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1121998061"
+- FOR VEHICLES EQUIPPED"
 KB14088062,"- When vehicle is not equipped with the crankshaft pulley N87, request code P/N 1111008032
-- Compressor SD5H09: ref.5074
-- Can be fit in right hand drive vehicles."
+- Compres"
 KB14098064,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit."
 KB14118067,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Kit designed to mount a Bock FK40 compressor and a 2nd original alternator.
-- It is necessary Linning LA16.0333Y E-M-Clut"
+- Kit designed to mount"
 KB14128068X,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- In order to install an additional alternator, it is required to get the special option P/N 1140008068"
+- In order to install a"
 KB15018069,"- ""E""=TM-UNICLA;
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley l"
+- Can be fit in right hand drive ve"
 KB15028070,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KB15028072,"- COMPRESSOR PULLEY LINNING LA16_0234Y
 - Vehicle equipped with original option HK85
-- Fixing for 3rd alternator reference Mercedes A 000 150 72 12"
+- Fixing for 3rd"
 KB15028073,
 KB15038074,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Kit designed to mount a BOCK FK40 compressor and a 2nd original alternator
-- It is necessary Linning LA16.0333Y E-M-Clutc"
+- Kit designed to mount"
 KB15068075,- Compressor fittings not supplied in the kit
 KB15078076,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KB15118077,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KB16018078,"- Can be fit in right hand drive vehicles
-- Kit designed to mount a Bock FK40 compressor and a TM31 compressor.
-- It is necessary ""Linning LA160234Y""."
+- Kit designed to mount a Bock FK40 compressor and a TM31 "
 KB16018079,- Can be fit in right hand drive vehicles
 KB16048081,"- Compressor fittings not supplied in the kit
 - Suitable for front box AC"
 KB16098082,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KB17028083,
-KB17038084,"- The vehicle must be equipped with special option DAF: ""Thermoking Preparation or Generator preparation""
-- Can be fit in right hand drive vehicles"
+KB17038084,"- The vehicle must be equipped with special option DAF: ""Thermoking Preparation or Generator prepara"
 KB17038084-A,"- The vehicle must be equipped with special option DAF: ""Thermoking Preparation""
-- Not suitable for vehicles with ""Generator Option""
-- Can be fit in right hand drive vehicles"
+- Not suitable for "
 KB17038084-B,"- The vehicle must be equipped with special option DAF: ""Thermoking Preparation""
-- Not suitable for vehicles with ""Generator Option""
-- Can be fit in right hand drive vehicles"
+- Not suitable for "
 KB17118085,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 114900039"
+- Suitable for veh"
 KB17118086,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 114900039"
+- Suitable for veh"
 KB18028089,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100014"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KB18038090,"- Can be fit in right hand drive vehicles
-- Vehicle must be equipped with special option Volvo PTEF-P1
-- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- For vehic"
+- Vehicle must be equipped with special option Volvo PTEF-"
 KB18068091,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITH original option MAN Frigoblock"
 KB18068092,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KB18108093U,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KB19058095,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITH original option MAN Frigoblock"
 KB20028096,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH THE N7C OPTION
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1121998096"
+- FOR VEHICLES EQUIPPED"
 KB20028097,- Compressor fittings not supplied in the kit
 KB20118103,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
@@ -5276,17 +5212,15 @@ KB21098106,"- Compressor fittings not supplied in the kit
 - Suitable for front box AC"
 KB21108107,"- Compressor fittings not supplied in the kit
 - Suitable for front box AC
-- COMPATIBLE with automatic gearbox ALLISON"
+- COMPATIBLE with automati"
 KB22028110,"- RWD= Rear wheel drive
 - ""E""=TM / QUE
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equipped with t"
+- Only for vehicle"
 KB22028111,"- RWD= Rear wheel drive
 - ""E""=TM / QUE
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped with the whole N63 option: original bracket + N62/N63 crankshaft pulley - A654 032 10 00
-"
+- Only for vehicle"
 KB22068112,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KB23068113,- Can be fit in right hand drive vehicles
@@ -5294,80 +5228,61 @@ KB23068114,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles."
 KB23108115,"- Can't be fit in right hand drive vehicles.
 - Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE"
 KB23118116,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Chassis definition CLAC-CM
-- Chassis mounted A/C
-- Clutch references: LINNIG (LA16.0172) Ø180 LANG (KK73.1.36.N-St) Ø180"
+- Chassis definition CL"
 KB23118116-A,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Chassis definition CLAC-CM
-- Chassis mounted A/C
-- Clutch references: LINNIG (LA16.0172) Ø180 LANG (KK73.1.36.N-St) Ø180"
+- Chassis definition CL"
 KB24088117,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automa"
+- Vehicles 136hp, "
 KB24088118,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automa"
+- Vehicles 136hp, "
 KB25018120,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automa"
+- Vehicles 136hp, "
 KB25018121,"- Can be fit in right hand drive vehicles
 - THE ORIGINAL ACCESSORIES BELT IS KEPT
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automa"
+- Vehicles 136hp, "
 KC05090001,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles."
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7K"
 KC05100002,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- Can be fit in right hand drive vehicles
-- Only for vehicles with original N60 PTO option
-- Only for vehicles with original dual comp"
+- Can be fit in right hand drive v"
 KC05100003,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- Can be fit in right hand drive vehicles
-- Only for vehicles with original N60 PTO option
-- The original bracket for two compressors "
+- Can be fit in right hand drive v"
 KC05100004,- Can be fit in right hand drive vehicles
 KC05100005,- Can be fit in right hand drive vehicles
 KC05100006,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles
-- For compressor TM-08 and UP-90 it is essential to indicate the compressor in the order."
+- Can be fit in right hand drive"
 KC05100006-E,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles
-- For compressor TM-08 and UP-90 it is essential to indicate the compressor in the order."
+- Can be fit in right hand drive"
 KC05100008,"- Engine mounted sideways
 - Rear wheel drive
 - Can be fit in right hand drive vehicles"
 KC05100009,- Can be fit in right hand drive vehicles
 KC05100010,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles
-- RWD:Rear wheel drive"
+- Can be fit in right hand drive"
 KC05100011,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC05100012,"- ""E""=TM / QUE / UNICLA
 - For SD5H14/SD5L14 and SD7H15/SD7L15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- To be mounted with special PTO option
-- Can be fit in right hand drive ve"
+- For TM and UP"
 KC05100013,- Can be fit in right hand drive vehicles
 KC05100014,- Can be fit in right hand drive vehicles
 KC05100015,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Applicable only when the power steering pump is located rear the engine (driven with an indep"
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC05100016,"- From chassis number ZCFA75CO102391603 (truck number 3298466).
-- Can't be fit in right hand drive vehicles."
+- Can't be fit in right hand drive v"
 KC05100017,- Can't be fit in right hand drive vehicles.
 KC05100018,- Can't be fit in right hand drive vehicles.
 KC05100019,- Can be fit in right hand drive vehicles
@@ -5375,13 +5290,11 @@ KC05100020,- Can be fit in right hand drive vehicles
 KC05100022,- Can be fit in right hand drive vehicles
 KC05100023,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- To be mounted with special PTO option
-- Can be fit in right hand drive vehicles"
+- To be mounted with special "
 KC05100024,- Can be fit in right hand drive vehicles
 KC05100025,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- Can be fit in right hand drive vehicles.
-- A 45º suction fitting is recommended on right hand drive vehicles."
+- Can be fit in right hand drive vehicles"
 KC05100026,"- Not to be used on 18 ton vehicles
 - Can be fit in right hand drive vehicles"
 KC05100027,"- Can be fit in right hand drive vehicles
@@ -5390,55 +5303,44 @@ KC05100028,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles"
 KC05100029,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- When the vehicle is not equipped with the a/c sump, the sump P/N 1155000029 must be ordered s"
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC05100031,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- When the vehicle is not equipped with the a/c sump, the sump P/N 1155000029 must be ordered s"
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC05100033,"- - ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- When the vehicle is not equipped with the a/c sump, the sump P/N 1155000029 must be ordered separately
-- Can be fit in right hand drive v"
+- When the vehicle is not equipped with"
 KC05100035,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- When the vehicle is not equipped with the a/c sump, the sump P/N 1155000029 must be ordered separately
-- Can be fit in right hand drive veh"
+- When the vehicle is not equipped with t"
 KC05100037,"- Applicable from chassis 152369000
 - Brake exhauster camshaft driven
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand dri"
 KC05100038,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC05100040,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box"
-KC05100041,"- To install this kit it is essential to use the special tool code P/N 1149000092 or Ref.Ford 303-393.
-- To be fitted in vehicles with original A/C option
-- Alternator is shaft driven
-- Can be fit in "
+KC05100041,- To install this kit it is essential to use the special tool code P/N 1149000092 or Ref.Ford 303-39
 KC05100044,- Can be fit in right hand drive vehicles
 KC05100045,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive"
 KC05100046,- Can be fit in right hand drive vehicles
 KC05100049,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive "
 KC05100051,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Vehicle must be equipped with original A/C compressor bracket
-- Can be fit in right hand drive vehicles"
+- Vehicle must be equipped with orig"
 KC05100053,"- ""E""=TM QUE / UNICLA
 - To be mounted with special PTO option
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive vehic"
 KC05100055,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Engine mounted sideways
-- Can be fit in right hand d"
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC05100056,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive"
 KC05100057,- Can be fit in right hand drive vehicles
 KC05100058,- Can be fit in right hand drive vehicles
 KC05100059,- Can be fit in right hand drive vehicles
@@ -5448,98 +5350,83 @@ KC05100062,"- Vehicle must be eqquiped with original A/C system
 - Can be fit in right hand drive vehicles"
 KC05100064,"- ""E""=TM-UNICLA;""S""=SANDEN.
 - ""S"" only for SD7H15 / SD7L15 .
-- Requires crankshaft pulley w/ 3 grooves, RVI 5000691024, and fan spacer RVI 5010258230
-- Can be fit in right hand drive vehicles"
+- Requires crankshaft pulley w/ 3 groov"
 KC05100065,"- ""E""=TM-UNICLA;""S""=SANDEN.
 - ""S"" only for SD7H15 / SD7L15.
-- Requires A/C option, RVI 18482 - one pulley, 3 grooves, RVI 05403, and one, 2, grooves, RVI 73410
-- Can be fit in right hand drive vehicle"
+- Requires A/C option, RVI 18482 - one p"
 KC05100066,- Can be fit in right hand drive vehicles
 KC05100067,"- ""E""=TM-UNICLA;""S""=SANDEN.
 - ""S"" only for SD7H15.
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles"
+- "
 KC05100068,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles"
 KC06040074,"- Can be fit in right hand drive vehicles.
 - Only for vehicles WITHOUT original option MAN 120FF"
 KC06040075,- Can be fit in right hand drive vehicles
 KC06060076,"- When vehicle is not equipped with the crankshaft pulley N63, request code P/N 1111000076
-- Can be fit in right hand drive vehicles"
+- Can be "
 KC06060077,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
-- When vehicle is not equipped with the crankshaft pulley N63, request code P/N 1111000076
-- Can be fit in right hand drive vehicles"
+- When vehicle is not equipped with the crankshaft pulley N63, re"
 KC06070079,- Can be fit in right hand drive vehicles
 KC06070081,"- ""E""=TM-UNICLA.
 - FWD: Front wheel driven"
 KC06070082,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Vehicle must be equipped with original (""C.M.F."") option.
-- Can be fit in right hand drive vehicles"
+- Vehicle must be equipped with orig"
 KC06070083,- Can be fit in right hand drive vehicles
 KC06090084,- Can be fit in right hand drive vehicles
 KC06090085,- Can be fit in right hand drive vehicles
 KC06100086,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles
-- RWD:Rear wheel drive"
+- Can be fit in right hand drive"
 KC06100087,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
 - Can be fit in right hand drive vehicles"
 KC06100088,- Can be fit in right hand drive vehicles
 KC06100089,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles.
-- Only for vehicles with original N63 PTO option."
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC06110090,"- ""E""=TM QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be mounted with or without the PTO option"
+- Can be mounted with or withou"
 KC06110091,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Only in vehicles with cabin comfort, type ""C\"\"\"
+- Only in vehicles with cabin comfort, typ"
 KC06110092,"- Can be fit in right hand drive vehicles
 - Use the special tool P/N 1149000092 to fit the kit"
 KC06110093,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Can be fit in right hand drive vehicles"
+- For TM and UP-UPF Ø119 only"
 KC06110094,"- ""E""=TM / QUE / UNICLA
 - Replace transmision kit every 30.000Km. P/N 1125000094
-- Can be fit in right hand drive vehicles"
+- Can be fit in rig"
 KC06120095,"- ""E""=TM / QUE / UNICLA
 - Must be equipped with Power take-off (PFMOT).
-- Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles"
+- Not recommended in vehicle"
 KC06120096,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Can be fit in right hand drive vehicles"
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC07010097,"- ""E""=TM ( QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC07010098,"- Can be fit in standard vehicles, without options
-- For RHD vehicles you should order the P/N 1121000098.
-- Water pipe must be Ref.: 7482241760"
+- For RHD vehicles you should order the P/N 11210"
 KC07010099,"- Vehicle must be eqquiped with option RVI -1EZ02
 - Water pipe must be Ref.: 7482241760.
-- For RHD vehicles you should order the P/N 1121000098."
+- For RHD v"
 KC07020100,- Can be fit in right hand drive vehicles
 KC07020101,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand dr"
 KC07020102,"- The vehicle does not have to be equipped with the option take off 2AB.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand "
 KC07030103,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC07030104,- Can be fit in right hand drive vehicles
 KC07030105,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles."
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC07040106,"- Can be fit in standard vehicles, without options
 - Can be fit in right hand drive vehicles"
 KC07040107,"- Vehicle must be equipped with option Volvo-APUL1
@@ -5547,121 +5434,94 @@ KC07040107,"- Vehicle must be equipped with option Volvo-APUL1
 KC07040108,- Can be fit in right hand drive vehicles
 KC07040109,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- For vehicles with hydraulic power steering, order the belt (not included in the kit):
-KC07040109: P/N 1260601705
-KC07040109E: P/N 12"
+- For vehicles with hydraulic powe"
 KC07040110,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC07040111,"- Can't be fit in right hand drive vehicles.
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automat"
+- No"
 KC07040112,"- Can't be fit in right hand drive vehicles.
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automat"
+- No"
 KC07050114,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles equipped with automatic gear box
-- To install this kit it is essential to use the special tool code P/N 114000"
+- Suitable for vehicles equipped w"
 KC07070115,"- ""E""=TM-UNICLA
 - For TM and UP Ø119 only Poly-V 8K
-- Use the special tool: P/N 1149000115 to fit the kit (ref. Toyota 09330-00021 and 09213-58013).
-- Can be fit in right hand drive vehicles"
+- Use the special tool: P/N 1149000115 to fit th"
 KC07070116,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Can be fit in right hand drive vehicles"
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC07080117,"- Use the special tool: P/N 1149000115 to fit the kit (ref. Toyota 09330-00021 and 09213-58013).
-- Can be fit in right hand drive vehicles"
+- C"
 KC07090118,"- ""E""=TM / QUE / UNICLA
-- It cannot be fit in vehicles with the original A/C located in the RIGHT upper part of the engine.
-- For vehicles previous to 8/2010 request P/N 1290000118.
-- Can be fit in ri"
+- It cannot be fit in vehicles with the original A/C located in the RIGHT up"
 KC07100119,"- RWD= Rear wheel drive
 - Engine mounted sideways
 - Can be fit in right hand drive vehicles
-- To be mounted without special PTO option"
+- To be "
 KC08010120,"- ""E""=TM-UNICLA
 - For TM and UP-UPF Ø119 only Poly-V 8K
-- Use the special tool: P/N 1149000115 to fit the kit (ref. Toyota 09330-00021 and 09213-58013).
-- Can be fit in right hand drive vehicles"
+- Use the special tool: P/N 1149000115 to fi"
 KC08010121,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- To install this kit it is essential to use the special tool code P/N 1149000092 or Ref.Ford 303-393.
-- TM-08 Must be mounted version"
+- To install this kit it is essent"
 KC08020122,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand dr"
 KC08020123,"- Not to be used on 18 ton vehicles.
 - Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Fittings not includ"
 KC08030124,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- For SD5H14 / SD5L14 and SD7H15 / SD7L15 Ø119 only Poly-V 7K-8K
-- Can be fit with electrical power steering
-- Can be fit in right ha"
+- For SD5H14 / SD5L14 and SD7H15 "
 KC08030125,"- Can't be fit in right hand drive vehicles.
 - Fittings not included in the kit"
 KC08030126,"- ""E""=TM / QUE / UNICLA
 - Must be equipped with Power take-off ""V66"".
-- Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles w"
+- Not recommended in vehicles "
 KC08040127,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Vehicles must be equipped with the option ""CABADP"" information connector, Version ""CHAUFO"" free pulley Ø125 or Version ""CHOREC"
+- Vehicles must be equipped "
 KC08040128,"- TM-21 Clutch 1B Ø150 / 2B Ø149
 - Can't be fit in right hand drive vehicles
-- Fittings not included in the kit
-- Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles wi"
+- Fittings not included"
 KC08040129,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- N"
+- Compatible with ZF "
 KC08040130,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox
-- NOT SUITABLE FOR Euro VI-D vehic"
+- Compatible with ZF "
 KC08040131,"- Can't be fit in right hand drive vehicles
 - No suitable for 220HP engine with automatic gear box
-- Fittings not included in the kit
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+-"
 KC08040132,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive veh"
 KC08050133,"- Vehicle must be eqquiped with option RVI - 1EZ02
 - Water pipe must be Ref.: 7482241760.
-- Can be fit in right hand drive vehicles"
+- Can be f"
 KC08050134,- Can be fit in right hand drive vehicles
 KC08060135,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles."
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC08060136,- Can be fit in right hand drive vehicles
 KC08070138,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles
-- RWD:Rear wheel drive"
+- Can be fit in right hand drive"
 KC08090139,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC08090140,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC08100141,"- Only for vehicles with original N63 PTO option (Bracket compressor and crankshaft pulley).
-- Can be fit in right hand drive vehicles."
+- Can b"
 KC08110142,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - Can be fit in right hand drive vehicles.
-- To install this kit it is essential to use the special tool code P/N 1149000142
-- For compressor TM-08/UP-90 ordered P/N"
+- To install this kit "
 KC08110143,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive veh"
 KC08110144,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles."
 KC08120145,"- Can be fit in right hand drive vehicles
@@ -5669,94 +5529,73 @@ KC08120145,"- Can be fit in right hand drive vehicles
 KC09010146,- Can be fit in right hand drive vehicles
 KC09020147,- Can be fit in right hand drive vehicles
 KC09030148,"- Kit not suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles.
-- Fittings supplied with refrigeration unit.
-- Kit not suitable for the"
+- Can be fit i"
 KC09030149,"- Can be fit in right hand drive vehicles.
 - Only for vehicles with original option MAN 120FF.
-- Fittings not included, see drawing."
+- Fit"
 KC09030150,"- ""E""=TM-UNICLA;""S""=SANDEN.
 - ""S"" only for SD7H15.
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles"
+- "
 KC09030151,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles"
 KC09030155,"- ""E""=TM / QUE / UNICLA
-- To install this kit it is essential to use the special tool code P/N 1140000155
-- Can be fit in right hand drive vehicles"
+- To install this kit it is essential to use the special tool code P/N 11400"
 KC09030156,- Can be fit in right hand drive vehicles
 KC09030157,- Can be fit in right hand drive vehicles
 KC09040158,"- Can be fit in right hand drive vehicles
 - Suitable for Automatic Gear Box"
 KC09040159,"- When vehicle is not equipped with the crankshaft pulley N63, request code P/N 1111000076
-- Can be fit in right hand drive vehicles"
+- Can be "
 KC09050160,"- Kit not suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles.
-- Fittings supplied with refrigeration unit.
-- Kit not suitable for the"
+- Can be fit i"
 KC09050161,"- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles.
-- Fittings supplied with refrigeration unit."
+- Can be fit i"
 KC09050162,"- Kit not suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles.
-- Kit not suitable for QP25 compressor
-- Kit not suitable for the model"
+- Can be fit i"
 KC09050163,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Vehicles must be equipped with the option ""CABADP"" information connector, Version ""CHAUFO"" free pulley Ø125 or Version ""CHOREC"
+- Vehicles must be equipped "
 KC09060164,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitab"
 KC09060165,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitab"
 KC09060166,"- The vehicle must be equipped with Mercedes-Benz MN9 option.
-- Can be fit in right hand drive vehicles.
-- Fittings not included, see drawing."
+- Can be fit in right hand drive vehic"
 KC09060167,"- The vehicle must be equipped with Mercedes-Benz MN9 option.
-- Can be fit in right hand drive vehicles.
-- Fittings supplied with refrigeration unit."
+- Can be fit in right hand drive vehic"
 KC09060168,"- Tool Crankshaft Pulley not included. P/N 1152000168.
 - Can be fit in right hand drive vehicles"
 KC09070169,"- Can be fit in right hand drive vehicles.
 - Only for vehicles without original option MAN 120FF.
-- Fittings not included, see drawing."
+- "
 KC09070170,"- Can be fit in right hand drive vehicles
 - Only for vehicles with original option MAN 120FF."
 KC09070171,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA;""S""=SANDEN (only for SD7H15)
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles.
-- Only for vehicles equipped with"
-KC09070172,"THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES A6510300803 OR A6510300703
-- RWD= Rear wheel drive
-- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must"
+- For SD5H14 and SD7H15"
+KC09070172,THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES A6510300
 KC09080173,"- Can be fit in right hand drive vehicles
 - Only for vehicles with original N63 PTO option
-- Version ""E"" no available for SANDEN"
+- Version"
 KC09090174,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Only for vehicles equipped with the N63 crankshaft pulley
-- When vehicle is not equipped with the crankshaft pulley N63, request cod"
+- Only for vehicles equipped with "
 KC09090175,"- Only for vehicles equipped with the N63 crankshaft pulley
-- When vehicle is not equipped with the crankshaft pulley N63, request code P/N 1111200171
-- Short intercooler hose (in order to avoid inter"
+- When vehicle is not equipped with the "
 KC09090176,"- Kit not suitable for vehicles equipped with pneumatic suspension in the front axis.
-- ""E""=TM-UNICLA
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles.
-- Kit no"
+- ""E""=TM-UNICL"
 KC09090177,"- Can be fit in right hand drive vehicles.
 - Only for vehicles without original option MAN 120FF."
 KC09090178,"- Can be fit in right hand drive vehicles
 - It can't be fit in normative Euro 5 vehicles"
 KC09090179,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand d"
 KC09100180,"- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- Fittings supplied with refrigeration unit.
-- Can be fit in right hand drive vehicles.
-- Poly-V clutch not includ"
+- Fittings sup"
 KC09100181,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITH original option MAN 120FF"
 KC09100182,"- Can be fit in right hand drive vehicles
@@ -5766,203 +5605,158 @@ KC09100183,"- Can be fit in right hand drive vehicles.
 KC09110184,- Can be fit in right hand drive vehicles
 KC09120185,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITH original option MAN 120FF
-- IMPORTANT: Check in the Service Bulletin SB17110031 the suitability of the vehicle with our kits"
+- IMPOR"
 KC10010186,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit."
 KC10010188,"- ""E""=TM-UNICLA
 - Only for vehicles with 6 speeds gear manual box
-- Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD"
+- Can be fit in right hand drive v"
 KC10020189,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KC10030190,- Can be fit in right hand drive vehicles
 KC10040191,"- ""E""=TM-UNICLA
 - Only for vehicles with 5 speeds gear manual box
-- Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD"
+- Can be fit in right hand drive v"
 KC10050192,"- Only for vehicles with original N63 PTO option.
-- When the vehicle is not equipped with the N63 option order, P/N 1170000192.
-- Can be fit in right hand drive vehicles."
+- When the vehicle is not equipped with the N63 op"
 KC10050193,"- Fittings supplied with refrigeration unit.
 - Can't be fit in right hand drive vehicles.
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMP"
 KC10050194,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Suitable on vehicles WITHOUT"
+- According to bodybuilder indications, the power take off is not suitable "
 KC10050195,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand dr"
 KC10070197,"- ""E""=TM-UNICLA
 - Only for vehicles with 6 speeds gear manual box
-- Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD"
+- Can be fit in right hand drive v"
 KC10070198,"- ""E""=TM-UNICLA
 - Only for vehicles with 5 speeds gear manual box
-- Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD"
+- Can be fit in right hand drive v"
 KC10080199,"- The vehicle must be equipped with special engine bracket DAF P/N 1735015-00.
-- Fittings supplied with refrigeration unit."
+- Fittings supplied w"
 KC10080200,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles."
 KC10090201,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Suitable on vehicles WITHOUT "
+- According to bodybuilder indications, the power take off is not suitable f"
 KC10090202,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicle"
+- According to bodybuilder indications, the power take off is not suitable "
 KC10090203,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN (only for SD7H15).
 - SD5H14-SD7H15 Ø119 only 7K-8K
-- For vehicles with ECO (Start& Stop) option requested belt P/N 1262602307. Only kits with special clutch.
-- For "
+- For vehicle"
 KC10090204,"- ""E""=TM / QUE / UNICLA
-- For vehicles with ECO (Start& Stop) option requested belt P/N 1262602307. Only kits with special clutch.
-- Can be fit in right hand drive vehicles.
-- IMPORTANT. The kit with "
+- For vehicles with ECO (Start& Stop) option requested belt P/N 1262602307. "
 KC10100206,"- Can be fit in standard vehicles, without options
 - Can be fit in right hand drive vehicles
-- Water pipe must be Ref.: 7482241760
-- Compressor fittings optional: P/N 1175000206 (CR2318), P/N 11760002"
+- Water"
 KC10110207,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles
-- Suitable for vehicles equipped with automatic gear box"
+- Can be fit in right hand drive veh"
 KC10120211,"- Can be fit in right hand drive vehicles.
 - Only for vehicles without original option MAN 120FF."
 KC10120212,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - Can be fit in right hand drive vehicles"
 KC10120213,"- Can be fit in standard vehicles, without options.
 - Can be fit in right hand drive vehicles.
-- Water pipe must be Ref.: 7482241760."
+- Wat"
 KC11030214,"- Fittings supplied with refrigeration unit.
 - Can't be fit in right hand drive vehicles.
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMP"
 KC11030215,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE with"
 KC11030216,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for 220HP engine with automatic gear box.
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- Not suitable for 22"
 KC11030217,"- Can't be fit in right hand drive vehicles
 - No suitable for 220HP engine with automatic gear box
-- Fittings not included in the kit
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+-"
 KC11030218,"- Can be fit in right hand drive vehicles.
 - Fittings not included, see drawing."
 KC11030219,"- Can't be fit in right hand drive vehicles.
 - Fittings not included in the kit"
 KC11040220,"- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must order P/N 1170000171.
-- Only for vehicles without original N63 PTO option.
-- Can be fit in right hand drive vehicles."
+- Only for vehicles "
 KC11040222,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box"
 KC11040223,- Can be fit in right hand drive vehicles
 KC11050227,"- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must order P/N 1170000171.
-- Only for vehicles with option ECO (Start & Stop).
-- Can be fit in right hand drive vehicles."
+- Only for vehicles "
 KC11050228,"- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must order P/N 1170000171.
-- Only for vehicles with option ECO (Start & Stop).
-- Can be fit in right hand drive vehicles."
+- Only for vehicles "
 KC11050229,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitable for veh"
 KC11050230,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive veh"
 KC11050231,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles.
-- Only for vehicles without original N63 PTO option."
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC11050232,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Only for vehicles without original N63 PTO option."
+- Only for vehicles without origi"
 KC11050236,- Can be fit in right hand drive vehicles
 KC11060237,"- Can be fit in right hand drive vehicles.
 - Kit not suitable for the model 2017. Check SB17020028"
 KC11060238,"- Can be fit in right hand drive vehicles
 - Fittings supplied with refrigeration unit
-- VEHICLE'S VOLTAGE 12 V"
+- VEHICLE'S VO"
 KC11070239,"- The vehicle must be equipped with Mercedes-Benz MN9 option.
-- Can be fit in right hand drive vehicles.
-- Fittings supplied with refrigeration unit."
+- Can be fit in right hand drive vehic"
 KC11070240,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitab"
 KC11070241,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Suspension type: FSCM or FPCM.
-- Special option Front Traverse â€œFRIGOBLOCK""
-- Not suitable for vehicles equi"
+- Suspension"
 KC11080242,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles
-- Model 35S15 / 35C15 can also be equipped "
+- UNICLA: Clutch drive plate Ø120"
 KC11090243,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Suspension type: FSCM or FPCM.
-- Special option Front Traverse â€œFRIGOBLOCK""
-- Not suitable for vehicles equi"
-KC11090245,"- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine rubber mounts.
-- Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Suspension"
+KC11090245,- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine r
 KC11100247,"- Can be fit in right hand drive vehicles.
 - Only for vehicles with original option MAN 120FF."
 KC11100248,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles."
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC11110250,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Suspension type: FSCM or FPCM.
-- Special option Front Traverse â€œFRIGOBLOCK""
-- Not suitable for vehicles equi"
+- Suspension"
 KC11110252,"- ""E""=TM / QUE / UNICLA
 - RWD:Rear wheel drive
 - Can be fit in right hand drive vehicles"
 KC11120253,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- Can be fit in right hand drive vehicles
-- Model 35C15 can also be equipped with the 3.0l engine
-- IMPORTANT: This kit is not suitab"
+- Can be fit in right hand drive "
 KC11120254,"- ""E""=TM / QUE / UNICLA
 - ""S"" only for SD7H15 / SD7L15
 - RWD: Rear wheel drive
-- Can be fit on AWD vehicles
-- Can be fit on right hand drive vehicles"
+- Can be fit on AWD v"
 KC11120255,- Can be fit in right hand drive vehicles
 KC12010256,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Can be fit in right hand drive vehicles"
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC12010257,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- For TM and UP-UPF Ø119 only Poly-V 8K
-- Can be fit in right hand drive vehicles"
+- For SD5H14 and SD7H15 Ø119 only Poly-V "
 KC12010258,"- RWD:Rear wheel drive
 - Can be fit in right hand drive vehicles"
 KC12010259,"- ""E""=TM / QUE
 - RWD:Rear wheel drive
 - Can be fit in right hand drive vehicles"
 KC12010260,"- Vehicle must be eqquiped with power take off, Volvo option PTER-100
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand dri"
 KC12010261,
 KC12010262,"- Can be fit in right hand drive vehicles.
 - Kit not suitable for the model 2017. Check SB17020028"
 KC12020263,"- Not to be used on 18 ton vehicles
 - Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Fittings not include"
 KC12020264,"- Can be fit in right hand drive vehicles.
-- When vehicle is not equipped with the crankshaft pulley N63, request code P/N 1111200171.
-- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must order P"
+- When vehicle is not equipped with the crankshaft pulley"
 KC12020265,- Can be fit in right hand drive vehicles
 KC12030266,- Can be fit in right hand drive vehicles
 KC12030267,- Can be fit in right hand drive vehicles
@@ -5970,52 +5764,42 @@ KC12040269,"- Can be fit in standard vehicles, without options
 - Can be fit in right hand drive vehicles"
 KC12050270,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit with electrical power steering
-- Can be fit in right hand drive vehicles.
-- Kit not suitable in vehicles with steel"
+- Can be fit with electrical"
 KC12050271,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop
-- MUFFLER option recommended"
+- It canâ€™t be fit in vehicles wh"
 KC12050272,- Can be fit in right hand drive vehicles
 KC12060274,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitab"
 KC12060275,"- ""E""=TM-UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive veh"
 KC12060276,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit with electrical power steering
-- Can be fit in right hand drive vehicles.
-- Kit not suitable in vehicles with steel"
+- Can be fit with electrical"
 KC12060277,"- FWD= Front wheel drive
 - Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- Can be fit in righ"
 KC12060278,"- FWD= Front wheel drive
 - Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- Can be fit in righ"
 KC12060279,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Only for vehicles with original option MAN 331FL"
+- Only for v"
 KC12060280,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Only for vehicles with original option MAN 331FL"
+- Only for v"
 KC12060281,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Only for vehicles with original option MAN 331FL"
+- Only for v"
 KC12060282,- Can be fit in right hand drive vehicles
 KC12070283,"- The vehicle must be equipped with special engine bracket DAF P/N 1735015-00
-- Fittings not included in the kit"
-KC12070284,"- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine rubber mounts.
-- Fittings supplied with refrigeration unit.
-- Can be fit in right hand drive vehicles"
+- Fittings not include"
+KC12070284,- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine r
 KC12070285,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Model 35C15 can also be equipped with the 3.0l engine
-- IMPORTANT: This kit is not suitable for the Daily 2014 version"
+- Model 35C15 can also be equipped"
 KC12070286,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles"
@@ -6025,75 +5809,58 @@ KC12090289,"- Can be fit in right hand drive vehicles
 KC12090290,"- Can be fit in right hand drive vehicles.
 - Kit not suitable for the model 2017. Check SB17020028"
 KC12090291,"- Only for compressor SD5H09 with special pulley Ø150
-- Carrier Transicold compressor P/N 79-60649-00
-- Poly-V clutch not included"
+- Carrier Transicold compressor P/N 79-60649-0"
 KC12090292,"- Only for compressor SD5H09 with special pulley Ø150
-- Carrier Transicold compressor P/N 79-60649-00
-- Poly-V clutch not included
-- Can be fit with electrical power steering"
-KC12100293,"- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine rubber mounts.
-- Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Carrier Transicold compressor P/N 79-60649-0"
+KC12100293,- The vehicle must be equipped with special option DAF: AFRU462 / AFRU519 / AFRU520 and STD engine r
 KC12100294,"- Can be fit in right hand drive vehicles
 - Fittings supplied with refrigeration unit
-- VEHICLE'S VOLTAGE 12 V"
+- VEHICLE'S VO"
 KC12110295,"- Can be fit in right hand drive vehicles
 - Suitable for the automatic gear box.
-- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- See Fitting Instructions for de"
+- No compatible Kit"
 KC12110296,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles before year 2016"
+- Not suitable for vehi"
 KC12110297,- Can be fit in right hand drive vehicles
 KC12120298,"- Not recommended in vehicles with automatic gear box.
 - Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- I"
 KC12120298Z,"- ""E""=TM / QUE / UNICLA
 - Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- Can be fit in right"
 KC12120299,"- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability of the vehicle with our kits
-This kit is suitable only for vehicles after March 2014. Fo"
+- IMPORTANT: Check in the Service Bulletin SB15030025 the "
 KC12120300,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KC12120300Z,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KC12120301,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension"
+- Not suitable for vehi"
 KC12120302,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles before year 2016"
+- Not suitable for vehi"
 KC12120304,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles before year 2016"
+- Not suitable for veh"
 KC13010305,"- Can be fit in right hand drive vehicles
 - Fittings supplied with refrigeration unit
-- VEHICLE'S VOLTAGE 12 V"
+- VEHICLE'S VO"
 KC13020306,"- Not to be used on 18 ton vehicles
 - Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Fittings not include"
 KC13020307,"- Can't be fit in right hand drive vehicles
 - No suitable for 220HP engine with automatic gear box
-- Fittings not included in the kit
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+-"
 KC13020308,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles before year 2016"
+- Not suitable for vehi"
 KC13020309,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KC13020310,"- Can't be fit in right hand drive vehicles
 - TM-21 Clutch 1B Ø150 / 2B Ø149
-- Fittings not included in the kit"
+- Fittings not included"
 KC13020311,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KC13020312,"- Can't be fit in right hand drive vehicles
@@ -6101,68 +5868,58 @@ KC13020312,"- Can't be fit in right hand drive vehicles
 KC13020313,- Can be fit in right hand drive vehicles
 KC13020314,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- N"
+- Compatible with ZF "
 KC13020315,"- Not to be used on 18 ton vehicles
 - Can be fit in right hand drive vehicles
-- Fittings not included in the kit"
+- Fittings not include"
 KC13020316-D,- Can be fit on right hand drive vehicles
 KC13020316-E,- Can be fit on right hand drive vehicles
 KC13020316-F,- Can be fit on right hand drive vehicles
 KC13030317,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15.
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive"
 KC13030318,"- Can be fit in right hand drive vehicles
 - Suitable for the automatic gear box.
-- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- See Fitting Instructions for de"
+- No compatible Kit"
 KC13030319,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles
-- Dacia recommend not to use STOSTA option in vehicles with a refrigeration system
-THE"
+- Can be fit in right hand d"
 KC13030320,"- ""E""=TM / QUE / UNICLA
 - UNICLA: Clutch plate Ø120 not suitable.
-- Can be fit in right hand drive vehicles
-- Suitable for automatic gear box
-- Renault recommend not to use the STOSTA option in vehicl"
+- Can be fit in right hand drive v"
 KC13040322,"- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability of the vehicle with our kits
-This kit is suitable only for vehicles after March 2014. Fo"
+- IMPORTANT: Check in the Service Bulletin SB15030025 the "
 KC13040323,"- ""E""=TM / QUE / UNICLA
 - Not recommended in vehicles with automatic gear box.
-- Can be fit in right hand drive vehicles
-- It canâ€™t be fit in vehicles whit Start & Stop"
+- Can be fit in right"
 KC13040324,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles."
 KC13050326,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- To install this kit it is essential to use the special tool code P/N 1149000142"
+- To install this kit it is essent"
 KC13050327,"- The vehicle must be equipped with Mercedes-Benz MN9 option
-- Can be fit in right hand drive vehicles"
+- Can be fit in right hand drive vehicl"
 KC13050328,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles
-- Model 35C15 can also be equipped with the 2.3l engine"
+- Model 35C15 can also be equippe"
 KC13050329,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles with automatic gear box DUONIC
-- The CG8 option must be removed, if present, in order to install the kit."
+- T"
 KC13050330,- Can be fit in right hand drive vehicles
 KC13050331,- Can be fit in right hand drive vehicles
 KC13050332,- Can be fit in right hand drive vehicles
 KC13050333,- Can be fit in right hand drive vehicles.
 KC13050334,"- The vehicle must be equipped with special engine bracket DAF P/N 1735015-00
-- Fittings not included in the kit"
+- Fittings not include"
 KC13060335,#¡VALOR!
 KC13070336,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC13080337,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Only for vehicles with special option Front Traverse (IVECO ULM). Check SB18050035"
+- Only for vehicles wit"
 KC13080338,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only for vehicles with special option Front Travers"
+- Not suitable for veh"
 KC13080339,- Can be fit in right hand drive vehicles
 KC13080340,"- FWD: Front wheel drive
 - Can be fit on right hand drive vehicles"
@@ -6170,292 +5927,224 @@ KC13080340-C,"- FWD: Front wheel driven
 - Can be fit on right hand drive vehicles"
 KC13090341,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles equipped with automatic gearbox
-- To install this kit it is essential to use the special tool code P/N 1140000"
+- Suitable for vehicles equipped w"
 KC13090342,"- Can be fit in right hand drive vehicles.
 - Only for vehicles without original N63 PTO option."
 KC13120343,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KC13120344,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KC14010345,- Can be fit in right hand drive vehicles
 KC14010346,- Can be fit in right hand drive vehicles.
 KC14020347,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KC14020348,"- Can be fit in right hand drive vehicles
 - Not to be used on 18 or 19 ton vehicles"
 KC14020349,"- Can be fit in right hand drive vehicles
 - Not to be used on 18 or 19 ton vehicles"
 KC14030350,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - For SD5H14/SD5L14 and SD7H15 Ø119 only Poly-V 6K-7K-8K
-- Can be fit in right hand drive vehicles
-- Suitable for vehicles with automatic gear box DUONIC
-- The CG8 o"
+- Can be"
 KC14030351,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KC14040352,"- Only for vehicles equipped with the original N7C option
 - Can be fit in right hand drive vehicles
-- For vehicles before 2022 see Service Bulletin SB23020059
-P/N 1121998057"
+"
 KC14040354,
 KC14040355,IT'S NECESSARY TO BUY SEPARATELY THE AUTOMATIC TENSIONER 1160000355
 KC14040356,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH OPTION N7C"
+- FOR VEHICLES EQUIPPED"
 KC14050357,"- Can be fit in right hand drive vehicles
-- Kit not suitable for vehicles 6x2 with directional rear axle (TA-HYDRS)
-- For vehicles not equipped with air conditioning, select also the idler pulley brac"
+- Kit not suitable for vehicles 6x2 with directional rear "
 KC14050358,"- Can be fit in right hand drive vehicles
-- Kit not suitable for vehicles 6x2 with directional rear axle (TA-HYDRS)
-- For vehicles not equipped with air conditioning, select also the idler pulley brac"
+- Kit not suitable for vehicles 6x2 with directional rear "
 KC14050359,"- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability of"
+- Can be fit i"
 KC14050360,"- Kit also suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability o"
+- Can be fit "
 KC14050361,- Can be fit in right hand drive vehicles
 KC14050362,- Can be fit in right hand drive vehicles
 KC14050363,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14/SD5L14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles
-- This kit is only sui"
+- For SD5H14/SD5L1"
 KC14060364,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- FOR VEHICLES EQUIPPED WITH OPTION N7C"
+- FOR VEHICLES EQUIPPED"
 KC14060365,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITHOUT the original N7 options"
 KC14060366,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITHOUT the original N7 options"
 KC14070367,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KC14070368,- Can be fit in right hand drive vehicles
-KC14070369,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - "
-KC14070369Z,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop, i"
+KC14070369,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear bo"
+KC14070369Z,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear bo"
 KC14070370,"- ""E""=TM / QUE
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles"
 KC14080372,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available with factory "
+- If the "
 KC14080373,"- ""E""=TM / QUE / UNICLA
 - Not available for TM / UP-UPF Poly V 6K A Ø119
-- ONLY FOR A/C COMPRESSOR ON THE RIGHT HAND SIDE (direction of motion), consult Service Bulletin
-- Can be fit in right hand dri"
+- ONLY FOR A/C COMPRESSOR O"
 KC14080374,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC14090375,"- Can be fit in right hand drive vehicles
 - Only suitable for vehicles before year 2017"
 KC14090376,"- Can be fit in right hand drive vehicles
-- The kit is suitable for vehicles with D8K engine, equipped with pneumatic suspension in the front axis.
-- See Fitting Instructions for details on the refer "
+- The kit is suitable for vehicles with D8K engine, equipp"
 KC14090377,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC14090378,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available with factory "
+- If the "
 KC14120379,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-Suitable for vehicles WITH A/C from factory, but the A/C compressor must be removed"
+Suitable for vehicles WITH A/C fro"
 KC14120380,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC14120381,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- VEHICLES MUST BE EQUIPPED WITH AIR CONDITIONING COMPRESSOR, BUT THE AIR CONDITIONING COMPRESSOR MUST BE REMOVED WHEN MOUNTED THE REF"
+- VEHICLES MUST BE EQUIPPED WITH A"
 KC14120382,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC14120383,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD5H14 / SD5L14.
-- Can be fit in right hand drive vehicles."
+- Can be fit in right hand drive "
 KC14120384,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- IMPORTANT. The kit is not suitable for vehicles with automatic gear box."
+- IMPORTANT. The kit is not suitab"
 KC14120385,"- Suitable for the automatic gear box.
 - Can be fit in right hand drive vehicles
-- The kit is not suitable for vehicles 4x4"
+- The kit is not su"
 KC14120386,"- Suitable for the automatic gear box.
 - Can be fit in right hand drive vehicles
-- The kit is not suitable for vehicles 4x4"
-KC15010387,"THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES LITENS A6510351612, A6510351812 OR A6510350912
-- RWD= Rear wheel drive
-- Models 210 / 310 / 510 CDI, Engine "
+- The kit is not su"
+KC15010387,THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES LITENS A
 KC15020388,"- ""E""=TM / QUE / UNICLA
 - Suitability for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available with factory option RALENT or CABADP"
+- If the vehicle is equipped wit"
 KC15050389,"- ""E""=TM / QUE / UNICLA
 - Replace transmision kit every 30.000Km. P/N 1125000094
-- Cannot be fit in right hand drive vehicles"
+- Cannot be fit in "
 KC15050390,"- Can be fit in right hand drive vehicles
 - Use tool to block the flywheel P/N 1149000412
-- Important to check radiator pipe length, see SB24110072.
-- The kit is not suitable for vehicles 4x4
-- If the"
+- Importan"
 KC15050390Z,"- Can be fit in right hand drive vehicles
 - Use tool to block the flywheel P/N 1149000412
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- The k"
+- Accordin"
 KC15060391,"- ""E""=TM / QUE / UNICLA
 - For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles
-- The kit is not suitable for vehicles 4x4
-- If the vehicle is equipped with the Start "
+- Can be fit in right hand dr"
 KC15060392,"- No compatible Kit in vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability of"
+- Can be fit i"
 KC15060393,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles after january 2016"
+- Not suitable for veh"
 KC15060393-B,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- ASK THE AFTERSALES DEPARTMENT FOR THE SUITABILITY O"
+- Not suitable for veh"
 KC15060394,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles after year 2016"
+- Not suitable for vehi"
 KC15060395,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Only suitable for vehicles before year 2016"
+- Not suitable for vehi"
 KC15070396,- Can be fit in right hand drive vehicles
 KC15070397,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/STOP AND REVERSIBLE ALTERNATOR 180A)
-- Kit not suitable for the model 2018"
+- KIT NOT SUITABLE FOR VEHICLES W"
 KC15070398,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- Kit wit"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC15070398Z,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- Kit wit"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC15070399,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit "
+- Suitable for vehicles with 8-Sp"
 KC15070400,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 can also be "
+- Suitable for vehicles with 8-Sp"
 KC15070400Z,"- UNICLA: Clutch drive plate Ø120 not suitable.
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 can also be equipped with the 3"
+- Suitable for vehicles with 8-Speed Automatic Trans"
 KC15090402,- Can be fit in right hand drive vehicles
 KC15090403,"- ""E""=TM-QP
 - Can be fit in vehicles with DSG automatic gear box
-- CANNOT be fit in right hand drive vehicles
-- CANNOT be fit on all wheel drive vehicles AWD
-- Not suitable for engine powers above 150"
+- CANNOT be fit in right hand drive"
 KC15090403Z,"- Can be fit in vehicles with DSG automatic gear box
 - CANNOT be fit in right hand drive vehicles
-- CANNOT be fit on all wheel drive vehicles AWD
-- Not suitable for engine powers above 150Hp"
+- "
 KC15100404,- Can be fit in right hand drive vehicles
 KC15110405,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD
-- Can be fit in vehicles with DSG automatic gear box
-- KIT NOT SUITABLE FOR VW T6.1
-- Itâ€™s poss"
+- Can be fit on all wheel drive vehicles A"
 KC15120407,- Can be fit in right hand drive vehicles
 KC16060408,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN
 - ""S"" only for SD7H15.
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles.
-- Kit NOT suitable for MY 2019"
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC16070409,- Can be fit in right hand drive vehicles
 KC16070410,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15 / SD7L15
-- UNICLA: Clutch drive plate Ø120 not suitable.
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on"
+- UNICLA: Clutch drive plate Ø120"
 KC16070411,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/STOP AND REVERSIBLE ALTERNATOR 180A)
-- If the vehicle is equipped with the S"
+- KIT NOT SUITABLE FOR VEHICLES "
 KC16080412,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- Suitable for vehicles with automatic gear box.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this"
+- Suitable for vehicles with aut"
 KC16080412Z,"- Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option
-- The kit is not suitable for vehicles 4x4
-- Use tool to block the"
+- If the vehicle is equipped with the Start & Stop, it is"
 KC16090413,"- ""E""=TM / QUE / UNICLA; ""S""=SANDEN
 - ""S"" only for SD7H15
-- For SD5H14 and SD7H15 Ø119 only Poly-V 7K-8K
-- Can be fit in right hand drive vehicles
-- Itâ€™s possible to mount the kit on vehicles with A"
+- For SD5H14 and SD7H15 Ø119 only Poly-V 7"
 KC16090414,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles
-- For compressor TM-08/QP-08, order P/N 1129000414."
+- For com"
 KC16090415,"- Cannot be fit in right hand drive vehicles
-- Kit not suitable for the models 2018 Combo Life and Combo Cargo"
+- Kit not suitable for the models 2018 Combo Life and C"
 KC16090415D,"- Cannot be fit in right hand drive vehicles
-In order to use SSMK 1183000415, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000415, the vehicle must be eq"
 KC16100416,"- Can be fit in right hand drive vehicles
-- Itâ€™s possible to mount the kit on vehicles with AC, although the AC compressor must be removed in order to fit the kit and the refrigeration compressor. I"
+- Itâ€™s possible to mount the kit on vehicles with AC, al"
 KC16100417,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/STOP AND REVERSIBLE ALTERNATOR 180A)"
+- KIT NOT SUITABLE FOR VEHICLES "
 KC16100418,- Can be fit in right hand drive vehicles
 KC16110419,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-To install this kit it is essential to use the special tool code:
-- P/"
+- Suitabl"
 KC16110420,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC16120421,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Can be fit on all wheel drive vehicles AWD
-- Can be fit in vehicles with DSG automatic gear box
-- Itâ€™s possible to mount the kit on vehicl"
+- Can be fit on all wheel drive vehicles A"
 KC16120422,"- ""E""=TM / QUE / UNICLA
 - RWD: Rear wheel drive
 - Can be fit on AWD vehicles
-- Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- Not suitable for ECOBLUE HYBRID version
-"
+- Can be fit in right h"
 KC17010423,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option (check installation procedure)
-- Not suit"
+- If the vehicle is equipped wit"
 KC17010424,"- ""E""=TM / QUE / UNICLA
 - RWD: Rear wheel drive
 - Can be fit on AWD vehicles
-- Can be fit in right hand drive vehicles
-- For compressor TM-08/QP-08, order P/N 1129000414."
+- Can be fit in right h"
 KC17010425,"- Can be fit in right hand drive vehicles.
 - Fittings supplied with refrigeration unit.
-- Only for vehicles with original option MAN 331FL"
+- Only for v"
 KC17020426,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KC17020427,"- ""E""=TM / QUE
 - Can be fit in right hand drive vehicles"
 KC17020428,"- ""E""=TM / QUE
@@ -6466,90 +6155,69 @@ KC17030432,- To install this kit it is essential to use the special tool code P/
 KC17050434,- Can be fit in right hand drive vehicles
 KC17050435,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- The kit is not suitable for vehicles 4x4"
+- The kit is not suitable for vehi"
 KC17060436,"- Can be fit in right hand drive vehicles
-- Kit with independent belt for the refrigeration compressor
-- Kit not suitable for the models 2018 Combo Life and Combo Cargo"
+- Kit with independent belt for the refrigeration compress"
 KC17060437,"- ""E""=TM / QUE / UNICLA;
 - FWD= Front wheel drive
 - Can be fit in right hand drive vehicles.
-- VW RECOMMENDS TO USE THE CRANKSHAFT PULLEY 04L105251K or 04L105251P.
-- When vehicle is not equipped with "
+- VW RE"
 KC17070438,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Kit with independent belt for the refrigeration compressor
-- The kit is not suitable for vehicles 4x4
-- If the vehicle is equipped w"
+- Kit with independent belt for th"
 KC17070439,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles 4x2 and 4x4
-- Suitable for automatic gear box
-- Not suitable for model N57"
+- Suitable for vehicles 4x2 and 4"
 KC17070440,"- ""E""=TM / QUE
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- In case of vehicles with AC, the AC "
+- According to bodybuilder indications, the power take off is not suitable for the au"
 KC17080441,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- ONLY FOR A/C COMPRESSOR ON DRIVER SIDE, consult Service Bulletin"
+"
 KC17090442,"- Kit also suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability o"
+- Can be fit "
 KC17110443,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Can be fit in vehicles with DSG automatic gear box
-- Can be fit on all wheel drive vehicles AWD
-- KIT NOT SUITABLE FOR ENGINES EURO 6D TEMP"
+- Can be fit in vehicles with DSG automati"
 KC17110445,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Cannot be fit in vehicles with DSG automatic gear box
-- Cannot be fit on all wheel drive vehicles AWD
-- Vehicles with 6 speed manual gear bo"
+- Cannot be fit in vehicles with DSG autom"
 KC17110446,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- ONLY FOR A/C COMPRESSOR ON PASSENGER SIDE, consult Service Bulletin"
+"
 KC17110447,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100007"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KC17110448,"- ""E""=TM / QUE
 - Can be fit in right hand drive vehicles"
 KC17110449,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100014"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KC17120450,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles"
 KC18010451,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles
-- AC compressor and refrigeration compressor must not work at the same time"
+- AC compressor and refrigeration"
 KC18010452,"- ""E""=TM / QUE / UNICLA
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped "
+- According to bodybuilder indications, the power take off is not suitable f"
 KC18020453,"- ""E""=TM / QUE / UNICLA;
 - RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
-- THE BODYBUILDER RECOMMENDS TO USE THE CRANKSHAFT PULLEY 04L105251L or 04L105251R.
-- When vehicle is not eq"
+- THE BO"
 KC18020454,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- The vehicle must be equipped with special option DAF-006785.
-Attention, the option 006785 cannot be ordered when the truck is equipp"
+- The vehicle must be equipped wit"
 KC18040455,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100014"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KC18040456,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100014"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KC18050459,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles."
 KC18050460,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITHOUT original option MAN 120FF or 0P0GP"
+- Only for vehicles WITHOUT original option MAN 120FF or 0"
 KC18050461,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- For vehicles version Van, the factory option EK1 is required for the electric connections of the refrigera"
+- For ve"
 KC18060462,"- Can be fit in right hand drive vehicles
 - Suitable for the automatic gear box."
 KC18070463,"- ""E""=TM-UNICLA
@@ -6558,317 +6226,241 @@ KC18070464,"- Can be fit in right hand drive vehicles.
 - Kit not suitable for QP25 compressor"
 KC18070465,"- ""E""=TM / QUE
 - Can be fit in right hand drive vehicles
-- In case of a Euro 4, 5 o 5b+ vehicle, ask for the reference P/N 1128000465"
+- In case of a Euro 4, 5 o 5b+ vehicle, ask"
 KC18070465-G,"- Kit suitable for both oversized and small oil sump
 - ""E""=TM / QUE / UNICLA
-- Vehicles equipped with QTOR bar - Buy manifold P/N 1170000465
-- UNICLA: Clutch drive plate Ø120 not suitable.
-- Can be fi"
+- Vehicles equipped wit"
 KC18070465-H,"- Kit suitable for both oversized and small oil sump
 - ""E""=TM / QUE
-- Can be fit in right hand drive vehicles
-- Vehicles equipped with QTOR bar - Buy manifold P/N 1170000465
-- UNICLA: Clutch drive pla"
+- Can be fit in right hand drive"
 KC18080467,"- ""E""=TM / QUE / UNICLA
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles.
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable f"
 KC18090468,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can't be fit on AWD vehicles
-- Origi"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC18090468-A,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can't be fit on AWD vehicles
-- Origi"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC18100469,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- Not sui"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC18100469-B,"- Can be fit in right hand drive vehicles
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automatic Transmission Hi-Matic, recommended t"
+- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed autom"
 KC18100470,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- KIT NOT SUITABLE FOR VEHICLES WITH STTA OPTION (START/STOP AND REVERSIBLE ALTERNATOR 180A)
-- KIT SUITABLE ONLY FOR VEHICLES WITH AI"
+- KIT NOT SUITABLE FOR VEHICLES W"
 KC18110471,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA;
-- For SD5H14 and SD7H15 contact with After Sales Department
-- Can be fit in right hand drive vehicles.
-- Kit with automatic tensioner. Long maintenance"
-KC18110472,"THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES A6510300803 OR A6510300703
-- RWD= Rear wheel drive
-- Models 210 / 310 / 510 CDI, Engine 95CV (70kW) you must"
-KC18110473,"THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES LITENS A6510351612, A6510351812 OR A6510350912
-- RWD= Rear wheel drive
-- Models 210 / 310 / 510 CDI, Engine "
+- For SD5H14 and SD7H15 contact with After Sales De"
+KC18110472,THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES A6510300
+KC18110473,THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES LITENS A
 KC18120474,"- ""E""=TM / QUE / UNICLA;""S""=SANDEN (only for SD7H15)
 - Can be fit in right hand drive vehicles."
 KC18120475,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA;""S""=SANDEN (only for SD7H15)
-- Can be fit in right hand drive vehicles.
-- For vehicles version Van, the factory option EK1 is required for the electric"
+- Can be fit in right "
 KC19010476,"- Can't be fit in right hand drive vehicles
 - COMPATIBLE with automatic gearbox ALLISON
-- NOT SUITABLE FOR Euro VI-D vehicles"
+- NOT SUITAB"
 KC19010477,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit"
 KC19020481,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option
-NOT SUITABLE with vehicles equipped with s"
+- If the vehicle is equipped with"
 KC19030482,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles."
 KC19030483,"- ""E""=TM / QUE / UNICLA
 - Not available for TM / UP-UPF Poly V 6K A Ø119
-- Can be fit in right hand drive vehicles
-- ONLY FOR A/C COMPRESSOR ON LEFT HAND SIDE (direction of motion), consult Service Bu"
+- Can be fit in right hand "
 KC19040484,- Can be fit in right hand drive vehicles
 KC19040485,- Can be fit in right hand drive vehicles
 KC19040486,"- ""E""=TM / QUE
 - Can be fit in right hand drive vehicles.
-- Cannot be fit in vehicles with automatic gear box"
+- Cannot be fit in vehicles with automatic"
 KC19050487,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles."
 KC19060488,
 KC19060489,- Can be fit in right hand drive vehicles
 KC19060490,"- Can be fit in right hand drive vehicles
-- When the vehicle is not equipped with the automatic tensioner Ref. 21983653 order, P/N 1160000490."
+- When the vehicle is not equipped with the automatic tens"
 KC19070491,"- ""E""=TM / QUE
 - Suitability for right hand drive vehicles
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- If the vehicle is equipped with the "
+- According to bodybuilder indications, t"
 KC19070492,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option"
+- If the vehicle is equipped with"
 KC19090493,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- If the vehicle is equipped with the Start & Stop, IT IS MANDATORY to"
+- Suitabl"
 KC19090494,"- Water pipe must be Ref.: 7482241760.
 - Can be fit in right hand drive vehicles"
 KC19110495,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC19110496,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC19120497,"- ""E""=TM / QUE / UNICLA
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles.
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable f"
 KC20010498,"- ""E""=TM / QUE / UNICLA
 - RWD: Rear wheel drive
 - Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- If the vehicle is equipped with the Start & Stop, IT IS MANDATORY to "
+- Suitable"
 KC20050500,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- "
+- Suitabl"
 KC20060501,"- RWD= Rear wheel drive
 - ""E""=TM / QUE
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehi"
+- Suitable with AW"
 KC20060501-A,"- RWD= Rear wheel drive
 - ""E""=TM / QUE
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehi"
+- Suitable with AW"
 KC20070502,"- Can be fit in right hand drive vehicles.
-- Only for vehicles with original option FRIGOBLOCK (MAN commercial code 0P0GH)"
+- Only for vehicles with original option FRIGOBLOCK (MAN "
 KC20070503,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- ONLY FOR A/C COMPRESSOR ON DRIVER SIDE, consult Service Bulletin"
+"
 KC20070503-A,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- ONLY FOR A/C COMPRESSOR ON DRIVER SIDE, consult Service Bulletin"
+"
 KC20070504,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- ONLY FOR A/C COMPRESSOR ON PASSENGER SIDE, consult Service Bulletin"
+"
 KC20080505,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles equipped with automatic gear box
-- To install this kit it is essential to use the special tool code P/N 114000"
+- Suitable for vehicles equipped w"
 KC20080506,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box"
-KC20080507,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - "
+KC20080507,"- According to bodybuilder indications, the power take off is not suitable for the automatic gear bo"
 KC20080508,- Can be fit in right hand drive vehicles
 KC20090510,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- For vehicles WITHOUT N62/N63 crankshaft pulley - A654 032 10 00
-- Use crankshaft "
+- Suitabl"
 KC20120512,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Use crankshaft pulley locking tool 1149000398
-- Not included in the kit:
-Crankshaft pulley locking tool P/N 1149000398"
+- Use crankshaft pulle"
 KC21020513,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 way"
+In order to use SSMK 1183000514, t"
 KC21020514,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 way"
+In order to use SSMK 1183000514, t"
 KC21050517,"- ""E""=TM-UNICLA
 - Can be fit in right hand drive vehicles
-- Can be fit in vehicles with DSG automatic gear box
-- Can be fit on all wheel drive vehicles AWD"
+- Can be fit in vehicles with DSG automati"
 KC21070524,- Can be fit in right hand drive vehicles.
 KC21080525,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- For vehicles WITHOUT N62/N63 crankshaft pulley - A654 030 91 00
-- To disable START / STOP it is necessary "
+- For ve"
 KC21080526,"- Can be fit in right hand drive vehicles
-- Only for vehicles WITH original option MAN 120FF or 0P0GP
-- For vehicles not equipped with air conditioning, select also the crankshaft pulley P/N 111100014"
+- Only for vehicles WITH original option MAN 120FF or 0P0G"
 KC21090527,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- N"
+- Compatible with ZF "
 KC21090528,"- Can't be fit in right hand drive vehicles
 - Fittings not included in the kit
-- Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- N"
+- Compatible with ZF "
 KC21090529,"- Can be fit in right hand drive vehicles.
-- Only for vehicles with original option FRIGOBLOCK (MAN commercial code 0P0GH)
-- To mount a compressor TM/QP 21 you must buy the manifold P/N 1170000004"
+- Only for vehicles with original option FRIGOBLOCK (MAN "
 KC21090530,"- Can be fit in right hand drive vehicles
 - Not to be used on 18 or 19 ton vehicles"
 KC21090530-A,"- Can be fit in right hand drive vehicles
 - Not to be used on 18 or 19 ton vehicles"
 KC21090531,- Can be fit in right hand drive vehicles
 KC21090532,"- Kit not suitable for vehicles equipped with pneumatic suspension in the front axis.
-- ""E""=TM-UNICLA
-- Can be fit in right hand drive vehicles.
-- Not suitable for alternators over 130 Ah."
+- ""E""=TM-UNICL"
 KC21110533,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped WITH the N62/N63 crankshaft pulley - A654 030 91 00
-- To disable START / STOP i"
+- Only f"
 KC21110535,"- ""E""=TM / QUE / UNICLA;
 - RWD= TracciÃ³n trasera
-- Compatible en vehÃ­culos con el volante a la derecha."
+- Compatible en vehÃ­culos con el volante a la der"
 KC21110536,"- FWD= Front wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles."
 KC22010537,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- Suitable for vehicles with automatic gear box.
-- IMPORTANT Check if you have 1 or 2 automatic tensioners.
-If you have 1 tensioner,"
+- Suitable for vehicles with aut"
 KC22010538,"- Can be fit in right hand drive vehicles
-- Factory option 2NC is recommended in order to disable Start/Stop of the vehicle.
-In order to use SSMK 1183000415, the vehicle must be equipped from factory "
+- Factory option 2NC is recommended in order to disable St"
 KC22020540,"- Kit also suitable for vehicles equipped with pneumatic suspension in the front axis.
-- Can be fit in right hand drive vehicles
-- IMPORTANT: Check in the Service Bulletin SB15030025 the suitability o"
+- Can be fit "
 KC22020541,"- ""E""=TM / QUE / UNICLA
 - PTO Suitable for Automatic Gear Box
-- Suitable for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available w"
+- Suitable for right hand drive vehicl"
 KC22020542,"- Can be fit in right hand drive vehicles
 - Fittings not included in the kit
-- This kit is not suitable for vehicles with the option N7."
+- This kit is not suita"
 KC22020543,
 KC22030544,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Reference J533005727 original ISUZU"
+- Reference J533005727 original IS"
 KC22030546,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the whole N63 option: original bracket + N62/N63 crankshaft pulley - A654"
+- Only "
 KC22030547,"- ""E""=TM-QP
 - Can be fit in vehicles with DSG automatic gear box
-- Can be fit in right hand drive vehicles
-- This kit is only suitable for the original Volskwagen Crankshaft pulley 04L105251F"
+- Can be fit in right hand drive ve"
 KC22030549,"- ""E""=TM-QP
 - FWD= Front wheel drive
 - Can be fit in vehicles with DSG automatic gear box
-- Can be fit in right hand drive vehicles
-- This kit is only suitable for the original Volskwagen Crankshaft p"
+- Can be f"
 KC22060551,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option"
+- If the vehicle is equipped with"
 KC22070552,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KC22070553,"- Can be fit in right hand drive vehicles
-- Kit not suitable for vehicles 6x2 with directional rear axle (TA-HYDRS)
-- For vehicles not equipped with air conditioning, select also the idler pulley brac"
+- Kit not suitable for vehicles 6x2 with directional rear "
 KC22100555,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the whole N63 option: original bracket + N62/N63 crankshaft pulley - A654"
+- Only "
 KC22100556,"- ""E""=TM / QUE /
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles with automatic gear box.
-- If the vehicle is equipped with the Start & Stop system, this function must be disabled by"
+- Suitable for vehicles with automatic ge"
 KC22110557,"- Can be fit in right hand drive vehicles
 - Suitable for the automatic gear box.
-- The kit is suitable for vehicles with DTi8 engine, equipped with pneumatic suspension in the front axis.
-- See Fittin"
+- The kit is suitab"
 KC23010558,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox up to 2024.
-- Not suitable for MY2024 vehicles with ZF Automatic Transmission.
-- NOT COMPATIBLE with ALLISON automati"
+- Not"
 KC23010559,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must be increased by inst"
+- Suitable for the automatic gearb"
 KC23010559-A,"- FWD= Front wheel drive
 - Suitability for right hand drive vehicles
-- Suitability for automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with fact"
+- Suitability for automatic gea"
 KC23010559-B,"- FWD= Front wheel drive
 - Suitability for right hand drive vehicles
-- Suitability for automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with fact"
+- Suitability for automatic gea"
 KC23010560,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles with automatic gear box DUONIC"
 KC23010561,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Not suitable for vehicles equipped with WABCO ABS P"
+- Not suitable for veh"
 KC23010562,"- Can be fit in right hand drive vehicles
 - Suitable on vehicles WITH optional mPTO NA7"
 KC23020563,- Can be fit in right hand drive vehicles
 KC23020563-A,"- Kit suitable for both oversized and small oil sump
-- Model 35S16 / 35C16 / 40C16 / 50C16 can also be equipped with the 3.0l engine
-Vehicles with Hi-Matic 8-speed automatic gearbox manufactured betwe"
+- Model 35S16 / 35C16 / 40C16 / 50C16 can also "
 KC23030564,- Can be fit in right hand drive vehicles
 KC23030566,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- "
+- Suitabl"
 KC23030567,"- RWD= Rear wheel drive
 - ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles.
-- Suitable with AWD / 4X4
-- For vehicles WITHOUT N62/N63 crankshaft pulley - A654 032 10 00
-- Kit with automa"
+- Suitabl"
 KC23030568,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KC23040570,"- Can be fit in right hand drive vehicles
@@ -6877,175 +6469,132 @@ KC23040570-A,"- Can be fit in right hand drive vehicles
 - Only for vehicles WITHOUT the original N7 options"
 KC23040571,"- Can be fit in right hand drive vehicles.
 - Fittings not included in the kit
-- Not suitable for vehicles equipped with front pneumatic suspension
-- Not suitable for vehicles equipped with WABCO ABS P"
+- Not suitable for veh"
 KC23050572,- Can be fit in right hand drive vehicles
 KC23050572-B,- Can be fit in right hand drive vehicles
 KC23070573,"High Performance Kit, refer to Service Bulletin SB23100063
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehic"
+- Kit specially designed to optimize the "
 KC23070573-A,"High Performance Kit, refer to Service Bulletin SB23100063
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehic"
+- Kit specially designed to optimize the "
 KC23070573-B,"High Performance Kit, refer to Service Bulletin SB23100063
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehic"
+- Kit specially designed to optimize the "
 KC23070574,"- High Performance Kit
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehicle makes multiple deliveries on shor"
+- Kit specially designed to optimize the functionality of the refrigeration u"
 KC23070575,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Compatible on vehicles with all-wheel drive AWD
-- Can't be fit in right-hand drive vehicles
-- NOT SUITABLE with OEM auxiliary heating system 7VF / 7V"
+-"
 KC23070575-A,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can't be fit in right-hand drive vehicles
-- Suitable for the automatic gear box.
-To install this kit it is essential to use the special tool code:
-- "
+- Suita"
 KC23070575-C,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Compatible on vehicles with all-wheel drive AWD
-- Can't be fit in right-hand drive vehicles
-- NOT SUITABLE with OEM auxiliary heating system.
-- Suita"
+-"
 KC23100577,"High Performance Kit, refer to Service Bulletin SB23100063
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehic"
+- Kit specially designed to optimize the "
 KC23110579,"- CANNOT be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Use crankshaft pulley locking tool not included in the kit: P/N 1149007027
-- Not suitable for right-hand drive"
+- Use crankshaft pu"
 KC23110580,"- Compatible with right-hand drive vehicles
 - Only for vehicles equipped WITH the full OTOKAR option"
 KC23110581,"- RWD= Rear wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must be increased by insta"
+- Suitable for the automatic gearbo"
 KC24010582,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- Kit wit"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KC24020583,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with factor"
+- Suitable for the automatic gearb"
 KC24020584,"- RWD= Rear Wheel drive
 - ""E""=TM / QUE / UNICLA"
 KC24040586,"- Compatible with right-hand drive vehicles
 - Only for vehicles equipped WITH the full OTOKAR option"
 KC24040587,"High Performance Kit, refer to Service Bulletin
 - ""E""=TM / QUE / UNICLA
-- Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conver"
+- Can be fit in right hand d"
 KC24050588,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- Suitable for vehicles with automatic gear box.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this"
+- Suitable for vehicles with aut"
 KC24050588-A,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles.
-- Suitable for vehicles with automatic gear box.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this"
+- Suitable for vehicles with aut"
 KC24060590,"- ""E""=TM / QUE / UNICLA
 - Can't be fit in right-hand drive vehicles.
-- Suitable for the automatic gearbox
-- In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion i"
+- Suitable for the automatic ge"
 KC24060590-B,"- ""E""=TM / QUE / UNICLA
 - Can't be fit in right-hand drive vehicles.
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 "
+In order to use SSMK 1183000514"
 KC24060591,"- ""E""=TM / QUE / UNICLA
 - PTO Suitable for Automatic Gear Box
-- Suitable for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available w"
+- Suitable for right hand drive vehicl"
 KC24070594,"- KIT NOT SUITABLE FOR OVERSIZED OIL SUMP IVECO OPTION. Ref. 72617 (SB20100050)
-- ""S"" only for SD7H15 / SD7L15
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD"
+- ""S"" only for SD7H1"
 KC24070594-A,"- ""S"" only for SD7H15 / SD7L1
 - In the case of UNICLA, please ask Oliva Torras team
-- Can be fit in right hand drive vehicles
-- In case of a Euro 4, 5 o 5b+ vehicle, ask for the reference P/N 11280004"
+- Can be fit in "
 KC24080598,"High Performance Kit
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehicle makes multiple deliveries on short "
+- Kit specially designed to optimize the functionality of the refrigeration uni"
 KC24080598-A,"High Performance Kit
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehicle makes multiple deliveries on short "
+- Kit specially designed to optimize the functionality of the refrigeration uni"
 KC25010606,"- Can be fit in right hand drive vehicles
-- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed automatic gearbox, order P/N 1150008086
-- On vehicles with Automatic Transmission Hi-Matic, recommended t"
+- Vehicles 136hp, 160hp, 180hp with Hi-Matic 8-speed autom"
 KC25020607,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- Not suitable for ECOBLUE HYBRID version
-To install this kit it is es"
+- Suitabl"
 KC25020608,"- ""E""=TM / QUE / UNICLA
 - RWD: Rear wheel drive
 - Can be fit on AWD vehicles
-- Can be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- Not suitable for ECOBLUE HYBRID version
-"
+- Can be fit in right h"
 KC25020609,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Compatible on vehicles with all-wheel drive AWD
-- Can't be fit in right-hand drive vehicles
-- NOT SUITABLE with OEM auxiliary heating system 7VF / 7V"
+-"
 KC25020609-A,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Compatible on vehicles with all-wheel drive AWD
-- Can't be fit in right-hand drive vehicles
-- NOT SUITABLE with OEM auxiliary heating system.
-- Suita"
+-"
 KC25020609-B,"- ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
 - Compatible on vehicles with all-wheel drive AWD
-- Can't be fit in right-hand drive vehicles
-- NOT SUITABLE with OEM auxiliary heating system 7VF / 7V"
+-"
 KC25020610,"- ""E""=TM / QUE / UNICLA;
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles 4x2 and 4x4
-- Suitable for automatic gear box
-- Only suitable for electric steering pump"
+- Suitable for vehicles 4x2 and 4"
 KC25020611,"SUITABLE only with right-hand drive vehicles
 - ""E""=TM / QUE / UNICLA
-- Suitable for the automatic gearbox
-- In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion i"
+- Suitable for the automatic ge"
 KC25020612,"Long Maintenance Kit
 - FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must"
+- Suitable fo"
 KC25060618,"SUITABLE only with right-hand drive vehicles
 - ""E""=TM / QUE / UNICLA
 - FWD: Front wheel drive
-- Compatible on vehicles with all-wheel drive AWD
-- NOT SUITABLE with OEM auxiliary heating system.
-- Suit"
+- Comp"
 KC25070619,"Long Maintenance Kit
 - ""E""=TM / QUE
 - Can be fit on AWD vehicles
-- Can be fit in right hand drive vehicles
-- UNICLA: Clutch drive plate Ø120 not suitable.
-- Vehicles equipped with QTOR bar - Buy manif"
+- Can be fit in right hand drive ve"
 KC25070620,"High Performance Kit & Long Maintenance
 - Kit suitable for both oversized and small oil sump
-- ""E""=TM / QUE
-- Can be fit in right hand drive vehicles
-- Vehicles equipped with QTOR bar - Buy manifold P"
+- ""E""=T"
 KC25070621,"Long Maintenance Kit
 - FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must"
+- Suitable fo"
 KC25080622,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Reference J533005727 original ISUZU
-- The cab must be lowered using the original ISUZU tool Part No. J533005845B
-- For vehicles WITH"
+- Reference J533005727 original IS"
 KC25080623,"- High Performance Kit
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehicle makes multiple deliveries on shor"
+- Kit specially designed to optimize the functionality of the refrigeration u"
 KC25080624,"High Performance Kit
 - Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on A"
+- Suitable for vehicles with 8-Speed "
 KC25090625,"High Performance Kit
-- Kit specially designed to optimize the functionality of the refrigeration unit in urban environments and high temperatures, where the vehicle makes multiple deliveries on short "
+- Kit specially designed to optimize the functionality of the refrigeration uni"
 KC25100626,- Compatible with right-hand drive vehicles
 KC25100629,- Can be fit in right hand drive vehicles.
 KC26010630,"- FWD= Front wheel drive
@@ -7057,41 +6606,33 @@ KF22070900,"- Suitable for Towing Hook PSA code 98 296 445 80
 KF22090901,"- Suitable for Towing Hook PSA code 98 296 445 80
 - Suitable only for L2-L3 chassis"
 KF23050904,"- Can be fit in right hand drive vehicles.
-- Suitable for vehicles with Manual and Automatic Transmission.
-- Suitable for L1 - L2 chassis only."
+- Suitable for vehicles with Manual and Automatic Transmi"
 KG13049001,- Can be fit in right hand drive vehicles.
-KG13049002,"THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES: A6510300803, A6510300703, A6510351612, A6510350912
-- THIS KIT IS COMPATIBLE ONLY WITH VEHICLES WITH INTERCO"
+KG13049002,THIS KIT IS ONLY COMPATIBLE WITH VEHICLES THAT HAVE THE ORIGINAL CRANKSHAFT PULLEY MERCEDES: A651030
 KG13049003,"- Kit not suitable for vehicles with Start/Stop
-- N63 option is not necessary, although it does not imply any incompatibility.
-- This kit is only compatible with vehicles that have the original cranks"
+- N63 option is not necessary, although it does not "
 KG13069005,UNDER REQUEST
 KG13089007,- Can be fit in right hand drive vehicles
 KG15069010,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE "
 KG15079011,"- RWD= Rear wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles
-- Requires high idle - CABADP -"
+- According to bodybuilder indications, the power take off is not suitable f"
 KG15079012,"- Can be fit in right hand drive vehicles
 - Can be fit on AWD vehicles
-- Model 35S16 / 35C16 can also be equipped with the 2.3l engine"
+- Model 35S16 / 35C16 can als"
 KG15099013,"- Suitable for vehicles with manual gear box or 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 can also be equipped with the 3.0l engine"
+- Can be fi"
 KG16029014,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box
-- To install this kit it is essential to use the special tool code P/N 1140000155
-In order to use SSM"
+-"
 KG16029015,"- Can be fit in right hand drive vehicles
-- It is essential to use the supplied centring tool. Check Service Bulletin SB17050029
-- To install this kit it is essential to use the special tool code P/N "
+- It is essential to use the supplied centring tool. Check"
 KG16029016,"- Model 35S15 / 35C15 can also be equipped with the 3.0l engineÃ§
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic."
+- Suitable for vehicles with 8-Spe"
 KG16039017,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box
-- To install this kit it is essential to use the special tool code P/N 1140000155 and the bracket P/N"
+-"
 KG16129019,"- Can be fit in right hand drive vehicles.
 - Kit not suitable for the model 2017."
 KG17049020,"- Can be fit in right hand drive vehicles
@@ -7099,236 +6640,170 @@ KG17049020,"- Can be fit in right hand drive vehicles
 KG17049020-B,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles with automatic gear box DUONIC"
 KG17059021,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KG17109022,"- RWD: Rear wheel drive
 - Can be fit on AWD vehicles
 - Can be fit in right hand drive vehicles
-- To install this kit it is essential to use the special tool code P/N 1149000422"
+- To "
 KG18059024,"- Can be fit in right hand drive vehicles
 - Use tool to block the flywheel P/N 1149000412
-- The kit is not suitable for vehicles 4x4
-In order to use SSMK 183000514, the vehicle must be equipped from f"
+- The kit "
 KG18109025,"- Kit suitable for both oversized and small oil sump
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 / 40C16 / 50C16 can also b"
+- Suitable for vehicles with 8-Speed Automatic "
 KG18109026,"- FWD= Front wheel drive
 - Can be fit in right hand drive vehicles."
 KG20019029,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- To install this kit it is "
+- According to bodybuilder indications, the power take off is not suitable "
 KG20029030,"- Can be fit in right hand drive vehicles
 - Suitable for front suspension QTOR.
-- Can be fit on AWD vehicles
-- Model 35S16 / 35C16 can also be equipped with the 2.3l engine"
+- Can be fit on AWD "
 KG20069031,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box"
 KG20069032,"- Can't be fit in right hand drive vehicles
 - Compatible with ZF automatic gearbox
-- NOT COMPATIBLE with ALLISON automatic gearbox"
+- NOT COMPATIBLE "
 KG20099033,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box"
 KG20109034,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equipped with the crankshaft p"
+- Only for vehicles equipped with"
 KG20109034-A,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equipped with the crankshaft p"
+- Only for vehicles equipped with"
 KG21069036,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 way"
+In order to use SSMK 1183000514, t"
 KG22039037,"- FWD= Front wheel drive
 - Can be fit in right hand drive vehicles.
-- Only for vehicles equipped WITH the N62/N63 crankshaft pulley - A654 030 91 00
-- To disable START / STOP it is necessary to visit "
+- Only for vehicles equipped WIT"
 KG22069038,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KG23119039,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must be increased by inst"
+- Suitable for the automatic gearb"
 KG24079040,"- Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000514, the vehicle must be equip"
 KG24079040-A,"- Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000514, the vehicle must be equip"
 KG24079040-B,"- Can be fit in right hand drive vehicles
-In order to use SSMK 1183000514, the vehicle must be equipped from factory with Conversion interface Box"" 081 option (connector 15 ways C036L1A)"
+In order to use SSMK 1183000514, the vehicle must be equip"
 KG25099041,"- RWD= Rear wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with a Start & Stop system, the idle speed must be increased by insta"
+- Suitable for the automatic gearbo"
 KG26039043,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles"
 KH14127001,"- 15 cc: P1DCN2015XA40C03N HPI
 - FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Can be fit in right hand drive vehicles"
+- According to bodybuilder indications, the "
 KH15017002,"- 15 cc: P1DCN2015XA40C03N HPI
 - 12 cc: P1DCN2012XA40C03N HPI
 - FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitabil"
+- According t"
 KH15017003,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- It is r"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KH16017005,"- 8 cc: P1DCN2008CA40C03N HPI
 - ""E""=TM / QUE / UNICLA
 - Suitability for right hand drive vehicles
-- If the vehicle is equipped with the Start & Stop - STOSTA - it requires high idle - available with f"
+- "
 KH17067006,"- Can be fit in right hand drive vehicles
 - The kit is not suitable for vehicles 4x4
-- Clutch 0903740-3017 KEB"
+- Clutch 090374"
 KH17077007,"- 15 cc: P1DCN2015XA40C03N HPI
 - 12 cc: P1DCN2012XA40C03N HPI
 - FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitabil"
+- According t"
 KH17087008,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Suitable for automatic gear box
-- Clutch 0903740-3017 KEB"
+- Suitable for automat"
 KH17087009,"- Can be fit in right hand drive vehicles
 - Suitable for automatic gear box"
 KH17127010,"- Use the special tool: P/N 1149000115 to fit the kit (ref. Toyota 09330-00021 and 09213-58013).
-- Can be fit in right hand drive vehicles
-- Not included in the kit:
-Pump clutch P/N 1112007021
-Hydraul"
+- C"
 KH19037011,"- Can be fit in right hand drive vehicles.
-- If the vehicle is equipped with the Start & Stop, it is necessary to disable this option (check installation procedure)
-- Not suitable for the automatic ge"
+- If the vehicle is equipped with the Start & Stop, it is"
 KH19067012,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KH19067013,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Suitable for automatic gear box
-- Not included in the kit:
-Pump clutch P/N 1112007022
-Hydraulic pump 12,7cc (For other d"
+- Suitable for automat"
 KH19067013-C,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Suitable for automatic gear box
-- Not included in the kit:
-Pump clutch P/N 1112007021
-Hydraulic pump 12,7cc (For other d"
+- Suitable for automat"
 KH19107014,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Use crankshaft pulley locking tool 1149000398
-- Not included in the kit:
-Crankshaft pulley locking tool P/N 1149000398
-P"
+- Use crankshaft pulle"
 KH19107015,"- Suitable for MY2024 vehicles
 - Model 35S15 / 35C15 can also be equipped with the 3.0l engine
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic.
-- In case of Euro 4, 5, 5b+, ask fo"
+- Sui"
 KH19117016,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
 Pump clutch P/N 1112007021
-Hydraulic pump 12,7cc (For other displacement consult) P/N 1197121000"
+Hydr"
 KH20017017,"- Can be fit in right hand drive vehicles
-- Suitable for vehicles with 8-Speed Automatic Transmission Hi-Matic. Use crankshaft pulley locking tool P/N 1149000398
-- Can be fit on AWD vehicles
-- Not inc"
+- Suitable for vehicles with 8-Speed Automatic Transmissio"
 KH20087018,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
-- Use tool to block the flywheel P/N 1149000412
-- According to bodybuilder indications, the power take off is not suitable for the aut"
+- Use tool to block the flywheel P"
 KH20107019,"- RWD= Rear wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equi"
+- Only "
 KH21017020,"- FWD: Front wheel drive
 - Can be fit in right hand drive vehicles
-- Not suitable for ECOBLUE HYBRID version
-- Not included in the kit:
-Pump clutch P/N 1112007022
-Hydraulic pump 12,7cc (For other disp"
+- Not suitable for ECOBLUE HYBRID"
 KH21087022,"- FWD: Front wheel drive
 - Suitable with right hand drive vehicles
-- Suitable for the automatic gear box.
-To install this kit it is essential to use the special tool code:
-- P/N 1149000422 (FOR MANUAL"
+- Suitable for the automatic gear"
 KH21087022-B,"- FWD: Front wheel drive
 - Can't be fit in right hand drive vehicles
-- Suitable for the automatic gear box.
-- Not suitable for ECOBLUE HYBRID version
-To install this kit it is essential to use the spe"
+- Suitable for the automatic ge"
 KH21087023,"- FWD= Front wheel drive
-- According to bodybuilder indications, the power take off is not suitable for the automatic gear box.
-- Suitability for right hand drive vehicles
-- If the vehicle is equipped"
+- According to bodybuilder indications, the power take off is not suitable "
 KH21097024,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
 Pump clutch P/N 1112007022
-Hydraulic pump 12,7cc (For other displacement consult) P/N 1197121000"
+Hydr"
 KH21117025,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles equipped with automatic gear box
-- Not included in the kit:
-Pump clutch P/N 1112007022
-Hydraulic pump 16cc (For other displacement con"
+-"
 KH22117026,"- FWD= Front wheel drive
 - Can be fit in right hand drive vehicles.
 - Suitable with AWD / 4X4
-- Only for vehicles equipped with the N62/N63 crankshaft pulley - A654 032 10 00
-- When vehicle is not equ"
+- Only"
 KH23077027,"- Can be fit in right hand drive vehicles
 - Suitable for vehicles 4x2 and 4x4
-- Use crankshaft pulley locking tool not included in the kit: P/N 1149007027
-Pump clutch P/N 1112007022
-Hydraulic pump 12,"
+- Use crankshaft pulle"
 KH23117028,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- If the vehicle is equipped with the Start & Stop, it requires high idle - available with factor"
+- Suitable for the automatic gearb"
 KH24057030,"- ""E""=TM / QUE / UNICLA
 - Can be fit in right hand drive vehicles
 - Suitable for automatic gear box
-- Not included in the kit:
-Pump clutch P/N 1112007022
-Hydraulic pump 16 cc (For other displacement c"
+"
 KH24067032,"- RWD= Rear Wheel drive
 - Can't be fit in right hand drive vehicles.
 - Not included in the kit:
-Pump clutch P/N 1112007022
-Hydraulic pump 16cc (For other displacement consult) P/N 1197161000"
+Pump"
 KH24087033,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
 Pump clutch P/N 1112007022
-Hydraulic pump 12,7cc (For other displacement consult) P/N 1197121000"
+Hydr"
 KH24087033-A,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
 Pump clutch P/N 1112007022
-Hydraulic pump 12,7cc (For other displacement consult) P/N 1197121000"
+Hydr"
 KH25017034,"- FWD= Front wheel drive
 - Suitable for right hand drive vehicles
-- Suitable for the automatic gearbox
-- Kit with automatic tensioner. Long maintenance intervals
-- If the vehicle is equipped with the "
+- Suitable for the automatic gearb"
 KH25107036,"- FWD: Front wheel drive
 - Suitable with right hand drive vehicles
-- Suitable for the automatic gear box.
-To install this kit it is essential to use the special tool code:
-- P/N 1149000422 (FOR MANUAL"
+- Suitable for the automatic gear"
 KH25127038,"- Can be fit in right hand drive vehicles
 - Not included in the kit:
 Pump clutch P/N 1112007022
-Hydraulic pump 16cc P/N 1197161000
-Hydraulic pump 19cc P/N 1197191000"
-Kits T6_old original sump oil,"The following available kits for the VW T5 are also suitable for vehicles VW T6 equipped with the original sump oil Ref: 03L 103 603H:
-KC10010188
-KC10040191
-KC10070197
-KC10070198"
+Hydr"
+Kits T6_old original sump oil,The following available kits for the VW T5 are also suitable for vehicles VW T6 equipped with the or
 """
 
 _SYSTEM_PROMPT_CACHE = None
