@@ -12,7 +12,8 @@ EXCEL_PATH  = BASE_DIR / "bbdd_kits_v8.xlsx"
 PROMPT_PATH = BASE_DIR / "prompt_selector_kits_v10.md"
 
 # ── Model ─────────────────────────────────────────────────────────────────────
-MODEL = "claude-sonnet-4-20250514"
+# Correct model string for Claude Sonnet 4 (claude-sonnet-4-5 is the API name)
+MODEL = "claude-sonnet-4-5"
 
 # ── Columns for the selection table (no notes — reduces tokens 54%) ───────────
 _SEL_COLS = [
@@ -31,8 +32,8 @@ _SEL_COLS = [
 ]
 
 
-# ── Lazy-loaded system prompt (built once, cached in module variable) ─────────
-_SYSTEM_PROMPT_CACHE: "str | None" = None
+# ── Lazy-loaded system prompt ─────────────────────────────────────────────────
+_SYSTEM_PROMPT_CACHE = None
 
 
 def _build_system_prompt() -> str:
@@ -65,7 +66,6 @@ def _build_system_prompt() -> str:
 
 
 def get_system_prompt() -> str:
-    """Return the full system prompt (lazy-loaded and cached after first call)."""
     global _SYSTEM_PROMPT_CACHE
     if _SYSTEM_PROMPT_CACHE is None:
         _SYSTEM_PROMPT_CACHE = _build_system_prompt()
@@ -80,10 +80,6 @@ def _get_client() -> anthropic.Anthropic:
 
 # ── Public API ────────────────────────────────────────────────────────────────
 def chat(messages: list) -> str:
-    """
-    Send the conversation history to Claude and return the assistant reply.
-    messages: list of {"role": "user"|"assistant", "content": str}
-    """
     client = _get_client()
     response = client.messages.create(
         model=MODEL,
@@ -95,13 +91,8 @@ def chat(messages: list) -> str:
 
 
 def chat_with_image(messages: list, image_data: bytes, media_type: str = "image/jpeg") -> str:
-    """
-    Send a conversation with an image attachment (e.g. a vehicle registration document).
-    """
     client = _get_client()
-
     img_b64 = base64.standard_b64encode(image_data).decode("utf-8")
-
     msgs = list(messages)
     last_user_text = msgs[-1]["content"] if msgs else ""
     msgs[-1] = {
@@ -109,16 +100,11 @@ def chat_with_image(messages: list, image_data: bytes, media_type: str = "image/
         "content": [
             {
                 "type": "image",
-                "source": {
-                    "type": "base64",
-                    "media_type": media_type,
-                    "data": img_b64,
-                },
+                "source": {"type": "base64", "media_type": media_type, "data": img_b64},
             },
             {"type": "text", "text": last_user_text},
         ],
     }
-
     response = client.messages.create(
         model=MODEL,
         max_tokens=2048,
