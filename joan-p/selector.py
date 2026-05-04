@@ -13,7 +13,7 @@ PROMPT_PATH = BASE_DIR / "prompt_selector_kits_v10.md"
 
 # ── Model ─────────────────────────────────────────────────────────────────────
 # Correct model string for Claude Sonnet 4 (claude-sonnet-4-5 is the API name)
-MODEL = "claude-sonnet-4-5"
+MODEL = "claude-sonnet-4-20250514"
 
 # ── Columns for the selection table (no notes — reduces tokens 54%) ───────────
 _SEL_COLS = [
