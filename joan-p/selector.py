@@ -11,14 +11,12 @@ _CACHE = None
 def get_system_prompt() -> str:
     global _CACHE
     if _CACHE is None:
-        prompt   = (BASE / "prompt_selector_kits_v10.md").read_text(encoding="utf-8")
-        bd_sel   = (BASE / "bd_sel.csv").read_text(encoding="utf-8")
-        bd_notes = (BASE / "bd_notes.csv").read_text(encoding="utf-8")
+        prompt = (BASE / "prompt_selector_kits_v10.md").read_text(encoding="utf-8")
+        bd_sel = (BASE / "bd_sel.csv").read_text(encoding="utf-8")
         _CACHE = (
             prompt
             + "\n\n---\n\n"
-            + "## BASE DE DATOS\n\n```csv\n" + bd_sel + "\n```\n\n"
-            + "## NOTAS TÉCNICAS\n\n```csv\n" + bd_notes + "\n```\n"
+            + "## BASE DE DATOS\n\n```csv\n" + bd_sel + "\n```\n"
         )
     return _CACHE
 
