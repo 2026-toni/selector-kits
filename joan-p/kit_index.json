@@ -1,0 +1,257 @@
+{
+  "|Kit bomba hidráulica": {
+    "file": "__kit_bomba_hidraulica.csv"
+  },
+  "|Kit compresor A/C": {
+    "file": "__kit_compresor_a_c.csv"
+  },
+  "|Kit compresor frío industrial": {
+    "file": "__kit_compresor_frio_industrial.csv"
+  },
+  "|Kit generador": {
+    "file": "__kit_generador.csv"
+  },
+  "ACCESSORY|Kit compresor A/C": {
+    "file": "accessory__kit_compresor_a_c.csv"
+  },
+  "ACCESSORY|Otro": {
+    "file": "accessory__otro.csv"
+  },
+  "CITROEN|Kit alternador": {
+    "file": "citroen__kit_alternador.csv"
+  },
+  "CITROEN|Kit bomba hidráulica": {
+    "file": "citroen__kit_bomba_hidraulica.csv"
+  },
+  "CITROEN|Kit chasis": {
+    "file": "citroen__kit_chasis.csv"
+  },
+  "CITROEN|Kit compresor A/C": {
+    "file": "citroen__kit_compresor_a_c.csv"
+  },
+  "CITROEN|Kit compresor frío industrial": {
+    "file": "citroen__kit_compresor_frio_industrial.csv"
+  },
+  "CITROEN|Kit generador": {
+    "file": "citroen__kit_generador.csv"
+  },
+  "DAF|Kit compresor A/C": {
+    "file": "daf__kit_compresor_a_c.csv"
+  },
+  "DAF|Kit compresor frío industrial": {
+    "file": "daf__kit_compresor_frio_industrial.csv"
+  },
+  "FIAT|Kit alternador": {
+    "file": "fiat__kit_alternador.csv"
+  },
+  "FIAT|Kit bomba hidráulica": {
+    "file": "fiat__kit_bomba_hidraulica.csv"
+  },
+  "FIAT|Kit chasis": {
+    "file": "fiat__kit_chasis.csv"
+  },
+  "FIAT|Kit compresor frío industrial": {
+    "file": "fiat__kit_compresor_frio_industrial.csv"
+  },
+  "FIAT|Kit generador": {
+    "file": "fiat__kit_generador.csv"
+  },
+  "FORD|Kit alternador": {
+    "file": "ford__kit_alternador.csv"
+  },
+  "FORD|Kit bomba hidráulica": {
+    "file": "ford__kit_bomba_hidraulica.csv"
+  },
+  "FORD|Kit compresor A/C": {
+    "file": "ford__kit_compresor_a_c.csv"
+  },
+  "FORD|Kit compresor frío industrial": {
+    "file": "ford__kit_compresor_frio_industrial.csv"
+  },
+  "FORD|Kit generador": {
+    "file": "ford__kit_generador.csv"
+  },
+  "IRISBUS|Kit compresor A/C": {
+    "file": "irisbus__kit_compresor_a_c.csv"
+  },
+  "ISUZU|Kit alternador": {
+    "file": "isuzu__kit_alternador.csv"
+  },
+  "ISUZU|Kit compresor frío industrial": {
+    "file": "isuzu__kit_compresor_frio_industrial.csv"
+  },
+  "ISUZU|Kit generador": {
+    "file": "isuzu__kit_generador.csv"
+  },
+  "IVECO|Kit alternador": {
+    "file": "iveco__kit_alternador.csv"
+  },
+  "IVECO|Kit bomba hidráulica": {
+    "file": "iveco__kit_bomba_hidraulica.csv"
+  },
+  "IVECO|Kit compresor A/C": {
+    "file": "iveco__kit_compresor_a_c.csv"
+  },
+  "IVECO|Kit compresor frío industrial": {
+    "file": "iveco__kit_compresor_frio_industrial.csv"
+  },
+  "IVECO|Kit generador": {
+    "file": "iveco__kit_generador.csv"
+  },
+  "MAN|Kit alternador": {
+    "file": "man__kit_alternador.csv"
+  },
+  "MAN|Kit compresor frío industrial": {
+    "file": "man__kit_compresor_frio_industrial.csv"
+  },
+  "MERCEDES|Kit alternador": {
+    "file": "mercedes__kit_alternador.csv"
+  },
+  "MERCEDES|Kit bomba hidráulica": {
+    "file": "mercedes__kit_bomba_hidraulica.csv"
+  },
+  "MERCEDES|Kit compresor A/C": {
+    "file": "mercedes__kit_compresor_a_c.csv"
+  },
+  "MERCEDES|Kit compresor frío industrial": {
+    "file": "mercedes__kit_compresor_frio_industrial.csv"
+  },
+  "MERCEDES|Kit generador": {
+    "file": "mercedes__kit_generador.csv"
+  },
+  "MITSUBISHI|Kit alternador": {
+    "file": "mitsubishi__kit_alternador.csv"
+  },
+  "MITSUBISHI|Kit compresor frío industrial": {
+    "file": "mitsubishi__kit_compresor_frio_industrial.csv"
+  },
+  "MITSUBISHI|Kit generador": {
+    "file": "mitsubishi__kit_generador.csv"
+  },
+  "MITSUBISHI FUSO|Kit alternador": {
+    "file": "mitsubishi_fuso__kit_alternador.csv"
+  },
+  "MITSUBISHI FUSO|Kit compresor frío industrial": {
+    "file": "mitsubishi_fuso__kit_compresor_frio_industrial.csv"
+  },
+  "NEOPLAN|Kit compresor A/C": {
+    "file": "neoplan__kit_compresor_a_c.csv"
+  },
+  "NISSAN|Kit alternador": {
+    "file": "nissan__kit_alternador.csv"
+  },
+  "NISSAN|Kit bomba hidráulica": {
+    "file": "nissan__kit_bomba_hidraulica.csv"
+  },
+  "NISSAN|Kit chasis": {
+    "file": "nissan__kit_chasis.csv"
+  },
+  "NISSAN|Kit compresor frío industrial": {
+    "file": "nissan__kit_compresor_frio_industrial.csv"
+  },
+  "NISSAN|Kit generador": {
+    "file": "nissan__kit_generador.csv"
+  },
+  "OPEL/VAUXHALL|Kit alternador": {
+    "file": "opel_vauxhall__kit_alternador.csv"
+  },
+  "OPEL/VAUXHALL|Kit bomba hidráulica": {
+    "file": "opel_vauxhall__kit_bomba_hidraulica.csv"
+  },
+  "OPEL/VAUXHALL|Kit chasis": {
+    "file": "opel_vauxhall__kit_chasis.csv"
+  },
+  "OPEL/VAUXHALL|Kit compresor frío industrial": {
+    "file": "opel_vauxhall__kit_compresor_frio_industrial.csv"
+  },
+  "OPEL/VAUXHALL|Kit generador": {
+    "file": "opel_vauxhall__kit_generador.csv"
+  },
+  "OPTARE|Kit compresor A/C": {
+    "file": "optare__kit_compresor_a_c.csv"
+  },
+  "PEUGEOT|Kit alternador": {
+    "file": "peugeot__kit_alternador.csv"
+  },
+  "PEUGEOT|Kit bomba hidráulica": {
+    "file": "peugeot__kit_bomba_hidraulica.csv"
+  },
+  "PEUGEOT|Kit chasis": {
+    "file": "peugeot__kit_chasis.csv"
+  },
+  "PEUGEOT|Kit compresor frío industrial": {
+    "file": "peugeot__kit_compresor_frio_industrial.csv"
+  },
+  "PEUGEOT|Kit generador": {
+    "file": "peugeot__kit_generador.csv"
+  },
+  "RAM/FIAT|Kit alternador": {
+    "file": "ram_fiat__kit_alternador.csv"
+  },
+  "RAM/FIAT|Kit compresor frío industrial": {
+    "file": "ram_fiat__kit_compresor_frio_industrial.csv"
+  },
+  "RENAULT|Kit alternador": {
+    "file": "renault__kit_alternador.csv"
+  },
+  "RENAULT|Kit bomba hidráulica": {
+    "file": "renault__kit_bomba_hidraulica.csv"
+  },
+  "RENAULT|Kit chasis": {
+    "file": "renault__kit_chasis.csv"
+  },
+  "RENAULT|Kit compresor A/C": {
+    "file": "renault__kit_compresor_a_c.csv"
+  },
+  "RENAULT|Kit compresor frío industrial": {
+    "file": "renault__kit_compresor_frio_industrial.csv"
+  },
+  "RENAULT|Kit generador": {
+    "file": "renault__kit_generador.csv"
+  },
+  "RENAULT TRUCKS|Kit alternador": {
+    "file": "renault_trucks__kit_alternador.csv"
+  },
+  "RENAULT TRUCKS|Kit bomba hidráulica": {
+    "file": "renault_trucks__kit_bomba_hidraulica.csv"
+  },
+  "RENAULT TRUCKS|Kit compresor A/C": {
+    "file": "renault_trucks__kit_compresor_a_c.csv"
+  },
+  "RENAULT TRUCKS|Kit compresor frío industrial": {
+    "file": "renault_trucks__kit_compresor_frio_industrial.csv"
+  },
+  "RENAULT TRUCKS|Kit generador": {
+    "file": "renault_trucks__kit_generador.csv"
+  },
+  "TOYOTA|Kit alternador": {
+    "file": "toyota__kit_alternador.csv"
+  },
+  "TOYOTA|Kit bomba hidráulica": {
+    "file": "toyota__kit_bomba_hidraulica.csv"
+  },
+  "TOYOTA|Kit chasis": {
+    "file": "toyota__kit_chasis.csv"
+  },
+  "TOYOTA|Kit compresor frío industrial": {
+    "file": "toyota__kit_compresor_frio_industrial.csv"
+  },
+  "TOYOTA|Kit generador": {
+    "file": "toyota__kit_generador.csv"
+  },
+  "VOLVO|Kit compresor A/C": {
+    "file": "volvo__kit_compresor_a_c.csv"
+  },
+  "VOLVO|Kit compresor frío industrial": {
+    "file": "volvo__kit_compresor_frio_industrial.csv"
+  },
+  "VW|Kit compresor frío industrial": {
+    "file": "vw__kit_compresor_frio_industrial.csv"
+  },
+  "VW|Kit generador": {
+    "file": "vw__kit_generador.csv"
+  },
+  "VW|Otro": {
+    "file": "vw__otro.csv"
+  }
+}
