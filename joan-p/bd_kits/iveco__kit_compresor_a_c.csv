@@ -1,0 +1,62 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KB09048005,Kit compresor A/C,IVECO,DAILY 3.0,F1C 3.0 (Euro 3-4),2004,,2024,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.998,any,,"1A Ø150
+4.573 rpm",#¿NOMBRE?,2004,,SD7H15 | TM 16 / QP 16 | UP 170 / UPF 170
+KB10018012,Kit compresor A/C,IVECO,DAILY 3.0,F1C 3.0 (Euro 3-4),2004,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,no,"Poly-V 8K A Ø137
+4.087 rpm",,N,2004,,TM 21 / QP 21
+KB11068028,Kit compresor A/C,IVECO,DAILY 3.0,F1C 3.0 (Euro 3-4),2004,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,,"1A Ø150
+4.573 rpm",#¿NOMBRE?,2004,,TM 21 / QP 21
+KB11128036,Kit compresor A/C,IVECO,DAILY 3.0 MY2012,F1CE3481K (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,,"1A Ø150
+3.730 rpm",#¿NOMBRE?,01/2012,,TM 21 / QP 21
+KB12018037,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481K (Euro 5),2012,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,no,"Poly-V 8K A Ø137
+4.090 rpm",,N,01/2012,,TM 21 / QP 21
+KB12028038,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL411F*A (Euro 6),2014,,2024,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.998,any,,"1A Ø145
+3.860 rpm",#¿NOMBRE?,08/2014,,TM 16 / QP 16 | UP 170 / UPF 170
+KB12118045,Kit compresor A/C,IVECO,DAILY 3.0 MY2012,F1CE3481K (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,no,,"1A Ø150
+4.150 rpm",#¿NOMBRE?,01/2012,,TM 16 (x2)
+KB12118046,Kit compresor A/C,IVECO,DAILY 3.0,F1C 3.0 (Euro 3-4),2004,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,no,,"1A Ø150, 4.573 rpm
+4K A Ø159, 4.676 rpm",#¿NOMBRE?,2004,,TM 16 (x2) | UP 170 / UPF 170 (x2)
+KB13038048,Kit compresor A/C,IVECO,EuroCargo,F4AFE611A*C (Euro 6) | F4AFE611E*C (Euro 6) | F4AFE611C*C (Euro 6) | F4AFE611D*C (Euro 6),2014,,2014,,,,Yes,,,ok,,,,,,,,,,,,,,,,6 / 6.700,any,"2B Ø158
+2.975 rpm",,N,2014,,TM 31 / QP 31
+KB13118055,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481D (Euro 5),2011,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm","Poly-V 8K A Ø137
+3.960 rpm",N-E,11/2011,,TM 21 / QP 21
+KB15018069,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481K (Euro 5) | F1CFL411H*C (Euro 5b+) | F1CFL411F*A (Euro 6),2012,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm","Poly-V 8K A Ø119
+4.560 rpm",N-E,01/2012,,SD7H15 | SD7L15 | TM 16 / QP 16 | UP 170 / UPF 170
+KB15018069,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL411F*A (Euro VID) | F1CFL4115 (Euro VID),2019,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm","Poly-V 8K A Ø119
+4.560 rpm",N-E,09/2019,,SD7H15 | SD7L15 | TM 16 / QP 16 | UP 170 / UPF 170
+KB15018069,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2021,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm","Poly-V 8K A Ø119
+4.560 rpm",N-E,09/2021,,SD7H15 | SD7L15 | TM 16 / QP 16 | UP 170 / UPF 170
+KB15028070,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481K (Euro 5) | F1CFL411H*C (Euro 5b+) | F1CFL411F*A (Euro 6),2012,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm","Poly-V 8K A Ø137
+3.960 rpm",N-E,01/2012,,TM 21 / QP 21
+KB15028070,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL411F*A (Euro VID) | F1CFL4115 (Euro VID),2019,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm","Poly-V 8K A Ø137
+3.960 rpm",N-E,09/2019,,TM 21 / QP 21
+KB15028070,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2021,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm","Poly-V 8K A Ø137
+3.960 rpm",N-E,09/2021,,TM 21 / QP 21
+KB17118085,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481K (Euro 5) | F1CFL411H*C (Euro 5b+) | F1CFL411F*A (Euro 6),2012,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm",,N,01/2012,,TM 16 / QP 16 | UP 170 / UPF 170
+KB17118085,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL411F*A (Euro VID) | F1CFL4115 (Euro VID),2019,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm",,N,09/2019,,TM 16 / QP 16 | UP 170 / UPF 170
+KB17118085,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2021,2024,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm",,N,09/2021,08/2024,TM 16 / QP 16 | UP 170 / UPF 170
+KB17118086,Kit compresor A/C,IVECO,DAILY 3.0,F1CE3481K (Euro 5) | F1CFL411H*C (Euro 5b+) | F1CFL411F*A (Euro 6),2012,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm",,N,01/2012,,TM 21 / QP 21
+KB17118086,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL411F*A (Euro VID) | F1CFL4115 (Euro VID),2019,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm",,N,09/2019,,TM 21 / QP 21
+KB17118086,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2021,2024,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm",,N,09/2021,08/2024,TM 21 / QP 21
+KB23108115,Kit compresor A/C,IVECO,EuroCargo Tector 7 4X4,F4AFE611A*C (Euro 6) | F4AFE611E*C (Euro 6) | F4AFE611C*C (Euro 6),2014,,2014,,,,Yes,,,not,,,,,,,,,,,,Yes,,,,6 / 6.728,any,"2B Ø158
+2.975 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KB24088117,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2024,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm",,N,09/2024,,TM 16 / QP 16
+KB24088118,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2024,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm",,N,09/2024,,TM 21 / QP 21
+KB25018120,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2024,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+3.960 rpm",,N,09/2024,,TM 16 / QP 16
+KB25018121,Kit compresor A/C,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2024,,2024,,,,Yes,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+4.560 rpm",,N,09/2024,,TM 21 / QP 21

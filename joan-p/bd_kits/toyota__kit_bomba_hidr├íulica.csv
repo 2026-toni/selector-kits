@@ -1,0 +1,7 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KH19037011,Kit bomba hidráulica,TOYOTA,PROACE,DW10FE (Euro 6) | DW10FD (Euro 6),2016,,2016,,,Yes,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø145
+2.552 rpm",,N,09/2016,,12 cc SALAMI | 16 cc SALAMI | 8 cc SALAMI
+KH19037011,Kit bomba hidráulica,TOYOTA,PROACE 2.0D,DW10 (Euro 6.3 / Euro 6.4),2021,,2021,,,Yes,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø145
+2.552 rpm",,N,11/2021,,12 cc SALAMI | 16 cc SALAMI | 8 cc SALAMI
+KH24087033,Kit bomba hidráulica,TOYOTA,PROACE MAX 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V 8K A Ø135
+995 rpm",,N,05/2024,,12 cc SALAMI

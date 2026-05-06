@@ -1,0 +1,4 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+Kits T6_old original sump oil,Otro,VW,TRANSPORTER,TDI 2.0 | (Euro 6),2015,,2015,,,,,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2015,,SD5H14 | SD7H15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90

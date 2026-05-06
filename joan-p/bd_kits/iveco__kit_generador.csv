@@ -1,0 +1,48 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KG15069010,Kit generador,IVECO,EuroCargo Tector 5,F4AFE411A*C (Euro 6) | F4AFE411B*C (Euro 6) | F4AFE411C*C (Euro 6),2014,,2014,,,,Yes,,,not,,,,,,,,,,,,Yes,,,,4 / 4.485,any,"Ø60
+2.403 rpm",,N,2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15069010,Kit generador,IVECO,EuroCargo Tector 5,F4AFE411A*C (Euro 6) | F4AFE411B*C (Euro 6) | F4AFE411C*C (Euro 6),2014,,2014,,,,Yes,,,not,,,,,,,,,,,,Yes,,,,4 / 4.485,any,"Ø60
+2.506 rpm",,N,2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15069010,Kit generador,IVECO,EuroCargo Tector 5 ML60E16 / ML65E16 / ML75E16 / ML80EL16 ML75E19 / ML80E19 / ML80EL19 / ML90E19 / ML100E19 / ML110EL19/ ML120EL19 ML75E21 / ML80E21 / ML80EL21 / ML90E21 / ML100E21 / ML110EL21 / ML120EL21,F4AFE411E*N (Euro 6D Temp) | F4AFE411F*N (Euro 6D Temp) | F4AFE411C*N (Euro 6D Temp),2019,,2019,,,,Yes,,,not,,,,,,,,,,,,Yes,,,,4 / 4.485,any,"Ø60
+2.506 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15079012,Kit generador,IVECO,DAILY 3.0,F1CFL411E*A /  F1CGL411E*A / F1CGL411A*E  (Euro 6) | F1CFL411F*A / F1CGL411F*A / F1CGL411B*E (Euro 6) | <b>F1CFA401A*A (CNG)</b>,2014,,2021,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø60
+2.415 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15079012,Kit generador,IVECO,DAILY 3.0,F1CE3481J (Euro 5) | F1CE3481K (Euro 5),2011,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø60
+2.415 rpm",,N,11/2011,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15079012,Kit generador,IVECO,DAILY 3.0,F1CFL411J*C (Euro 5b+) | F1CFL411H*C (Euro 5b+),2014,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø60
+2.415 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15079012,Kit generador,IVECO,DAILY 3.0,F1CFL4116  (Euro 6d-temp) | F1CFL4117  (Euro 6d-temp) | F1CFL4115  (Euro 6d-temp) | <b>F1CFA401C (CNG)</b>,2019,,2021,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø60
+2.415 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15099013,Kit generador,IVECO,DAILY 2.3,F1AGL411H (Euro 6) | F1AGL411J (Euro 6) | F1AGL411G (Euro 6),2016,,2021,,,Yes,,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.287,any,"Ø60
+2.454 rpm",,N,06/2016,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG15099013,Kit generador,IVECO,DAILY 2.3,F1AGL411X (Euro 6d-temp) | F1AGL411Y (Euro 6d-temp) | F1AGL411W (Euro 6d-temp),2019,,2021,,,Yes,,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.287,any,"Ø60
+2.454 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG16029016,Kit generador,IVECO,DAILY 2.3,F1AFL411A*A (Euro 5b+) | F1AFL411B*A (Euro 5b+) | F1AFL411C*A (Euro 5b+),2014,,2021,,,,,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.287,any,"Ø60
+2.454 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG16039017,Kit generador,IVECO,DAILY 2.3,F1AFL411A*A (Euro 5b+) | F1AFL411B*A (Euro 5b+) | F1AFL411C*A (Euro 5b+),2014,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG16039017,Kit generador,IVECO,DAILY 2.3,F1AGL411H (Euro 6) | F1AGL411J (Euro 6) | F1AGL411G (Euro 6),2016,,2021,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,06/2016,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG16039017,Kit generador,IVECO,DAILY 2.3,F1AGL411X (Euro 6d-temp) | F1AGL411Y (Euro 6d-temp) | F1AGL411W (Euro 6d-temp),2019,,2021,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG18109025,Kit generador,IVECO,DAILY 2.3,F1AGL411 (Euro 6d-full / Euro VI-E),2021,,2021,,,Yes,,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.287,any,"Ø53
+2.460 rpm",,N,09/2021,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG18109025,Kit generador,IVECO,DAILY 2.3,F1AGL411X (Euro 6d-temp) | F1AGL411Y (Euro 6d-temp) | F1AGL411W (Euro 6d-temp) | F1AGL411U (Euro 6d-temp),2019,,2021,,,Yes,,,,ok,,,,,,,,,,,Yes,,,,,4 / 2.287,any,,,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20029030,Kit generador,IVECO,DAILY 3.0,F1CFL (Euro 6d-full / Euro VI-E) | <b>F1CFA401C (CNG)</b>,2021,,2021,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø53
+2.405 rpm",,N,09/2021,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20029030,Kit generador,IVECO,DAILY 3.0,F1CE3481J (Euro 5) | F1CE3481K (Euro 5),2011,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø53
+2.405 rpm",,N,11/2011,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20029030,Kit generador,IVECO,DAILY 3.0,F1CFL411E*A /  F1CGL411E*A / F1CGL411A*E  (Euro 6) | F1CFL411F*A / F1CGL411F*A / F1CGL411B*E (Euro 6) | <b>F1CFA401A*A (CNG)</b>,2014,,2021,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø53
+2.405 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20029030,Kit generador,IVECO,DAILY 3.0,F1CFL4116  (Euro 6d-temp) | F1CFL4117  (Euro 6d-temp) | F1CFL4115  (Euro 6d-temp) | <b>F1CFA401C (CNG)</b>,2019,,2021,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø53
+2.405 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20029030,Kit generador,IVECO,DAILY 3.0,F1CFL411J*C (Euro 5b+) | F1CFL411H*C (Euro 5b+),2014,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Ø53
+2.405 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20069032,Kit generador,IVECO,EuroCargo Tector 7,F4AFE611A*N (Euro VI-D) | F4AFE611E*N (Euro VI-D),2019,,2019,,,,Yes,,,not,,,,,,,,,,,,Yes,,,,6 / 6.728,any,"Ø63
+2.506 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20099033,Kit generador,IVECO,DAILY 2.3,F1AFL411A*A (Euro 5b+) | F1AFL411B*A (Euro 5b+) | F1AFL411C*A (Euro 5b+),2014,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,08/2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20099033,Kit generador,IVECO,DAILY 2.3,F1AGL411H (Euro 6) | F1AGL411J (Euro 6) | F1AGL411G (Euro 6),2016,,2021,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,06/2016,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20099033,Kit generador,IVECO,DAILY 2.3,F1AGL411X (Euro 6d-temp) | F1AGL411Y (Euro 6d-temp) | F1AGL411W (Euro 6d-temp),2019,,2021,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.287,no,"Ø53
+2.475 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "

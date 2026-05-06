@@ -1,0 +1,7 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KG20069031,Kit generador,RENAULT TRUCKS,"SERIE-N 3,5t",RZ4E-TC (Euro 6d-temp),2020,,2020,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,no,"Ø53
+2.570 rpm",,N,06/2020,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG22069038,Kit generador,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1-E6N (Euro 6N),2021,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Ø53 7PK
+2.400 rpm",,N,2021,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG26039043,Kit generador,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1-E6N (Euro 6N),2021,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Ø53 7PK
+2.400 rpm",,N,2021,,"Generator ""G3-230V"" | Generator ""G3-400V"" "

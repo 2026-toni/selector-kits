@@ -1,0 +1,3 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KB20118103,Kit compresor A/C,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-E6N (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,,"Poly-V 5K A Ø125
+4.100 rpm",#¿NOMBRE?,2014,,TM 21 / QP 21

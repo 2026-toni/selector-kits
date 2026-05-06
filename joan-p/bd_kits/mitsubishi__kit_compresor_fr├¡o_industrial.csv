@@ -1,0 +1,47 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KC05100024,Kit compresor frío industrial,MITSUBISHI,CANTER,4M42-02AT (Euro 3),2001,2006,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.977,any,"2A Ø135
+2.960 rpm",,N,2001,06/2006,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100049,Kit compresor frío industrial,MITSUBISHI,CANTER,4D34-2AT6 (Euro 3),2001,,2019,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 3.907,no,"2A Ø135
+4.296 rpm","1A Ø200
+2.900 rpm",N-E/S,2001,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06100088,Kit compresor frío industrial,MITSUBISHI,CANTER,4M42 T1 (Euro 4) | 4M42 T2 (Euro 4) | 4M42 T4 (Euro 4),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.977,no,"2A Ø135
+3.555 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06110091,Kit compresor frío industrial,MITSUBISHI,CANTER,4M42 T1 (Euro 4) | 4M42 T2 (Euro 4) | 4M42 T4 (Euro 4),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.977,any,"Poly-V Ø119
+3.388 rpm","Poly-V 8K A Ø119
+3.388 rpm",N-E,06/2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07010097,Kit compresor frío industrial,MITSUBISHI,CANTER,4M42 T1 (Euro 4) | 4M42 T2 (Euro 4),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.977,any,"Poly-V Ø119
+3.388 rpm","Poly-V 8K A Ø119
+3.388 rpm",N-E,06/2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09110184,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"2A Ø135
+3.060 rpm",,N,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11060238,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"2B Ø152
+2.990 rpm",,N,2009,,TK-315
+KC12100294,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,1B Ø128 3.554 rpm / 1B Ø134 3.395 rpm,,N,2009,,CS150 | CS90
+KC13010305,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"1B Ø152 / 1B Ø155
+2.935 rpm",,N,2009,,CR2318 | CR2323
+KC13050329,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6) | 4PT10-AAT6 (Euro 6),2014,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø137
+2.810 rpm","Poly-V 8K A Ø137
+2.810 rpm",N-E,2014,,TM 21 / QP 21
+KC13050329,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-BAT2 (Euro 5b+) | 4PT10-BAT4 (Euro 5b+) | 4PT10-BAT6 (Euro 5b+),2014,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø137
+2.810 rpm","Poly-V 8K A Ø137
+2.810 rpm",N-E,2014,,TM 21 / QP 21
+KC13050329,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.998,any,"Poly-V 8K A Ø137
+2.810 rpm","Poly-V 8K A Ø137
+2.810 rpm",N-E,2009,,TM 21 / QP 21
+KC13050329,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6D Temp) | 4PT10-AAT6 (Euro 6D Temp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø137
+2.810 rpm","Poly-V 8K A Ø137
+2.810 rpm",N-E,09/2019,,TM 21 / QP 21
+KC14030350,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-BAT2 (Euro 5b+) | 4PT10-BAT4 (Euro 5b+) | 4PT10-BAT6 (Euro 5b+),2014,,2019,,,,Yes,,,ok,Yes,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø119
+3.235 rpm","Poly-V 8K A Ø119
+3.235 rpm",N-E,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14030350,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6) | 4PT10-AAT6 (Euro 6),2014,,2019,,,,Yes,,,ok,Yes,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø119
+3.235 rpm","Poly-V 8K A Ø119
+3.235 rpm",N-E,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14030350,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6D Temp) | 4PT10-AAT6 (Euro 6D Temp),2019,,2019,,,,Yes,,,ok,Yes,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø119
+3.235 rpm","Poly-V 8K A Ø119
+3.235 rpm",N-E,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14030350,Kit compresor frío industrial,MITSUBISHI,CANTER,4P10T2 (Euro 5) | 4P10T3 (Euro 5) | 4P10T6 (Euro 5),2009,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998,any,"Poly-V 8K A Ø119
+3.235 rpm","Poly-V 8K A Ø119
+3.235 rpm",N-E,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23010560,Kit compresor frío industrial,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6D Temp) | 4PT10-AAT6 (Euro 6D Temp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 8K A Ø137
+4.290 rpm",,N,09/2019,,QP 25

@@ -1,0 +1,5 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KG13049001,Kit generador,VW,CRAFTER,TDI 2.0 CKTB (Euro 5) | TDI 2.0 CKTC (Euro 5) | BiTDI 2.0 CKUC (Euro 5) | BiTDI 2.0 CKUB (Euro 5),2011,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"2A Ø135
+3.111 rpm",,N,06/2011,,"Generator ""G3-230V"" | Generator ""G4-400V""  | TM 15 / QP 15 | TM 16 / QP 16"
+KG16129019,Kit generador,VW,CRAFTER,TDI 2.0 CKTB (Euro 5/Euro 6) | TDI 2.0 CKTC (Euro 5/Euro 6) | BiTDI 2.0 CKUC (Euro 5/Euro 6) | BiTDI 2.0 CKUB (Euro 5/Euro 6),2011,2016,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"Ø53 7PK
+2.818 rpm",,N,06/2011,12/2016,"Generator ""G4-230V"" | Generator ""G4-400V"" "

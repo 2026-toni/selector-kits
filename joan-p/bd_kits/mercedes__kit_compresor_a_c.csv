@@ -1,0 +1,43 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KB10028014,Kit compresor A/C,MERCEDES,VARIO,OM 904 LA (Euro 4-5),1997,,1997,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.249,no,"Poly-V 8K A Ø137
+3.206 rpm",,N,1997,,TM 21 / QP 21
+KB10038018,Kit compresor A/C,MERCEDES,ATEGO,OM 904 LA (Euro 3-4-5) | OM 924 LA (Euro 3-4-5) | OM 906 LA (Euro 3-4-5),1998,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.249_x000D_
+4 / 4.800_x000D_
+6 / 6.374",no,"2B Ø158
+3.899 rpm",,N,1998,,TM 31 / QP 31
+KB11078032,Kit compresor A/C,MERCEDES,SPRINTER,M 272 E 35 | (Euro 4-5-6),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 3.498,any,"Poly-V 8K A Ø137
+5.512 rpm",,N,09/2008,,TM 21 / QP 21
+KB11118035X,Kit compresor A/C,MERCEDES,INTOURO,OM 926 LA 210,,,,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 7.200,no,"2B Ø204
+2.426 rpm",,N,,,X-430
+KB12048041,Kit compresor A/C,MERCEDES,ATEGO,OM 904 LA (Euro 3-4-5) | OM 924 LA (Euro 3-4-5) | OM 906 LA (Euro 3-4-5),1998,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.249_x000D_
+4 / 4.800_x000D_
+6 / 6.374",any,"2B Ø158
+4.000 rpm",,N,1998,,TM 31 / QP 31
+KB14038057,Kit compresor A/C,MERCEDES,ATEGO,OM936 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 7.700,any,"8K A Ø151
+3.730 rpm",,N,2014,,TM 31 / QP 31
+KB14058058,Kit compresor A/C,MERCEDES,ATEGO,OM934 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.132,any,"8K A Ø151
+3.730 rpm",,N,2014,,TM 31 / QP 31
+KB14078061,Kit compresor A/C,MERCEDES,ATEGO,OM934 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.132,any,"8K A Ø137
+4.100 rpm","8K A Ø137
+4.100 rpm",N-E,2014,,TM 21 / QP 21
+KB14088062,Kit compresor A/C,MERCEDES,SPRINTER,M 272 E 35 | (Euro 4-5-6),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 3.498,any,"Poly-V 5K A Ø119
+6.200 rpm",,N,09/2008,,SD5H09
+KB14098064,Kit compresor A/C,MERCEDES,CHASSIS OC 500 RF,OM936 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 7.700,no,"2B Ø203
+2.746 rpm",,N,2014,,BOCK FK40
+KB15028072,Kit compresor A/C,MERCEDES,MERCEDES OC 500 RF,OM470 (Euro 6),,,,,,,,,,,,,,,,,,,,,,,,,,6 / 10.676,no,"2B Ø203 / 2A Ø254
+2.730 rpm",,N,,,BOCK FK40
+KB15078076,Kit compresor A/C,MERCEDES,ATEGO,OM934 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.132,any,"2A Ø145
+3.820 rpm",,N,2014,,TM 21 / QP 21
+KB16098082,Kit compresor A/C,MERCEDES,ATEGO,OM936 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 7.700,any,"2A Ø145
+3.520 rpm",,N,2014,,TM 21 / QP 21
+KB20028096,Kit compresor A/C,MERCEDES,ATEGO,OM934 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.132,any,"8K A Ø137
+4.100 rpm","8K A Ø137
+4.100 rpm",N-E,2014,,TM 21 / QP 21
+KB22028110,Kit compresor A/C,MERCEDES,SPRINTER 2.0,OM 654 D20 SCR | (Euro 6d-Temp / VI E),2020,,2020,Yes,,,Yes,,,,,,,,,,,,Yes,,,,,,,4 / 1.950,any,"Poly-V 8K A Ø137
+4.632 rpm","Poly-V 8K A Ø137
+4.632 rpm",N-E,2020,,TM 21 / QP 21
+KB22028111,Kit compresor A/C,MERCEDES,SPRINTER 2.0,OM 654 D20 SCR | (Euro 6d-Temp / VI E),2020,,2020,Yes,,,Yes,,,,,,,,,,,Yes,Yes,,,,,,,4 / 1.950,any,"Poly-V 8K A Ø119
+4.940 rpm","Poly-V 8K A Ø119
+4.940 rpm",N-E,2020,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KB22068112,Kit compresor A/C,MERCEDES,Econic 1827/1830/1835,OM936 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 7.700,any,"8PK Ø137
+4.046 rpm",,N,2014,,QP 25

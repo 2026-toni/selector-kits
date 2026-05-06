@@ -1,0 +1,5 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KA23015014,Kit alternador,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6D Temp) | 4PT10-AAT6 (Euro 6D Temp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 7K A Ø53
+3.014 rpm",,N,09/2019,,Mahle MG 142 (100A 28V) | Mahle MG 29 (200A 14V)
+KA23115029,Kit alternador,MITSUBISHI,CANTER,4PT10-AAT4 (Euro 6D Temp) | 4PT10-AAT6 (Euro 6D Temp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.998 ,any,"Poly-V 7K A Ø54
+2188 rpm",,N,09/2019,,Valeo 140A 14V

@@ -1,0 +1,25 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KH14127001,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,06/2010,,HPI 15cc
+KH15017002,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,09/2019,,HPI 12cc | HPI 15cc
+KH15017002,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,2016,,HPI 12cc | HPI 15cc
+KH15017002,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,2014,,HPI 12cc | HPI 15cc
+KH19067012,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,2016,,12 cc SALAMI | 16 cc SALAMI
+KH19067012,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH19067012,Kit bomba hidráulica,NISSAN,INTERSTAR 2.3 dCi - FWD (EURO 6D Full),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH21087023,Kit bomba hidráulica,NISSAN,INTERSTAR 2.3 dCi - FWD (EURO 6D Full),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,Yes,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH21087023,Kit bomba hidráulica,NISSAN,NV400 2.3 dCi - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,Yes,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH23117028,Kit bomba hidráulica,NISSAN,INTERSTAR 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø145
+894 r.p.m.","Poly-V 8K A Ø145
+3.910 r.p.m.",N,09/2024,,12 cc SALAMI
+KH25017034,Kit bomba hidráulica,NISSAN,INTERSTAR 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,Yes,ok,,Yes,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø145
+894 r.p.m.","Poly-V 8K A Ø145
+3.910 r.p.m.",N,09/2024,,12 cc SALAMI
