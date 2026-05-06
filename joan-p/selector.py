@@ -3,7 +3,7 @@ import base64
 import os
 from pathlib import Path
 
-MODEL = "claude-sonnet-4-20250514"
+MODEL = "claude-sonnet-4-5"
 BASE  = Path(__file__).parent
 
 _CACHE = None
