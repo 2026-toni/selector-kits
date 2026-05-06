@@ -1,6 +1,0 @@
-code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
-KA21055008,Kit alternador,MAN,TGL,D0834 LFL 77/78/79 (Euro 6c) | D0836 LFL 79 (Euro 6c),2017,,2017,,,,Yes,,,,,,,,,,,,,,,,,Yes,,"4 / 4.580_x000D_
-6 / 6.871",yes,"Poly-V 6pk Ø53
-10.889 rpm",,N,11/2017,,Mahle MG 142 (100A 28V) | Mahle MG 29 (200A 14V)
-KA21055008,Kit alternador,MAN,TGM,D0836 LFL 79/80/81 (Euro 6c),2017,,2017,,,,Yes,,,,,,,,,,,,,,,,,Yes,,6 / 6.871,yes,"Poly-V 6pk Ø53
-10.889 rpm",,N,11/2017,,Mahle MG 142 (100A 28V) | Mahle MG 29 (200A 14V)

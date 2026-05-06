@@ -1,3 +1,0 @@
-code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
-KA25105046,Kit alternador,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2024,,2024,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø54
-2429 r.p.m.",,N,09/2024,,SEG 150A 28V 

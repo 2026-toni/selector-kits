@@ -1,6 +1,0 @@
-code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
-KA23025015,Kit alternador,TOYOTA,PROACE,1.6D-4D 95 (Euro 6) | 1.6D-4D 115 (Euro 6),2016,,2016,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.560,yes,"Poly-V 5PK Ø54
-10.667 rpm",,N,09/2016,,Valeo 140A 14V
-KA24125042,Kit alternador,TOYOTA,PROACE MAX 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø53
-11.094 r.p.m.",,N,05/2024,,SEG 150A 28V 
-KA25035043,Kit alternador,TOYOTA,PROACE MAX 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,,,,,,,,,,,,,,,,,4 / 2.184,no,Poly-V,,N,05/2024,,SEG 150A 28V 
