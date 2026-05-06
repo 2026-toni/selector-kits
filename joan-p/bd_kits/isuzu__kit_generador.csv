@@ -1,0 +1,3 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KG16029015,Kit generador,ISUZU,NT400 - CABSTAR,YD25K3 LD-5 (Lo) (Euro 5b+) | YD25K3 LD-5 (Mo) (Euro 5b+) | YD25K3 LD-5 (Ho) (Euro 5b+),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.488,no,"Ø60
+2.587 rpm",,N,2014,,"Generator ""G3-230V"" | Generator ""G3-400V"" "

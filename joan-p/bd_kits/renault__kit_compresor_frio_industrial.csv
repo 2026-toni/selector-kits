@@ -1,0 +1,201 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KC05100008,Kit compresor frío industrial,RENAULT,MASTER 3.0 dCi - RWD,ZD30 | (Euro 3),2004,,2004,Yes,,,Yes,,,,,,,,,,,,,,,,,,Yes,4 / 2.953,any,"2A Ø135
+3.870 rpm",,N,2004,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100012,Kit compresor frío industrial,RENAULT,TRAFIC,G9U 630 | (Euro 3 / Euro 4),2003,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.464,no,"Poly-V Ø119
+4.387 rpm","Poly-V 7K A Ø119
+4.387 rpm",N-E,2003,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100012,Kit compresor frío industrial,RENAULT,MASTER,G9T | G9U (Euro 3) | G9U 630 (Euro 4),2001,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 2.188 _x000D_
+4 / 2.464",no,"Poly-V Ø119
+4.387 rpm","Poly-V 7K A Ø119
+4.387 rpm",N-E,2001,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100023,Kit compresor frío industrial,RENAULT,TRAFIC,F9Q (Euro 3),2001,2006,2010,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.870,no,"Poly-V Ø119
+4.265 rpm","Poly-V 8K A Ø119
+4.265 rpm",N-E,2001,06/2006,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100051,Kit compresor frío industrial,RENAULT,KANGOO,K9K 812 (Euro 3),2002,2006,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2002,06/2006,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100053,Kit compresor frío industrial,RENAULT,TRAFIC,F9Q (Euro 3),2001,2006,2010,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.870,no,"Poly-V Ø119
+4.229 rpm","Poly-V 6K A Ø119
+4.229 rpm",N-E,2001,06/2006,TM 08 / QP 08 | UP 90
+KC05100055,Kit compresor frío industrial,RENAULT,MASTER,ZD30 - Euro 3 | DXi3 - Euro 4,2004,,2006,,Yes,,Yes,,,,Yes,,,,,,,,,,,,,,Yes,4 / 2.953,no,"Poly-V Ø119
+4.689 rpm","Poly-V 8K A Ø157
+3.554 rpm",N-E/S,2004,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06070082,Kit compresor frío industrial,RENAULT,KANGOO,K9K (Euro 4),2006,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,06/2006,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06110090,Kit compresor frío industrial,RENAULT,MASTER,G9U 650 (Euro 4) | G9U 632 (Euro 4),2006,,2006,,,,,,,,,,,,,,,,,,,,,,,4 / 2.464,any,"Poly-V Ø119
+3.529 rpm","Poly-V 8K A Ø119
+3.529 rpm",N-E,06/2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06120095,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2010,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06120095,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 780 (Euro 4) | M9R 630 (Euro 5) | M9R 692 (Euro 5),2006,,2010,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2006,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC07100119,Kit compresor frío industrial,RENAULT,MASTER 3.0 dCi - RWD,ZD30 (Euro 3) | DXi 3 (Euro 4),2004,,2004,Yes,,,Yes,,,,,,,,,,,,,,,,,,Yes,4 / 2.953,any,"2A Ø135
+3.870 rpm",,N,2004,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08030126,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2010,,TM 08 / QP 08 | UP 90
+KC08030126,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 780 (Euro 4) | M9R 630 (Euro 5) | M9R 692 (Euro 5),2006,,2010,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2006,,TM 08 / QP 08 | UP 90
+KC08040127,Kit compresor frío industrial,RENAULT,KANGOO,X61 K9K (Euro 4),2008,,2012,,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08040127,Kit compresor frío industrial,RENAULT,KANGOO,K9K (Euro 4 / Euro 5 / Euro 6),2006,2019,2012,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2006,09/2019,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08120145,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 780 (Euro 4),2006,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,yes,"2A Ø135
+3.111 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC09050163,Kit compresor frío industrial,RENAULT,KANGOO,X61 K9K (Euro 4),2008,,2012,,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 08 / QP 08 | UP 90
+KC09050163,Kit compresor frío industrial,RENAULT,KANGOO,K9K (Euro 4 / Euro 5 / Euro 6),2008,2019,2012,,,,Yes,,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,09/2019,TM 08 / QP 08 | UP 90
+KC09090178,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 780 (Euro 4),2006,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,yes,"2A Ø135
+3.111 rpm",,N,06/2006,,TM 08 / QP 08 | UP 90
+KC10020189,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD,M9T (Euro 4-5) | M9T / M9T B7 (Euro 5b+),2010,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD (EURO6D),M9T (Euro VI-D Temp / Euro VI-E),2019,,2022,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10050194,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10090201,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD,M9T (Euro 4-5) | M9T / M9T B7 (Euro 5b+),2010,,2016,Yes,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC10090201,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,TM 08 / QP 08 | UP 90
+KC10090202,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC12060277,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5),2010,,2016,,Yes,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.059 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12060278,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T (Euro 4-5),2010,,2016,,Yes,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.059 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC12120298,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2010,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm","Poly-V 7K A Ø119
+2.941 rpm",N-E,01/2010,,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120
+KC12120298Z,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2010,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm",,N,01/2010,,UP 150 / UPF 150
+KC12120300,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2014,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD (EURO6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp / Euro VI-E),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300Z,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD (EURO6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,09/2019,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2014,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2016,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC13030319,Kit compresor frío industrial,RENAULT,KANGOO,K9K (Euro 5 / Euro 6),2012,2019,2012,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,09/2019,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC13030320,Kit compresor frío industrial,RENAULT,KANGOO,K9K (Euro 5 / Euro 6),2012,2019,2012,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,09/2019,TM 08 / QP 08 | UP 90
+KC13040323,Kit compresor frío industrial,RENAULT,TRAFIC,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2010,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm","Poly-V 7K A Ø119
+2.491 rpm",N-E,01/2010,,TM 08 / QP 08 | UP 90
+KC14070367,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,2014,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,2016,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD (EURO6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp / Euro VI-E),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,09/2019,,SD5H14 | SD7H15
+KC14070369,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 5b+/ Euro 6),2014,,2016,,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,2014,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC14070369Z,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 5b+/ Euro 6),2014,,2016,,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2014,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2014,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD (EURO6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp / Euro VI-E),2019,,2019,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14090378,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2014,,TM 08 / QP 08 | UP 90
+KC14090378,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 08 / QP 08 | UP 90
+KC14120380,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 5b+),2014,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2014,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC14120380,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 6),2016,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2016,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC14120382,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 5b+),2014,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2014,,TM 08 / QP 08 | UP 90
+KC14120382,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 6),2016,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2016,,TM 08 / QP 08 | UP 90
+KC15020388,Kit compresor frío industrial,RENAULT,TRAFIC 1.6 dCi,R9M (Euro 5b+/ Euro 6),2014,,2016,,,,Yes,Yes,Yes,,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,2014,,TM 08 / QP 08 | UP 90
+KC17020426,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2014,,TM 08 / QP 08 | UP 90
+KC17020426,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 08 / QP 08 | UP 90
+KC17070440,Kit compresor frío industrial,RENAULT,KANGOO 1.3 TCe (HR13),1.3 Petrol (Euro 6d-full),2021,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.333,no,,"Poly-V 7K A Ø119
+4.500 rpm",#¿NOMBRE?,09/2021,,TM 13 / QP 13
+KC18010452,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 dCi,M9R (Euro 6d temp),2019,,2021,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,no,"Poly-V 8K A Ø119
+4.441 r.p.m.","Poly-V 8K A Ø119
+4.441 r.p.m.",N-E,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18010452,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 dCi,M9R (Euro 6D Full),2021,,2021,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,no,"Poly-V 8K A Ø119
+4.441 r.p.m.","Poly-V 8K A Ø119
+4.441 r.p.m.",N-E,09/2021,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18080467,Kit compresor frío industrial,RENAULT,KANGOO 1.5,K9K Gen8 (Euro 6d-full),2019,,2019,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC19070491,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 dCi,M9R (Euro 6d temp),2019,,2021,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.120 r.p.m.","Poly-V 8K A Ø119
+3.120 r.p.m.",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120
+KC19120497,Kit compresor frío industrial,RENAULT,KANGOO 1.5,K9K Gen8 (Euro 6d-full),2019,,2019,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC22020541,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 dCi,M9R (Euro 6D Full),2021,,2021,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.120 r.p.m.","Poly-V 8K A Ø119
+3.120 r.p.m.",N-E,09/2021,,TM 13 / QP 13 | TM 15 / QP 15
+KC22070552,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD (EURO6D),M9T (Euro VI-D Temp / Euro VI-E),2022,,2022,Yes,,,Yes,Yes,Yes,ok,,,,Yes,,,,,,,,,,,,4 / 2.298,any,"Poly-VØ119
+4.780 rpm","Poly-V 6K A Ø142
+4.005 rpm",N-E,2022,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22070552,Kit compresor frío industrial,RENAULT,MASTER 2.3 dCi - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,Yes,,,,,,,,,,,,4 / 2.298,any,"Poly-VØ119
+4.780 rpm","Poly-V 6K A Ø142
+4.005 rpm",N-E,2016,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23010559,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+3.500 r.p.m.","Poly-V 6K A Ø119
+3.500 r.p.m.",N-E,09/2024,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC23010559-B,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,Yes,,,,,Yes,Yes,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,09/2024,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23110581,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - RWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,Yes,,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+3.500 r.p.m.","Poly-V 6K A Ø119
+3.500 r.p.m.",N-E,09/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24020583,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,no,"Poly-V 7K A Ø119
+4.441 r.p.m.","Poly-V 7K A Ø157
+3.366 r.p.m.",N-E,09/2024,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24060591,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 Blue dCi,Blue dCi (Euro 6E),2024,,2024,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.120 r.p.m.","Poly-V 8K A Ø119
+3.120 r.p.m.",N-E,12/2024,,TM 13 / QP 13 | TM 15 / QP 15
+KC24060591,Kit compresor frío industrial,RENAULT,TRAFIC 2.0 dCi,M9R (Euro 6d temp),2019,,2021,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.120 r.p.m.","Poly-V 8K A Ø119
+3.120 r.p.m.",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15
+KC25020612,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+3.500 r.p.m.","Poly-V 6K A Ø119
+3.500 r.p.m.",N-E,09/2024,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC25070621,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+4.411 r.p.m.","Poly-V 6K A Ø119
+4.411 r.p.m.",N-E,09/2024,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25090625,Kit compresor frío industrial,RENAULT,MASTER 2.0 dCi - RWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,Yes,,,Yes,Yes,,ok,,,,,,Yes,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+3.500 r.p.m.","Poly-V 6K A Ø119
+3.500 r.p.m.",N-E,09/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170

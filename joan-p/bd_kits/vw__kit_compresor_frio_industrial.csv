@@ -1,0 +1,122 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KC05100067,Kit compresor frío industrial,VW,CADDY,BDJ | (Euro 3),,2004,2015,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+4.706 rpm","Poly-V 6K A Ø157
+3.567 rpm",N-E/S,,2004,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100068,Kit compresor frío industrial,VW,TRANSPORTER,86TDI(AXB) - Euro 3 | 104TDI(AXB) - Euro 3,2003,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.896,no,,"Poly-V 6K A Ø125
+3.880 rpm",#¿NOMBRE?,2003,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC07020102,Kit compresor frío industrial,VW,CRAFTER,BJJ / BJK (Euro 4) | BJL / BJM (Euro 4),2006,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 2.459,any,"2A Ø135
+3.295 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09030150,Kit compresor frío industrial,VW,CADDY,BLS | (Euro 4),2006,,2015,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.896,no,"Poly-V Ø119
+4.672 rpm","Poly-V 6K A Ø142
+3.915 rpm",N-E/S,2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09030151,Kit compresor frío industrial,VW,CADDY,BLS | (Euro 4),2006,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.896,no,,"Poly-V 6K A Ø142
+3.915 rpm",#¿NOMBRE?,2006,,TM 08 / QP 08 | UP 90
+KC10010188,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5 / Euro 5b+,2010,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2010,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10010188,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5b+,2015,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2015,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10040191,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5 / Euro 5b+,2010,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2010,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10040191,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5b+,2015,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2015,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10070197,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5 / Euro 5b+,2010,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2010,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10070197,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5b+,2015,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2015,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10070198,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5 / Euro 5b+,2010,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2010,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10070198,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 | EA189 - Euro 5b+,2015,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+2.875 rpm","Poly-V 7K A Ø119
+2.875 rpm",N-E,2015,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11050230,Kit compresor frío industrial,VW,CADDY,CAYE | CAYD | (Euro 5),2010,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,,"Poly-V 6K A Ø125
+4.416 rpm",#¿NOMBRE?,08/2010,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11050230,Kit compresor frío industrial,VW,CADDY,CLCA | CFHC | (Euro 5),2010,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+4.637 rpm",#¿NOMBRE?,08/2010,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11060237,Kit compresor frío industrial,VW,CRAFTER,TDI 2.0 CKTB (Euro 5/Euro 6) | TDI 2.0 CKTC (Euro 5/Euro 6) | BiTDI 2.0 CKUC (Euro 5/Euro 6) | BiTDI 2.0 CKUB (Euro 5/Euro 6),2011,2016,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"2A Ø135
+3.111 rpm",,N,06/2011,12/2016,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12010262,Kit compresor frío industrial,VW,CRAFTER,TDI 2.0 CKTB (Euro 5/Euro 6) | TDI 2.0 CKTC (Euro 5/Euro 6) | BiTDI 2.0 CKUC (Euro 5/Euro 6) | BiTDI 2.0 CKUB (Euro 5/Euro 6),2011,2016,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"2A Ø135
+3.111 rpm",,N,06/2011,12/2016,TM 08 / QP 08 | UP 90
+KC12060275,Kit compresor frío industrial,VW,CADDY,CAYE | CAYD | (Euro 5),2010,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,,"Poly-V 6K A Ø125
+4.416 rpm",#¿NOMBRE?,08/2010,,TM 08 / QP 08 | UP 90
+KC12060275,Kit compresor frío industrial,VW,CADDY,CLCA | CFHC | (Euro 5),2010,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+4.637 rpm",#¿NOMBRE?,08/2010,,TM 08 / QP 08 | UP 90
+KC12090290,Kit compresor frío industrial,VW,CRAFTER,TDI 2.0 CKTB (Euro 5/Euro 6) | TDI 2.0 CKTC (Euro 5/Euro 6) | BiTDI 2.0 CKUC (Euro 5/Euro 6) | BiTDI 2.0 CKUB (Euro 5/Euro 6),2011,2016,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"1B Ø110
+5.918 rpm",,N,06/2011,12/2016,CS55
+KC13050333,Kit compresor frío industrial,VW,CRAFTER,TDI 2.0 CKTB (Euro 5) | TDI 2.0 CKTC (Euro 5) | BiTDI 2.0 CKUC (Euro 5) | BiTDI 2.0 CKUB (Euro 5),2011,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"2A Ø145
+2.896 rpm",,N,06/2011,,TM 21 / QP 21
+KC14010346,Kit compresor frío industrial,VW,CRAFTER,TDI 2.0 CKTB (Euro 5) | TDI 2.0 CKTC (Euro 5) | BiTDI 2.0 CKUC (Euro 5) | BiTDI 2.0 CKUB (Euro 5),2011,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,no,"2A Ø145
+2.896 rpm",,N,06/2011,,TM 21 / QP 21
+KC15090403,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 EU6d-TEMP BMT,2019,,2019,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,,"Poly-V 6K A Ø125
+3.150 rpm",#¿NOMBRE?,10/2019,,TM 13 / QP 13
+KC15090403Z,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 EU6d-TEMP BMT,2019,,2019,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V 6K A Ø125
+3.150 rpm",,N,10/2019,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC15110405,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 BMT | EA288 - Euro 6,2015,2019,2019,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V Ø119
+4.058 rpm","Poly-V 8K A Ø119
+4.058 rpm",N-E,2015,09/2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,VW,TRANSPORTER T7 - Euro 6,,2023,,2024,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16120421,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 BMT | EA288 - Euro 6,2015,,2019,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+3.860 rpm",#¿NOMBRE?,2015,,TM 08 / QP 08 | UP 90
+KC17060437,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V k Ø119
+4.175 rpm","Poly-V k Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17060437,Kit compresor frío industrial,VW,TGE 2.0 TDI - FWD,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-VK Ø119
+4.175 rpm","Poly-Vk Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17110443,Kit compresor frío industrial,VW,CADDY,TDI 2.0 BMT | EA288 - Euro 6,2015,2021,2015,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+4.416 rpm",#¿NOMBRE?,2015,02/2021,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC17110445,Kit compresor frío industrial,VW,CADDY,TDI 2.0 BMT | EA288 - Euro 6,2015,2020,2015,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.968,any,"Poly-V Ø119
+3.361 rpm","Poly-V 8K A Ø119
+3.361 rpm",N-E,2015,2020,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC18020453,Kit compresor frío industrial,VW,TGE 2.0 TDI - RWD,2.0 TDI EA288 (Euro 6 / Euro 6d-Temp),2017,,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V Ø119
+4.175 rpm","Poly-V Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18020453,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / Euro 6d-Temp),2017,,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8k Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC21050517,Kit compresor frío industrial,VW,CADDY 2021,TDI 2.0 BMT | DTRF / DTRE / DPBC/ DTRC - Euro 6D Temp,2021,,2021,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+4.416 rpm",#¿NOMBRE?,02/2021,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC22030547,Kit compresor frío industrial,VW,TRANSPORTER,TDI 2.0 EU6d-TEMP BMT,2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8K A Ø119
+4.175 rpm",N-E,10/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22030547,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8K A Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22030547,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8K A Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22030547,Kit compresor frío industrial,VW,TGE 2.0 TDI - RWD,2.0 TDI EA288 (Euro 6 / Euro 6d-Temp),,2017,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8k Ø119
+4.175 rpm",N-E,,2017,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22030547,Kit compresor frío industrial,VW,TGE 2.0 TDI - FWD,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø119
+4.175 rpm","Poly-V 8k Ø119
+4.175 rpm",N-E,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22030549,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø137
+3.625 rpm","Poly-V 8K A Ø137
+3.625 rpm",N-E,2017,,TM 21 / QP 21
+KC22030549,Kit compresor frío industrial,VW,CRAFTER 2.0 TDI,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø137
+3.625 rpm","Poly-V 8K A Ø137
+3.625 rpm",N-E,2017,,TM 21 / QP 21
+KC22030549,Kit compresor frío industrial,VW,TGE 2.0 TDI - FWD,2.0 TDI EA288 (Euro 6 / 6d-Temp / 6AR),2017,,2017,,Yes,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø137
+3.625 rpm","Poly-V 8K A Ø137
+3.625 rpm",N-E,2017,,TM 21 / QP 21
+KC22030549,Kit compresor frío industrial,VW,TGE 2.0 TDI - RWD,2.0 TDI EA288 (Euro 6 / Euro 6d-Temp),2017,,2017,Yes,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,"Poly-V 8K A Ø137
+3.625 rpm","Poly-V 8K A Ø137
+3.625 rpm",N-E,2017,,TM 21 / QP 21
+KC23070575,Kit compresor frío industrial,VW,TRANSPORTER T7 - Euro 6,,2023,2024,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2023,11/2024,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020609,Kit compresor frío industrial,VW,TRANSPORTER T7 - Euro 6,,2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25060618,Kit compresor frío industrial,VW,TRANSPORTER T7 - Euro 6,,2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170

@@ -1,0 +1,113 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KC05100064,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,MIDR040226B (Euro 2) | 4 dCi 4 (Euro 3),,,2010,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 4.000,no,"2A Ø135
+4.373 rpm","1A Ø150
+3.936 rpm",N-E/S,,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100065,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,dCi 6 (Euro 3),,,2010,,,,Yes,,,,Yes,,,,,,,,,,,,,,,6 / 6.200,no,"2A Ø135
+4.373 rpm","1A Ø150
+3.936 rpm",N-E/S,,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07010098,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 4) | DXi7 (Euro 4),2006,,2010,,,,,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"2A Ø135
+3.680 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07010098,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"2A Ø135
+3.680 rpm",,N,09/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07010099,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 4) | DXi7 (Euro 4),2006,,2010,,,,,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"2A Ø135
+3.900 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07010099,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"2A Ø135
+3.900 rpm",,N,09/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08050133,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 4) | DXi7 (Euro 4),2006,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"1B Ø150
+3.710 rpm","1B Ø150
+3.710 rpm",N-E,06/2006,,TM 21 / QP 21
+KC08050133,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"1B Ø150
+3.710 rpm","1B Ø150
+3.710 rpm",N-E,09/2010,,TM 21 / QP 21
+KC09040158,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro6,4HK1-E6C | (Euro6),2014,,2018,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09040158,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4HK1-TCS | (Euro 4-5),2009,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09040158,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4HK1- Euro VI OBD-D,2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09040158,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 6D / VI,4HK1-E6C | (Euro 6D / VI E),2014,,2014,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10100206,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"1B Ø152 / 1B Ø155
+3.484 rpm",,N,09/2010,,CR2318 | CR2323
+KC10120213,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"2B Ø152 / 1B Ø149
+3.552 rpm",,N,09/2010,,TK-312 | TK-315
+KC14070368,Kit compresor frío industrial,RENAULT TRUCKS,SERIE F,4HK1E6H (Euro 6),2014,,2017,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+2.933 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080373,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JJ1E6N-D (Euro 6d Temp),2020,2021,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,"Poly-V 8K A Ø119
+3.453 rpm","Poly-V 8K A Ø119
+3.453 rpm",N-E,2020,2021,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080373,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-E5L (Euro 5b+) | 4JJ1E6N (Euro 6),2014,2019,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,"Poly-V 8K A Ø119
+3.453 rpm","Poly-V 8K A Ø119
+3.453 rpm",N-E,2014,2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14090375,Kit compresor frío industrial,RENAULT TRUCKS,SERIE F,4HK1E6S (Euro 6),2014,2016,2017,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+2.933 rpm",,N,2014,2016,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC15120407,Kit compresor frío industrial,RENAULT TRUCKS,Serie K,DONGFENG BG 13-20 | Fuel and Bi-fuel Autogas GLP (Euro 5b+),2015,,2020,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.300,no,"2A Ø135
+4.888 rpm",,N,2015,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17080441,Kit compresor frío industrial,RENAULT TRUCKS,"SERIE-N 3,5t",RZ4EE6N-L  (Euro 6b-1),2017,2020,2017,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8PK Ø119
+2.800 rpm","Poly-V 8PK Ø119
+2.800 rpm",N-E,07/2017,06/2020,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17110446,Kit compresor frío industrial,RENAULT TRUCKS,"SERIE-N 3,5t",RZ4EE6N-L  (Euro 6b-1),2017,2020,2017,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,yes,"Poly-V 8PK Ø119
+2.800 rpm","Poly-V 8PK Ø119
+2.800 rpm",N-E,07/2017,06/2020,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17110448,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-E6N (Euro 6),2014,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,,"Poly-V 5K A Ø125
+3.225 rpm",#¿NOMBRE?,2014,,TM 21 / QP 21
+KC17110448,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JJ1-E6N-D (Euro 6d Temp),2020,2021,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,,"Poly-V 5K A Ø125
+3.225 rpm",#¿NOMBRE?,2020,2021,TM 21 / QP 21
+KC18060462,Kit compresor frío industrial,RENAULT TRUCKS,SERIE F,4HK1E6S (Euro 6C),2017,,2017,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+2.933 rpm",,N,2017,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19030483,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-TCS (Euro 4) | 4JJ1-E5N (Euro 5 EEV),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Poly-V Ø119
+3.453 rpm","Poly-V 8K A Ø119
+3.453 rpm",N-E,2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19030483,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-E5L (Euro 5b+) | 4JJ1-E6N (Euro 6),2014,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Poly-V Ø119
+3.453 rpm","Poly-V 8K A Ø119
+3.453 rpm",N-E,2014,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040484,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro6,4HK1-E6C | (Euro6),2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040484,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-E,4HK1- Euro VI OBD-D,2019,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040484,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 6D / VI E,4HK1-E6C | (Euro 6D / VI E),2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040485,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro 5b+ / Euro6 SÃ©rie Bleu,4JJ1-E5L (Euro 5b+) | 4JJ1-E6N (Euro 6),2014,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,no,"2A Ø135
+2.800 rpm",,N,2014,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19090494,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 4) | DXi7 (Euro 4),2006,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"1B Ø150
+3.710 rpm","1B Ø150
+3.710 rpm",N-E,06/2006,,TM 21 / QP 21
+KC19090494,Kit compresor frío industrial,RENAULT TRUCKS,MIDLUM,DXi5 (Euro 5) | DXi7 (Euro 5),2010,,2010,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 4.760_x000D_
+6 / 7.150",any,"1B Ø150
+3.710 rpm","1B Ø150
+3.710 rpm",N-E,09/2010,,TM 21 / QP 21
+KC20070503,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,RZ4E-TC (Euro 6d-temp),2020,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8PK Ø119
+2.800 rpm","Poly-V 8PK Ø119
+2.800 rpm",N-E,06/2020,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC20070503-A,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,RZ4E-TC (Euro 6d-temp),2020,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8PK Ø119
+2.800 rpm","Poly-V 8PK Ø119
+2.800 rpm",N-E,06/2020,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC20070504,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,RZ4E-TC (Euro 6d-temp),2020,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,yes,"Poly-V 8PK Ø119
+2.800 rpm","Poly-V 8PK Ø119
+2.800 rpm",N-E,06/2020,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC20080508,Kit compresor frío industrial,RENAULT TRUCKS,Serie K,DONG FENG DK12-06,2020,,2020,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.240,no,"8PK Ø119
+3509 rpm",,N,2020,,TM 13 / QP 13
+KC22030544,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1E6N (Euro VI OBD-E),2021,2025,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Poly-V 8K A Ø119
+3.294 rpm","Poly-V 8K A Ø119
+3.294 rpm",N-E,2021,2025,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23030568,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1E6N (Euro 6N),2021,2025,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,no,"Poly-V 8K A Ø119
+3.294 rpm","Poly-V 8K A Ø119
+3.294 rpm",N-E,2021,2025,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23070574,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1E6N (Euro VI OBD-E),2021,,2021,,,,Yes,,,,,,,,,Yes,,,,,,,,,,4 / 2.999,yes,"Poly-V 8K A Ø119
+4.329 rpm","Poly-V 8K A Ø119
+4.329 rpm",N-E,2021,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25080622,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1E6N (Euro VI OBD-E),2021,,2021,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,yes,"Poly-V 8K A Ø119
+3.294 rpm","Poly-V 8K A Ø119
+3.294 rpm",N-E,2021,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25080623,Kit compresor frío industrial,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,4JZ1E6N (Euro VI OBD-E),2021,,2021,,,,Yes,,,,,,,,,Yes,,,,,,,,,,4 / 2.999,yes,"Poly-V 8K A Ø119
+4.329 rpm","Poly-V 8K A Ø119
+4.329 rpm",N-E,2021,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170

@@ -1,0 +1,365 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KC05100008,Kit compresor frío industrial,,MASCOTT,ZD30 | (Euro 3),2004,,2004,Yes,,,Yes,,,,,,,,,,,,,,,,,,Yes,4 / 2.953,any,"2A Ø135
+3.870 rpm",,N,2004,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100013,Kit compresor frío industrial,,LT,AGX (Euro 3),1999,,1999,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 2.461,any,"2A Ø135
+2.850 rpm",,N,09/1999,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100014,Kit compresor frío industrial,,LT,MWM (Euro 3),1999,,1999,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.799,any,"2A Ø135
+3.500 rpm",,N,09/1999,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100025,Kit compresor frío industrial,,FA LF45.130,Paccar BE 99C (Euro 3) | Paccar BE 110C (Euro 3) | Paccar BE 123C (Euro 3),2001,2006,2001,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 3.900,no,"Poly-V 8K A Ø119
+3.782 rpm","Poly-V 8K A Ø157
+2.886 rpm",N-E/S,2001,2006,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100025,Kit compresor frío industrial,,FA LF45.180 / FA LF55.180 / FT LF55.180 / FAN LF55.180,Paccar CE 136C (Euro 3) | Paccar CE 162C (Euro 3) | Paccar CE 184C (Euro 3),2001,2006,2001,,,,Yes,,,,Yes,,,,,,,,,,,,,,,6 / 5.900,no,"Poly-V 8K A Ø119
+3.782 rpm","Poly-V 8K A Ø157
+2.886 rpm",N-E/S,2001,2006,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100025,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4) | Paccar FR118 (Euro 4) | Paccar FR136 (Euro 4),2006,,2006,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 4.500,no,"Poly-V 8K A Ø119
+3.782 rpm","Poly-V 8K A Ø157
+2.886 rpm",N-E/S,2006,,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100025,Kit compresor frío industrial,,FA LF45.220 / FA LF55.165 / FT LF55.220,Paccar GR165 (Euro 4) | Paccar GR184 (Euro 4) | Paccar GR210 (Euro 4),2006,,2006,,,,Yes,,,,Yes,,,,,,,,,,,,,,,6 / 6.700,no,"Poly-V 8K A Ø119
+3.782 rpm","Poly-V 8K A Ø157
+2.886 rpm",N-E/S,2006,,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100025,Kit compresor frío industrial,,KW45 160,Paccar FR160 (Euro 3-4),2006,,2006,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 4.500,no,"Poly-V 8K A Ø119
+3.782 rpm","Poly-V 8K A Ø157
+2.886 rpm",N-E/S,2006,,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100026,Kit compresor frío industrial,,FA LF45.130,Paccar BE 99C (Euro 3) | Paccar BE 110C (Euro 3) | Paccar BE 123C (Euro 3),2001,2006,2001,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 3.900,any,"2A Ø135
+3.480 rpm",,N,2001,2006,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100026,Kit compresor frío industrial,,FA LF45.180 / FA LF55.180 / FT LF55.180 / FAN LF55.180,Paccar CE 136C (Euro 3) | Paccar CE 162C (Euro 3) | Paccar CE 184C (Euro 3),2001,2006,2001,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 5.900,any,"2A Ø135
+3.480 rpm",,N,2001,2006,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100026,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4-5) | Paccar FR118 (Euro 4-5) | Paccar FR136 (Euro 4-5),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2A Ø135
+3.480 rpm",,N,2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100026,Kit compresor frío industrial,,FA LF45.220 / FA LF55.165 / FT LF55.220,Paccar GR165 (Euro 4-5) | Paccar GR184 (Euro 4-5) | Paccar GR210 (Euro 4-5),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.700,any,"2A Ø135
+3.480 rpm",,N,2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100026,Kit compresor frío industrial,,FA LF45.140 / FA LF45.160,Paccar FR103 (Euro 5) | Paccar FR118 (Euro 5) | Paccar FR136 (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2A Ø135
+3.480 rpm",,N,2012,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100044,Kit compresor frío industrial,,H-1 CRDi,D4CB,2005,,2005,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.497,no,"2A Ø135
+3.040 rpm",,N,2005,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100045,Kit compresor frío industrial,,NKR 77L,4JH1-X (Euro 3),2002,,2002,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.999,no,"2A Ø135
+3.652 rpm","1A Ø150
+3.287 rpm",N-E/S,2002,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100045,Kit compresor frío industrial,,ELF 100,4JH1-TCN (Euro 4),2002,,2002,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.999,no,"2A Ø135
+3.652 rpm","1A Ø150
+3.287 rpm",N-E/S,2002,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100046,Kit compresor frío industrial,,ELF 400 / ELF 500 / ELF 600,4HK1-TCS | (Euro 4-5),2009,,2009,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,no,"2A Ø135
+3.526 rpm",,N,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100051,Kit compresor frío industrial,,KUBISTAR,K9K (Euro 3),2003,2006,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2003,06/2006,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100061,Kit compresor frío industrial,,MASCOTT,8140.43B (S9W 206) | 8140.43S (S9W 208) | 8140.43N (S9W 212),1998,,2004,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.798,no,"2A Ø135
+3.800 rpm",,N,1998,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100062,Kit compresor frío industrial,,MASCOTT,8140.43B (S9W 206) | 8140.43S (S9W 208) | 8140.43N (S9W 212),1998,,2004,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.798,yes,"2A Ø135
+2.810 rpm",,N,1998,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100066,Kit compresor frío industrial,,DYNA,D-4D (2KD-FTV) | (Euro 3),2005,2007,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.494,no,"2A Ø135
+3.600 rpm",,N,2005,2007,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100066,Kit compresor frío industrial,,HILUX 2.5 D-4D,D-4D(2KD-FTV) | (Euro 3),2005,2007,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.494,no,"2A Ø135
+3.600 rpm",,N,2005,2007,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100066,Kit compresor frío industrial,,HIACE,D-4D(2KD-FTV) | (Euro 3),2005,2007,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.494,no,"2A Ø135
+3.600 rpm",,N,2005,2007,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06070079,Kit compresor frío industrial,,DYNA,D-4D (SO5C-TB),2005,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.613,no,"2A Ø135
+3.760 rpm",,N,2005,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06070082,Kit compresor frío industrial,,KUBISTAR,K9K (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,06/2006,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06070083,Kit compresor frío industrial,,L-200,4D56 | 4D56 TDI,,2000,,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.477,no,"2A Ø135
+3.825 rpm",,N,,2000,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06090085,Kit compresor frío industrial,,TGA,D2066LF04 // D2066LF03 | D2066LF02 // D2066LF01,2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 10.518,any,"2A Ø135
+3.850 rpm",,N,2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07040109,Kit compresor frío industrial,,NEMO,DV4 TED | (Euro 4-5),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E,01/2008,,TM 08 / QP 08 | UP 90
+KC07040109,Kit compresor frío industrial,,BIPPER,DV4 TED | (Euro 4-5),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E,01/2008,,TM 08 / QP 08 | UP 90
+KC07070115,Kit compresor frío industrial,,DYNA,D-4D(1KD-FTV) | (Euro 4),2006,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.982,any,"Poly-V Ø119
+3.529 rpm","Poly-V 7K A Ø119
+3.529 rpm",N-E,2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC07080117,Kit compresor frío industrial,,HIACE,D-4D (2KD-FTV) | (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.495,any,"2A Ø135
+4.267 rpm",,N,2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07100119,Kit compresor frío industrial,,MASCOTT,ZD30 (Euro 3) | DXi 3 (Euro 4),2004,,2004,Yes,,,Yes,,,,,,,,,,,,,,,,,,Yes,4 / 2.953,any,"2A Ø135
+3.870 rpm",,N,2004,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08010120,Kit compresor frío industrial,,HILUX 2.5 D-4D,D-4D(2KD-FTV) | (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.494,any,"Poly-V Ø119
+4.235 rpm","Poly-V 7K A Ø119
+4.235 rpm",N-E,2007,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08020123,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4) | Paccar FR118 (Euro 4) | Paccar FR136 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2B Ø152
+3.100 rpm",,N,2006,,TK-315
+KC08020123,Kit compresor frío industrial,,FA LF45.220 / FA LF55.165 / FT LF55.220,Paccar GR165 (Euro 4) | Paccar GR184 (Euro 4) | Paccar GR210 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.700,any,"2B Ø152
+3.100 rpm",,N,2006,,TK-315
+KC08030124,Kit compresor frío industrial,,NEMO,DV4 TED | (Euro 4-5),2008,,2008,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,01/2008,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08030124,Kit compresor frío industrial,,BIPPER,DV4 TED | (Euro 4-5),2008,,2008,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,01/2008,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08040127,Kit compresor frío industrial,,LOGAN VAN,K9K 792 (Euro 4),2008,,2008,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08040127,Kit compresor frío industrial,,DOKKER VAN,K9K 612 (Euro 5 / Euro 6),2013,2019,2013,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,05/2013,09/2019,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08040127,Kit compresor frío industrial,,CITAN,OM 607 DE15LA | (Euro 4 / Euro 5 / Euro 6),2012,,2012,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08060135,Kit compresor frío industrial,,MAXUS,2.5 CRD 16v | (Euro-4),2005,,2005,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.499 ,no,"Poly-V Ø119
+5.429 rpm","Poly-V 6K A Ø178
+3.629 rpm",N-E/S,2005,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08060136,Kit compresor frío industrial,,FIORINO,199 A 2000/9000 (Euro 4),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,no,"2A Ø135
+4.000 rpm",,N,01/2008,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08060136,Kit compresor frío industrial,,BIPPER,199 A 9000 (Euro 4) | F13DTE5 (Euro 5),2004,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,no,"2A Ø135
+4.000 rpm",,N,2004,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08060136,Kit compresor frío industrial,,NEMO,199 A 9000 (Euro 4) | F13DTE5 (Euro 5),2004,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,no,"2A Ø135
+4.000 rpm",,N,2004,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08090139,Kit compresor frío industrial,,NEMO,199 A 2000 (Euro 4),2004,2009,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+3.697 rpm","Poly-V 5K A Ø119
+3.697 rpm",N-E,2004,2009,TM 08 / QP 08 | UP 90
+KC08090139,Kit compresor frío industrial,,BIPPER,199 A 9000 (Euro 4) | F13DTE5 (Euro 5),2004,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+3.697 rpm","Poly-V 5K A Ø119
+3.697 rpm",N-E,2004,,TM 08 / QP 08 | UP 90
+KC08090140,Kit compresor frío industrial,,NEMO,199 A 2000 (Euro 4),2004,2009,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+3.697 rpm","Poly-V 8K A Ø119
+3.697 rpm",N-E,2004,2009,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08090140,Kit compresor frío industrial,,BIPPER,199 A 9000 (Euro 4) | F13DTE5 (Euro 5),2004,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+3.697 rpm","Poly-V 8K A Ø119
+3.697 rpm",N-E,2004,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08110144,Kit compresor frío industrial,,MAXUS,2.5 CRD 16v | (Euro-4),2005,,2005,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.499 ,any,"Poly-V Ø119
+3.097 rpm","Poly-V 8K A Ø119
+3.097 rpm",N-E,2005,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09010146,Kit compresor frío industrial,,DYNA,N04C-TW | (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,no,"2A Ø135
+3.200 rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09010146,Kit compresor frío industrial,,300 Series (Euro 4),N04C-VC (Euro 4) | N04C-UV (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,no,"2A Ø135
+3.200 rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09020147,Kit compresor frío industrial,,300 Series (Euro 4),N04C-VC (Euro 4) | N04C-UV (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.200 rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09020147,Kit compresor frío industrial,,DYNA,N04C-TW | (Euro 4),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.200 rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09030148,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 6K A Ø145
+2.960 rpm",,N,2008,2017,CR2318
+KC09040158,Kit compresor frío industrial,,ELF 400 / ELF 500 / ELF 600,4HK1-TCS | (Euro 4-5),2009,,2009,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09050160,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 7 Ø145
+2.960 rpm",,N,2008,2017,CR2323
+KC09050161,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,,"Poly-V 8K A Ø145
+3.041 rpm",#¿NOMBRE?,2008,2017,TK-315
+KC09050162,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 8K A Ø137
+3.128 rpm","Poly-V 8K A Ø137
+3.128 rpm",N-E,2008,2017,TM 21 / QP 21
+KC09050163,Kit compresor frío industrial,,LOGAN VAN,K9K 792 (Euro 4),2008,,2008,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 08 / QP 08 | UP 90
+KC09050163,Kit compresor frío industrial,,CITAN,OM 607 DE15LA | (Euro 4 / Euro 5 / Euro 6),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,,TM 08 / QP 08 | UP 90
+KC09050163,Kit compresor frío industrial,,DOKKER VAN,K9K 612 (Euro 5 / Euro 6),2013,2019,2013,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,no,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,05/2013,09/2019,TM 08 / QP 08 | UP 90
+KC09090176,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 6K A Ø119
+3.705 rpm","Poly-V 8K A Ø119
+3.705 rpm",N-E,2008,2017,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC09100180,Kit compresor frío industrial,,P230 / P250 / P270 / P280 / P310 / P320,DC9 / OC9 (Euro 4-5) | DC09 (Euro 6),2008,2017,2008,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 6K A Ø145
+2.960 rpm",,N,2008,2017,TK-312
+KC11040220,Kit compresor frío industrial,,\N,OM 651 DE22 LA | (Euro 5b - CDI | Euro 6 - BlueTEC),2009,,2009,,,,Yes,,,,,,,,,,,,,Yes,,,,,,4 / 2.143,any,"1B Ø119 5.876rpm / 1B Ø128
+5.463 rpm",,N,2009,,CS55 | CS90
+KC11050227,Kit compresor frío industrial,,\N,OM 651 DE22 LA ECO | (Euro 5b - CDI | Euro 6 - BlueTEC),2009,,2009,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 2.143,any,"2A Ø135
+3.300 rpm",,N,2009,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11050228,Kit compresor frío industrial,,\N,OM 651 DE22 LA ECO | (Euro 5b - CDI | Euro 6 - BlueTEC),2009,,2009,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 2.143,any,"2A Ø135
+3.300 rpm",,N,2009,,TM 08 / QP 08 | UP 90
+KC11090245,Kit compresor frío industrial,,FA LF45.140 / FA LF45.160,Paccar FR103 (Euro 5) | Paccar FR118 (Euro 5) | Paccar FR136 (Euro 5) | Paccar FR152 (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2B Ø152 / 1B Ø149 / 1B Ø150
+2.597 rpm","1B Ø150
+2.597 rpm",N-E,2012,,TK-312 | TK-315 | TM 21 / QP 21
+KC11120255,Kit compresor frío industrial,,FRR90,4HK1-E5S | (Euro 5),2011,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+3.177 rpm",,N,12/2011,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12020263,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4) | Paccar FR118 (Euro 4) | Paccar FR136 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø128 4.238 rpm / 1B Ø134
+4.049 rpm",,N,2006,,CS150 | CS90
+KC12030267,Kit compresor frío industrial,,TGA,D2066LF04 // D2066LF03 | D2066LF02 // D2066LF01,2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 10.518,any,"1B Ø128
+4.070rpm / 1B Ø134 3.900",,N,2006,,CS150 | CS90
+KC12070284,Kit compresor frío industrial,,FA LF45.140 / FA LF45.160,Paccar FR103 (Euro 5) | Paccar FR118 (Euro 5) | Paccar FR136 (Euro 5) | Paccar FR152 (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2A Ø135
+3.480 rpm",,N,2012,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12070284,Kit compresor frío industrial,,XB230 / XB260 / XB290 / XB310,PX-7 (Euro 6) | PX-7 (Euro 6) | PX-7 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.690,any,"2A Ø135
+3.480 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12090292,Kit compresor frío industrial,,NEMO,DV4 TED | (Euro 4-5),2008,,2008,,,,,,,,,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V 6K A Ø150
+3.800 rpm",,N,01/2008,,SD5H09
+KC12090292,Kit compresor frío industrial,,BIPPER,DV4 TED | (Euro 4-5),2008,,2008,,,,,,,,,,,,,,,,,,,,,,,4 / 1.399,no,"Poly-V 6K A Ø150
+3.800 rpm",,N,01/2008,,SD5H09
+KC12100293,Kit compresor frío industrial,,FA LF45.140 / FA LF45.160,Paccar FR103 (Euro 5) | Paccar FR118 (Euro 5) | Paccar FR136 (Euro 5) | Paccar FR152 (Euro 5),2012,,2012,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø128 3.380 rpm /
+1B Ø134 3.230 rpm",,N,2012,,CS150 | CS90
+KC13020306,Kit compresor frío industrial,,FA LF45.220 / FA LF55.165 / FT LF55.220,Paccar GR165 (Euro 4) | Paccar GR184 (Euro 4) | Paccar GR210 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.700,any,"1B Ø150 / 1B Ø155
+3.032 rpm",,N,2006,,CR2318 | CR2323
+KC13020306,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4) | Paccar FR118 (Euro 4) | Paccar FR136 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø150 / 1B Ø155
+3.032 rpm",,N,2006,,CR2318 | CR2323
+KC13020313,Kit compresor frío industrial,,NT500,ZDK2 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.953,any,"2A Ø135
+2.600 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13020315,Kit compresor frío industrial,,FA LF45.140,Paccar FR103 (Euro 4) | Paccar FR118 (Euro 4) | Paccar FR136 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø150
+3.150 rpm","1B Ø150
+3.150 rpm",N-E,2006,,TM 21 / QP 21
+KC13020315,Kit compresor frío industrial,,FA LF45.220 / FA LF55.165 / FT LF55.220,Paccar GR165 (Euro 4) | Paccar GR184 (Euro 4) | Paccar GR210 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.700,any,"1B Ø150
+3.150 rpm","1B Ø150
+3.150 rpm",N-E,2006,,TM 21 / QP 21
+KC13020315,Kit compresor frío industrial,,KW45 225,Paccar GR225 (Euro 4) | Paccar GR250 (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.690,any,"1B Ø150
+3.150 rpm","1B Ø150
+3.150 rpm",N-E,2006,,TM 21 / QP 21
+KC13030319,Kit compresor frío industrial,,LOGAN VAN,K9K 792 (Euro 4),2008,,2008,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC13030319,Kit compresor frío industrial,,DOKKER VAN,K9K 612 (Euro 5 / Euro 6),2013,2019,2013,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,05/2013,09/2019,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC13030319,Kit compresor frío industrial,,CITAN,OM 607 DE15LA | (Euro 4 / Euro 5 / Euro 6),2012,,2012,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC13030320,Kit compresor frío industrial,,CITAN,OM 607 DE15LA | (Euro 4 / Euro 5 / Euro 6),2012,,2012,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,2012,,TM 08 / QP 08 | UP 90
+KC13030320,Kit compresor frío industrial,,LOGAN VAN,K9K 792 (Euro 4),2008,,2008,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,03/2008,,TM 08 / QP 08 | UP 90
+KC13030320,Kit compresor frío industrial,,DOKKER VAN,K9K 612 (Euro 5 / Euro 6),2013,2019,2013,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.461,yes,,"Poly-V 6K A Ø125
+4.800 rpm",#¿NOMBRE?,05/2013,09/2019,TM 08 / QP 08 | UP 90
+KC13050330,Kit compresor frío industrial,,NT500,ZDK2 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.953,any,"2A Ø145
+2.420 rpm",,N,2014,,TM 21 / QP 21
+KC13050331,Kit compresor frío industrial,,NT500,ZDKe (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.953,any,"2A Ø135
+3.440 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13060335,Kit compresor frío industrial,,NP300,KA24DEN (petrol supply),2010,,2015,,,,,,,,,,,,,,,,,,,,,,,4 / 2.389,no,"2A Ø135
+5.585 rpm","1A Ø165
+4.570 rpm",N-E,2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14010345,Kit compresor frío industrial,,NT500,ZDKe (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.953,any,"2A Ø145
+3.200 rpm",,N,2014,,TM 21 / QP 21
+KC14020348,Kit compresor frío industrial,,XB230 / XB260 / XB290 / XB310,PX-7 (Euro 6) | PX-7 (Euro 6) | PX-7 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.690,any,"1B Ø150
+3.150 rpm","TM 21 / QP 21
+1B Ø150 -3.150rpm",N-E,2014,,TK-315 | TM 21 / QP 21
+KC14020349,Kit compresor frío industrial,,XB230 / XB260 / XB290 / XB310,PX-7 (Euro 6) | PX-7 (Euro 6) | PX-7 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.690,any,"2A Ø135
+3.480 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14040354,Kit compresor frío industrial,,F-350XL / FX350XL PLUS,Boss SOHC V8,2010,,2010,,,,,,,,,,,,,,,,,,,,,,,6200-08-01 00:00:00,no,"Poly-V 6PK Ø119
+7.764 rpm",,N,2010,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC14040355,Kit compresor frío industrial,,F-450 XL (SUPER DUTY),Triton SOHC V10,2010,,2010,,,,,,,,,,,,,,,,,,,,,,,6800-10-01 00:00:00,no,"Poly-V 6PK Ø119
+6.705 rpm",,N,2010,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC14050361,Kit compresor frío industrial,,XB170 / XB190 / XB210,PX-5 170 (Euro 6) | PX-5 190 (Euro 6) | PX-5 210 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø150
+3.000 rpm","1B Ø150
+3.000 rpm",N-E,2014,,TM 21 / QP 21
+KC14050362,Kit compresor frío industrial,,XB170 / XB190 / XB210,PX-5 170 (Euro 6) | PX-5 190 (Euro 6) | PX-5 210 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"2A Ø135
+3.100 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080373,Kit compresor frío industrial,,N-Evolution,4JJ1-TCS (Euro 4) | 4JJ1-E5N (Euro 5 EEV),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,any,"Poly-V 8K A Ø119
+3.453 rpm","Poly-V 8K A Ø119
+3.453 rpm",N-E,2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC15070396,Kit compresor frío industrial,,TORA FSR - Euro 5,4HK1-E5S | (Euro 5),2011,,2011,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.193,any,"2A Ø135
+2.933 rpm",,N,12/2011,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC15090402,Kit compresor frío industrial,,ELF 200 / ELF 300,4JJ1-TC | (US EPA 04),2006,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,no,"2A Ø135
+2.800 rpm",,N,2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC15100404,Kit compresor frío industrial,,H350 CRDi,D4CB 2.5 CRDi | (Euro 5b+ / Euro 6),2015,,2015,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.497,any,"Poly-V Ø119
+3.449 rpm","Poly-V 8K A Ø119
+3.449 rpm",N-E,2015,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16070409,Kit compresor frío industrial,,500 Series (Euro 2),J05C-TF | (Euro 2),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 5.307,no,"2A Ø135
+3.370 rpm",,N,09/2007,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16100418,Kit compresor frío industrial,,300 Series (EPA TIER 3),N04C-VB | (EPA TIER 3),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.360 rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17050434,Kit compresor frío industrial,,300 Series (Euro 1 / Euro 2),W04D-J (Euro 1) | W04D-TN (Euro 2),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,no,"2A Ø135
+3.440 rpm / 2.690rpm",,N,09/2007,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17070439,Kit compresor frío industrial,,D-MAX N57 / N60,RZ4E (Euro 6),2017,2022,2017,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,07/2017,12/2022,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC17070440,Kit compresor frío industrial,,CITAN 110/113,1.3 Petrol (Euro 6d-full) | M200.73,2021,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.333,no,,"Poly-V 7K A Ø119
+4.500 rpm",#¿NOMBRE?,09/2021,,TM 13 / QP 13
+KC17070440,Kit compresor frío industrial,,TOWNSTAR 1.3 TCe (HR13),1.3 Petrol (Euro 6d-full),2021,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.333,no,,"Poly-V 7K A Ø119
+4.500 rpm",#¿NOMBRE?,09/2021,,TM 13 / QP 13
+KC17120450,Kit compresor frío industrial,,HILUX 2.4 D-4D,2.4L D-4D | 2GD-FTV Euro6,2017,2019,2017,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.393,any,"Poly-V 8K A Ø119
+3.200 rpm","Poly-V 8K A Ø119
+3.200 rpm",N-E,11/2017,10/2019,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC18010451,Kit compresor frío industrial,,C31 / C32,DK 15-06 (Euro 5),2017,,2017,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2017,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC18020454,Kit compresor frío industrial,,XB170 / XB190 / XB210,PX-5 170 (Euro 6) | PX-5 190 (Euro 6) | PX-5 210 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"Poly-V 8K A Ø119
+4.850 rpm","Poly-V 8K A Ø142
+4.060 rpm",N-E,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18050459,Kit compresor frío industrial,,P280 / P320 / P360,"DC09 130 (Euro 6) | DC09 126 (Euro 6) | DC09 127 (Euro 6) | DC09 139 (Euro 6) | OC09 104 (CNG/LNG, Euro 6) | OC09 105 (CNG/LNG, Euro 6)",2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,"Poly-V 8K A Ø119
+3.911 rpm","Poly-V 8K A Ø119
+3.911 rpm",N-E,2018,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18070463,Kit compresor frío industrial,,P220 / P250 / P280,DC07 111 (Euro 6) | DC07 112 (Euro 6) | DC07 113 (Euro 6),2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.700,yes,"Poly-V 8K A Ø119
+5.765 rpm","Poly-V 8K A Ø119
+5.765 rpm",N-E,2018,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18070464,Kit compresor frío industrial,,P280 / P320 / P360,"DC09 130 (Euro 6) | DC09 126 (Euro 6) | DC09 127 (Euro 6) | DC09 139 (Euro 6) | OC09 104 (CNG/LNG, Euro 6) | OC09 105 (CNG/LNG, Euro 6)",2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,,"Poly-V 5K A Ø125
+3.730 rpm",#¿NOMBRE?,2018,,TM 21 / QP 21
+KC18080467,Kit compresor frío industrial,,NV250 1.5 dCi,K9K Gen8 (Euro 6dtemp),2019,2023,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,2023,TM 13 / QP 13
+KC18080467,Kit compresor frío industrial,,CITAN 1.5,OM 608 DE 15 LA (Euro 6dtemp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC18080467,Kit compresor frío industrial,,DOKKER 1.5,K9K Gen8 (Euro 6dtemp),2019,2023,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,2023,TM 13 / QP 13
+KC18080467,Kit compresor frío industrial,,CITAN 1.5,OM 608 DE 15 LA (Euro 6d-full),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC19030482,Kit compresor frío industrial,,MAXUS V80,VM ECO-D Euro VI 2.5,2019,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.499 ,yes,"Poly-V Ø119
+3.097 rpm","Poly-V 8K A Ø119
+3.097 rpm",N-E,2019,,SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040485,Kit compresor frío industrial,,ELF 200 / ELF 300,4JJ1-TC | (US EPA 04),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.999,no,"2A Ø135
+2.800 rpm",,N,2014,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19060488,Kit compresor frío industrial,,NP300,QR25DE (petrol),2015,,2015,,,,,,,,,,,,,,,,,,,,,,,4 / 2.488,any,"Poly-V 6K/8K A Ø119
+4.740 r.p.m.",,N,2015,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC19070492,Kit compresor frío industrial,,DOBLÃ“,DV5 (Euro 6.3 / Euro 6.4),2022,,2022,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,2022,,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19120497,Kit compresor frío industrial,,NV250 1.5 dCi,K9K Gen8 (Euro 6dtemp),2019,2023,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,2023,TM 13 / QP 13
+KC19120497,Kit compresor frío industrial,,CITAN 1.5,OM 608 DE 15 LA (Euro 6dtemp),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC19120497,Kit compresor frío industrial,,DOKKER 1.5,K9K Gen8 (Euro 6dtemp),2019,2023,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,2023,TM 13 / QP 13
+KC19120497,Kit compresor frío industrial,,CITAN 1.5,OM 608 DE 15 LA (Euro 6d-full),2019,,2019,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.461,no,"Poly-V 8K A Ø119
+4.750 rpm","Poly-V 8K A Ø119
+4.750 rpm",N-E,09/2019,,TM 13 / QP 13
+KC20080506,Kit compresor frío industrial,,PORTER NP6 1.5,EURO 6d-full (petrol/LPG & petrol/methane),2021,,2021,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.498,any,"Poly-V Ø119
+6.403 rpm","Poly-V 8PK Ø157
+4.854 rpm",N-E,2021,,TM 13 / QP 13
+KC20120512,Kit compresor frío industrial,,RANGER 2.0 EcoBlue TDCi,2.0L EcoBlue TDCi 170CV (125kW) | 2.0L EcoBlue TDCi  213CV (157kW),2019,2022,2023,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8K A Ø119
+3.588 rpm","Poly-V 8K A Ø119
+3.588 rpm",N-E,09/2019,12/2022,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC21070524,Kit compresor frío industrial,,P280 / P320 / P360,"OC09 104 (CNG/LNG, Euro 6) | OC09 105 (CNG/LNG, Euro 6)",2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,5 / 9.300,any,,"Poly-V 8K A Ø127
+3.665 rpm",#¿NOMBRE?,2018,,QP 25
+KC21090530,Kit compresor frío industrial,,XB230 / XB260 / XB290 / XB310,PX-7 (Euro 6) | PX-7 (Euro 6) | PX-7 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 6.690,any,"1B Ø150
+3.750 rpm",,N,2014,,QP 25
+KC21090531,Kit compresor frío industrial,,XB170 / XB190 / XB210,PX-5 170 (Euro 6) | PX-5 190 (Euro 6) | PX-5 210 (Euro 6),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.500,any,"1B Ø150
+3.600 rpm",,N,2014,,QP 25
+KC21090532,Kit compresor frío industrial,,R370 / R410 / R450 / R500 / R540,DC13 EURO6,2021,,2022,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 12.700,any,"Poly-V 8K A Ø119
+3.360 rpm","Poly-V 8K A Ø119
+3.360 rpm",N-E,2021,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC21110535,Kit compresor frío industrial,,GAZelle Next EA189 2.0 TDI - RWD,2.0 TDI EA189 - EURO 6,2021,,2021,Yes,,,,,,,,,,,,,,,,,,,,,,4 / 1.968,yes,"Poly-V 8K A Ø119
+4.058 rpm","Poly-V 8k Ø157
+3.076 rpm",N-E,2021,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC21110536,Kit compresor frío industrial,,MAXUS DELIVER 9 FWD,Euro 6.2,2021,,2021,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.996,yes,"Poly-V Ø119
+3.576 rpm","Poly-V 8K A Ø119
+3.576 rpm",N-E,2021,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22020543,Kit compresor frío industrial,,R370 / R410 / R450 / R500 / R540,DC13 (Euro 6),2022,,2022,,,,,,,,,,,,,,,,,,,,,,,6 / 12.700,yes,"Poly-V 8K A Ø137
+2.917 rpm","Poly-V 8K A Ø137
+2.917 rpm",N-E,2022,,TM 21 / QP 21
+KC22060551,Kit compresor frío industrial,,DOBLÃ“,DV5 (Euro 6.3/Euro 6.4),2022,,2022,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+4.500 rpm","Poly-V 8K A Ø119
+4.500 rpm",N-E,02/2022,,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23010561,Kit compresor frío industrial,,S-WAY,Cursor 9 (Euro 6) | F2CFE611D | F2CFE611C | F2CFE611B,2022,2024,2022,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 8.709,any,"Poly-V 8K A Ø137
+3.260 rpm","Poly-V 8K A Ø137
+3.260 rpm",N-E,01/2022,12/2024,TM 21 / QP 21
+KC23030564,Kit compresor frío industrial,,U-4000,OM 904 LA (Euro 3),1997,,1997,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.249,any,"8PK Ø119
+3.515 rpm","8PK Ø119
+3.515 rpm",N-E,1997,,SD5H14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23040571,Kit compresor frío industrial,,S-WAY,Cursor 9 (Euro 6) | F2CFE611D | F2CFE611C | F2CFE611B,2022,2024,2022,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 8.709,any,"Poly-V 8K A Ø137
+3.680 rpm","Poly-V 8K A Ø137
+3.680 rpm",N-E,01/2022,12/2024,QP 25
+KC23050572,Kit compresor frío industrial,,DYNA L75.34 / L75.38 / L75.42,N04C-WL (Euro 5)                                               N04C-WM (Euro 5),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.200 rpm",,N,09/2007,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC23050572,Kit compresor frío industrial,,HINO SERIE 300 (616/617/716/717/816/817/916/917),N04C-WL (Euro 5)                                               N04C-WM (Euro 5),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.200 rpm",,N,09/2007,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC23050572-B,Kit compresor frío industrial,,HINO SERIE 300 (616/617/716/717/816/817/916/917),N04C-WL (Euro 5)                                               N04C-WM (Euro 5),2007,,2007,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 4.009,any,"2A Ø135
+3.200 rpm",,N,09/2007,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC23110579,Kit compresor frío industrial,,RANGER 2.0 EcoBlue TDCi,2.0L EcoBlue TDCi 170CV (125kW) | 2.0L EcoBlue TDCi  213CV (151kW),2023,,2023,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8K A Ø119
+3588 rpm (ilde speed)","Poly-V 8K A Ø119
+3588 rpm (ilde speed)",N-E,01/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150
+KC23110580,Kit compresor frío industrial,,8.5t GVW,Cummins Intercooler Turbo Diesel Euro6,2023,,2023,,,,,,,,,,,,,,,,,,,,,,,3800-04-01 00:00:00,yes,"2A Ø135
+3330 rpm",,N,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24020584,Kit compresor frío industrial,,MAXUS DELIVER 9 RWD,Euro 6.2,2021,,2021,Yes,,,,,,,,,,,,,,,,,,,,,,4 / 1.996,any,"Poly-V 8K A Ø119
+3.576 rpm","Poly-V 8K A Ø119
+3.576 rpm",N-E,2021,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24040586,Kit compresor frío industrial,,8.5t GVW,Cummins Intercooler Turbo Diesel Euro6,2023,,2023,,,,,,,,,,,,,,,,,,,,,,,3800-04-01 00:00:00,yes,"1B Ø180
+3000 rpm","1B Ø150
+3000 rpm",N-E,11/2023,,TM 21 / QP 21
+KC25020610,Kit compresor frío industrial,,D-MAX N57 / N60,RZ4E (Euro 6),2017,,2017,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,07/2017,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC25020611,Kit compresor frío industrial,,RELAY 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,ok,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø119
+3.441 r.p.m.","Poly-V 8K A Ø119
+3.441 r.p.m.",N-E,05/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25100626,Kit compresor frío industrial,,AUMARK 7.5/8.5 TN,Cummins F3.8EVIE156,2023,,2023,,,,,,,,,,,,,,,,,,,,,,,4/3.780,yes,"2A Ø135
+3330 rpm",,N,11/2023,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25100629,Kit compresor frío industrial,,P280 / P320 / P360,"OC09 104 (CNG/LNG, Euro 6) | OC09 105 (CNG/LNG, Euro 6)",2018,,2018,,,,Yes,,,,,,,,,,,,,,,,,,,6 / 12.700,any,,"Poly-V 8K A Ø127
+3.665 rpm",N,2018,,TM 16 / QP 16
+KC26010630,Kit compresor frío industrial,,MAXUS DELIVER 7 FWD,Euro 6.2,2021,,2021,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.996,yes,"Poly-V Ø119
+3.576 rpm","Poly-V 8K A Ø119
+3.576 rpm",N-E,2021,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC26020631,Kit compresor frío industrial,,AUMARK 7.5/8.5 TN,Cummins F3.8EVIE156,2023,,2023,,,,,,,,,,,,,,,,,,,,,,,4/3.780,yes,"2A Ø135
+3330 rpm",,N,11/2023,,TM 21 / QP 21

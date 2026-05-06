@@ -1,0 +1,27 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KG13089007,Kit generador,NISSAN,CABSTAR,YD25DDTi | (Euro 4),2006,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.488,no,"Ø60
+2.750 rpm",,N,06/2006,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,NISSAN,NV400 2.3 dCi - RWD,M9T (Euro 5b+),2014,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,2014,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,NISSAN,NV400 2.3 dCi - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,2016,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,NISSAN,NV400 2.3 dCi - RWD (EURO 6D),M9T (Euro VI-D Temp),2019,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,09/2019,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG16029015,Kit generador,NISSAN,MAXITY,DXi2.5 Euro 5b+ (FAP),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.488,no,"Ø60
+2.587 rpm",,N,2014,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG17059021,Kit generador,NISSAN,NV400 2.3 dCi - FWD,M9T (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,2016,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG17059021,Kit generador,NISSAN,NV400 2.3 dCi - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG17059021,Kit generador,NISSAN,NV400 2.3 dCi - FWD (EURO VI-D),M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20019029,Kit generador,NISSAN,NV400 2.3 dCi - FWD (EURO 6D),M9T (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG20019029,Kit generador,NISSAN,INTERSTAR 2.3 dCi - FWD (EURO 6D Full),M9T (Euro 6D Full),2022,,2022,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,2022,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG23119039,Kit generador,NISSAN,INTERSTAR 2.0 dCi - FWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N,09/2024,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG25099041,Kit generador,NISSAN,INTERSTAR 2.0 dCi - RWD (EURO 6.4),XDD M920 Blue dCi EURO 6.4,2024,,2024,Yes,,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,yes,"Poly-V 6K A Ø119
+3.500 r.p.m.","Poly-V 6K A Ø119
+3.500 r.p.m.",N-E,09/2024,,"Generator ""G3-230V"" | Generator ""G3-400V"" "

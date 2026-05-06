@@ -1,0 +1,5 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KH17087009,Kit bomba hidráulica,RENAULT TRUCKS,"SERIE-N 3,5t",RZ4EE6N-L  (Euro 6b-1),2017,,2017,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,no,"Poly-V 7K A Ø140
+3.985 rpm",,N,07/2017,,HPI 12cc | HPI 15cc
+KH24057030,Kit bomba hidráulica,RENAULT TRUCKS,SERIE - N Euro VI OBD-D,RZ4E-TC (Euro 6d-temp),2020,,2020,,,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.898,any,"Poly-V 8PK Ø138
+870 rpm",,N,06/2020,,16 cc SALAMI
