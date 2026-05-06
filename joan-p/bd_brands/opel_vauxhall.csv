@@ -1,0 +1,386 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KA23055020,Kit alternador,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,,2019,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 2.179,yes,"Poly-V Ø54
+11.083 r.p.m.",,N,09/2019,,Valeo 140A 14V
+KA23065023,Kit alternador,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø54
+3.460 r.p.m.",,N,2016,,Valeo 140A 14V
+KA23065023,Kit alternador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø54
+3.460 r.p.m.",,N,09/2019,,Valeo 140A 14V
+KA23065023,Kit alternador,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø54
+3.460 r.p.m.",,N,09/2019,,Valeo 140A 14V
+KA23065023,Kit alternador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø54
+3.460 r.p.m.",,N,2016,,Valeo 140A 14V
+KA23065023,Kit alternador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø54
+3.460 r.p.m.",,N,2014,,Valeo 140A 14V
+KA25035043,Kit alternador,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,,,,,,,,,,,,,,,,,4 / 2.184,no,Poly-V,,N,05/2024,,SEG 150A 28V 
+KC05100012,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,G9U 630 | (Euro 3 / Euro 4),2003,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.464 ,no,"Poly-V Ø119
+4.387 rpm","Poly-V 7K A Ø119
+4.387 rpm",N-E,2003,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100012,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO,G9T | G9U (Euro 3) | G9U 630(Euro 4),2001,,2006,,,,Yes,,,,,,,,,,,,,,,,,,,"4 / 2.188 _x000D_
+4 / 2.464",no,"Poly-V Ø119
+4.387 rpm","Poly-V 7K A Ø119
+4.387 rpm",N-E,2001,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100023,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,F9Q (Euro 3),2001,2006,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.870,no,"Poly-V Ø119
+4.265 rpm","Poly-V 8K A Ø119
+4.265 rpm",N-E,2001,06/2006,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC05100053,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,F9Q (Euro 3),2001,2006,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.870,no,"Poly-V Ø119
+4.229 rpm","Poly-V 6K A Ø119
+4.229 rpm",N-E,2001,06/2006,TM 08 / QP 08 | UP 90
+KC05100055,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO,ZD30 (Euro 3) | DXi3 (Euro 4),2004,,2006,,,,Yes,,,,Yes,,,,,,,,,,,,,,Yes,4 / 2.953,no,"Poly-V Ø119
+4.689 rpm","Poly-V 8K A Ø157
+3.554 rpm",N-E/S,2004,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100060,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,Y17 (Euro 3),2001,2005,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.686,no,"2A Ø135
+3.520 rpm",,N,2001,2005,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06110090,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO,G9U 650 (Euro 4) | G9U 632 (Euro 4),2006,,2006,,,,,,,,,,,,,,,,,,,,,,,4 / 2.464,any,"Poly-V Ø119
+3.529 rpm","Poly-V 8K A Ø119
+3.529 rpm",N-E,06/2006,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06120095,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 5b+),2014,,2016,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,2014,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06120095,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 780 (Euro 4) | M9R 630 (Euro 5) | M9R 692 (Euro 5),2006,,2019,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2006,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC06120095,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2010,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08030126,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 780 (Euro 4) | M9R 630 (Euro 5) | M9R 692 (Euro 5),2006,,2019,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2006,,TM 08 / QP 08 | UP 90
+KC08030126,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,06/2010,,TM 08 / QP 08 | UP 90
+KC08030126,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 5b+),2014,,2016,,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 7K A Ø119
+4.353 rpm",N-E,2014,,TM 08 / QP 08 | UP 90
+KC08120145,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 780 (Euro 4),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,yes,"2A Ø135
+3.111 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC09090178,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 780 (Euro 4),2006,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,yes,"2A Ø135
+3.111 rpm",,N,06/2006,,TM 08 / QP 08 | UP 90
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T (Euro 4-5) | M9T / M9T B7 (Euro 5b+),2010,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T / M9T B7 (Euro 5b+),2014,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",any,"2A Ø135
+3.111 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - RWD,M9T / M9T B7 (Euro 6),2016,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - RWD,M9T (Euro VI-D Temp),2019,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10020189,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD (EURO 6D),M9T (Euro VI-D Temp),2019,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10030190,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A16FDL | (Euro 5),2012,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,yes,"2A Ø135
+3.495 rpm",,N,01/2012,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10050194,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10050194,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,"4 / 2.298_x000D_
+",any,"2A Ø135
+3.111 rpm",,N,2014,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC10050195,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,199A3000 | (Euro 4),2011,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+4.100 rpm","Poly-V 8K A Ø119
+4.100 rpm",N-E,12/2011,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC10080200,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,199A3000 | (Euro 4),2011,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,any,"Poly-V Ø119
+4.100 rpm","Poly-V 6K A Ø119
+4.100 rpm",N-E,12/2011,,TM 08 / QP 08 | UP 90
+KC10090201,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T (Euro 4-5) | M9T / M9T B7 (Euro 5b+),2010,,2016,Yes,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC10090201,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T / M9T B7 (Euro 5b+),2014,,2016,Yes,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2014,,TM 08 / QP 08 | UP 90
+KC10090201,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,TM 08 / QP 08 | UP 90
+KC10090201,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - RWD,M9T / M9T B7 (Euro 6),2016,,2019,Yes,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2016,,TM 08 / QP 08 | UP 90
+KC10090202,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC10090202,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 5b+),2014,,2016,,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.111 rpm",,N,2014,,TM 08 / QP 08 | UP 90
+KC11050236,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A16FDL | (Euro 5),2012,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"2A Ø135
+3.495 rpm",,N,01/2012,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12060277,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5),2010,,2016,,Yes,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.059 rpm",,N,06/2010,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12060278,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5),2010,,2016,,Yes,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 2.298,any,"2A Ø135
+3.059 rpm",,N,06/2010,,TM 08 / QP 08 | UP 90
+KC12060282,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263 A2000 (Euro 5),2010,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,no,"2A Ø135
+4.000 rpm",,N,2010,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC12120298,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2019,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm","Poly-V 7K A Ø119
+2.941 rpm",N-E,01/2010,,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120
+KC12120298Z,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2019,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm","Poly-V 7K A Ø119
+2.941 rpm",N-E,01/2010,,UP 150 / UPF 150
+KC12120300,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2014,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC12120300Z,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,09/2019,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,09/2019,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2016,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N,2016,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC12120300Z,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2014,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC13040323,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,M9R 630 (Euro 5) | M9R 692 (Euro 5),2010,,2019,,,,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8K A Ø119
+2.941 rpm","Poly-V 7K A Ø119
+2.491 rpm",N-E,01/2010,,TM 08 / QP 08 | UP 90
+KC13070336,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,198A4000 CNG (Euro 5),2012,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.368,yes,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2012,,SD5H14 | SD5L14 | TM 13 / QP 13 | UP 120 / UPF 120
+KC13070336,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A14FCCNG (Euro 6),2010,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.368,yes,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2010,,SD5H14 | SD5L14 | TM 13 / QP 13 | UP 120 / UPF 120
+KC14070367,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,2014,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,2016,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,2016,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,09/2019,,SD5H14 | SD7H15
+KC14070367,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 6-8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-S,09/2019,,SD5H14 | SD7H15
+KC14070369,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 5b+/ Euro 6),2014,,2019,,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,2014,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC14070369Z,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 5b+/ Euro 6),2014,,2019,,,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.",,N,2014,,UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2014,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14080372,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,09/2019,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC14090378,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2014,,TM 08 / QP 08 | UP 90
+KC14090378,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 08 / QP 08 | UP 90
+KC14090378,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,4 / 2.298,no,"Poly-V 8K A Ø119
+4.353 rpm","Poly-V 8K A Ø119
+4.353 rpm",N-E,2016,,TM 08 / QP 08 | UP 90
+KC14120380,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 6),2016,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2016,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC14120382,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 6),2016,,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+4.790 rpm","Poly-V 8K A Ø119
+4.790 rpm",N-E,2016,,TM 08 / QP 08 | UP 90
+KC15020388,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 5b+/ Euro 6),2016,,2019,,,,Yes,Yes,Yes,,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,2016,,TM 08 / QP 08 | UP 90
+KC15020388,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,R9M (Euro 5b+/ Euro 6),2014,,2019,,,,Yes,Yes,Yes,,,,,Yes,Yes,,,,,,,,,,,4 / 1.598,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 8K A Ø119
+3.500 r.p.m.",N-E,2014,,TM 08 / QP 08 | UP 90
+KC15050390,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,2024,2024,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 2.179,yes,"Poly-V Ø119
+3.150 r.p.m.","Poly-V 8K A Ø119
+3.150 r.p.m.",N-E,09/2019,04/2024,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120
+KC15060391,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 RU (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,,2024,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 2.179,no,"Poly-V 8K A Ø119
+4.790 r.p.m.","Poly-V 8K A Ø119
+4.790 r.p.m.",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16060408,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO 2018 (PSA Platform),DV6FDU (Euro 6.1) | DV6FCU (Euro 6.1),2018,,2018,,,,Yes,Yes,,,Yes,,,,,,,,,,,,,,,4 / 1.560,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,09/2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC16080412,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,DW10FE (Euro 6.2) | DW10FD (Euro 6.2) | DW10FC (Euro 6.2),2019,2021,2019,,,Yes,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø119
+3.120 rpm","Poly-V 8PK Ø119
+3.120 rpm",N-E,09/2019,11/2021,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC16080412Z,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,DW10FE (Euro 6.2) | DW10FD (Euro 6.2) | DW10FC (Euro 6.2),2019,,2019,,,Yes,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø119
+3.120 rpm",,N,09/2019,,UP 150 / UPF 150
+KC16090413,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,2018,2016,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+5.546 rpm","Poly-V 6K A Ø142
+4.647 rpm",N-E/S,09/2016,2018,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC16090413,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,,2016,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.598,no,"Poly-V Ø119
+5.546 rpm","Poly-V 6K A Ø142
+4.647 rpm",N-E/S,09/2016,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC16090415,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,2018,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,yes,"2A Ø135
+4.888 rpm",,N,09/2016,2018,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090415D,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,2018,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.598,yes,"2A Ø135
+4.888 rpm",,N,09/2016,2018,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16100416,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,330A1000 (Euro 6),2016,2019,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.248,no,"2A Ø135
+3.750 rpm",,N,09/2016,09/2019,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC17020426,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2014,,TM 08 / QP 08 | UP 90
+KC17020426,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 08 / QP 08 | UP 90
+KC17020426,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 8K A Ø119
+3.500 r.p.m.","Poly-V 5K A Ø138
+3.018 r.p.m.",N-E,2016,,TM 08 / QP 08 | UP 90
+KC17020427,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A14FCCNG (Euro 6),2010,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.368,no,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2010,,SD5H14 | SD5L14 | TM 13 / QP 13 | UP 120 / UPF 120
+KC17020428,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A14FP (Euro 6),2012,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.368,no,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2012,,SD5H14 | SD5L14 | TM 13 / QP 13 | UP 120 / UPF 120
+KC17030429,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,A14FP (Euro 6),2012,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.368,yes,"Poly-V 8K A Ø119
+3.150 rpm","Poly-V 8K A Ø119
+3.150 rpm",N-E,2012,,SD5H14 | SD5L14 | TM 13 / QP 13 | UP 120 / UPF 120
+KC17060436,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,2018,2016,,,,Yes,,,,,,,,,,Yes,,,,,,,,,4 / 1.598,no,"2A Ø135
+3.496 rpm",,N,09/2016,2018,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC17060436,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO,263A8000 (Euro 6) | 940C1000 (Euro 6),2016,,2016,,,,Yes,,,,,,,,,,Yes,,,,,,,,,4 / 1.598,no,"2A Ø135
+3.496 rpm",,N,09/2016,,TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC17070438,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 RU (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,,2024,,,Yes,Yes,Yes,,,,,,,,,Yes,,,,,,,,,4 / 2.179,no,"Poly-V 8K A Ø119
+3.150 r.p.m.","Poly-V 8K A Ø119
+3.150 r.p.m.",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18100470,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO 2018 (PSA Platform),DV6 | (Euro 6.1),2018,,2018,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.560,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC18120474,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO (PSA Platform),DV5 RE (Euro 6.2) | DV5 RD (Euro 6.2) | DV5 RC (Euro 6.2),2018,,2022,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E/S,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC18120474,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO,DV5 RE (Euro 6.2) | DV5 RD (Euro 6.2) | DV5 RC (Euro 6.2),2018,,2018,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E/S,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC19020481,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO (PSA Platform),DV5 RE (Euro 6.2 / Euro 6.3) | DV5 RD (Euro 6.2 / Euro 6.3) | DV5 RC (Euro 6.2 / Euro 6.3),2018,2022,2022,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2018,02/2022,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19020481,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO,DV5 RE (Euro 6.2) | DV5 RD (Euro 6.2) | DV5 RC (Euro 6.2),2018,,2018,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19020481,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,DV5 (Euro 6.2),2018,,2019,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19020481,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 1.5D,DV5 (Euro 6.3),2021,2024,2021,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2021,04/2024,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19020481,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 1.5 BlueHDi,DV5 (Euro 6.4),2024,,2024,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,05/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19070492,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO (PSA Platform),DV5 (Euro 6.2 / Euro 6.3 / Euro 6.4),2018,,2022,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19070492,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO,DV5 RE (Euro 6.2) | DV5 RD (Euro 6.2) | DV5 RC (Euro 6.2),2018,,2018,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19070492,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO,DV5 (Euro 6.2),2018,,2019,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,2018,,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19070492,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 1.5D,DV5 (Euro 6.3),2021,2024,2021,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,2021,04/2024,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19070492,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 1.5 BlueHDi,DV5 (Euro 6.4),2024,,2024,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,no,"Poly-V 8K A Ø119
+4.800 rpm","Poly-V 6K A Ø142
+4.035 rpm",N-E,05/2024,,SD5H14 | SD5L14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC21020514,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,2.2 Euro 6d-full,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V 8K A Ø119
+3.441 rpm","Poly-V 8K A Ø119
+3.441 rpm",N-E,02/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22010537,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 2.0D,DW10 (Euro 6.3),2021,2024,2021,,,Yes,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø119
+3.120 rpm","Poly-V 8PK Ø119
+3.120 rpm",N-E,11/2021,05/2024,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC22060551,Kit compresor frío industrial,OPEL/VAUXHALL,COMBO CARGO (PSA Platform),DV5 (Euro 6.3/Euro 6.4),2022,,2022,,,,Yes,Yes,,,,,,,,,,,,,,,,,,4 / 1.499,yes,"Poly-V 8K A Ø119
+4.500 rpm","Poly-V 8K A Ø119
+4.500 rpm",N-E,02/2022,,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC22100556,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 2.2 BlueHDi,B2.2 Euro 6.4,2026,,2026,,,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 2.184,any,"Poly-V 8PK Ø119
+3.120 rpm","Poly-V 8PK Ø119
+3.120 rpm",N-E,01/2026,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16
+KC24040587,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,2.2 Euro 6d-full,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V 8K A Ø119
+4.323 rpm","Poly-V 8K A Ø119
+4.323 rpm",N-E,02/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24050588,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 2.0 BlueHDi,DW10 (Euro 6.4),2024,,2024,,,Yes,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø119
+3.120 rpm","Poly-V 8PK Ø119
+3.120 rpm",N-E,05/2024,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC24050588,Kit compresor frío industrial,OPEL/VAUXHALL,VIVARO 2.0D,DW10 (Euro 6.3),2021,2024,2021,,,Yes,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø119
+3.120 rpm","Poly-V 8PK Ø119
+3.120 rpm",N-E,2021,2024,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC24060590,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,ok,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø119
+3.441 r.p.m.","Poly-V 8K A Ø119
+3.441 r.p.m.",N-E,05/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC24080598,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,,,,,,,Yes,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø119
+4205 r.p.m.","Poly-V Ø119
+4205 r.p.m.",N-E,05/2024,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020611,Kit compresor frío industrial,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,,,,ok,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø119
+3.441 r.p.m.","Poly-V 8K A Ø119
+3.441 r.p.m.",N-E,05/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KF22070900,Kit chasis,OPEL/VAUXHALL,VIVARO 1.5D,,2021,,2021,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,no,,,N,2021,,Xarios Integrated
+KF22070900,Kit chasis,OPEL/VAUXHALL,VIVARO 2.0D,,2021,,2021,,,,,,,,,,,,,,,,,,,,,,,4 / 1.997,no,,,N,11/2021,,Xarios Integrated
+KF22070900,Kit chasis,OPEL/VAUXHALL,VIVARO,,2018,,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,yes,,,N,2018,,Xarios Integrated
+KF22070900,Kit chasis,OPEL/VAUXHALL,VIVARO,,2019,2021,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.997,no,,,N,09/2019,11/2021,Xarios Integrated
+KF22070900,Kit chasis,OPEL/VAUXHALL,VIVARO,,2018,,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,no,,,N,2018,,Xarios Integrated
+KF22090901,Kit chasis,OPEL/VAUXHALL,VIVARO,,2019,2021,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.997,no,,,N,09/2019,11/2021,Battery Pack 6KWh Mastervolt
+KF22090901,Kit chasis,OPEL/VAUXHALL,VIVARO,,2018,,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,no,,,N,2018,,Battery Pack 6KWh Mastervolt
+KF22090901,Kit chasis,OPEL/VAUXHALL,VIVARO,,2018,,2019,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,yes,,,N,2018,,Battery Pack 6KWh Mastervolt
+KF22090901,Kit chasis,OPEL/VAUXHALL,VIVARO 2.0D,,2021,,2021,,,,,,,,,,,,,,,,,,,,,,,4 / 1.997,no,,,N,11/2021,,Battery Pack 6KWh Mastervolt
+KF22090901,Kit chasis,OPEL/VAUXHALL,VIVARO 1.5D,,2021,,2021,,,,,,,,,,,,,,,,,,,,,,,4 / 1.499,no,,,N,2021,,Battery Pack 6KWh Mastervolt
+KG15079011,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T (Euro 5b+),2014,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,"4 / 2.298_x000D_
+",any,"Ø60
+2.533 rpm",,N,2014,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD,M9T / M9T B7 (Euro 6),2016,,2016,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,2016,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,OPEL/VAUXHALL,MOVANO - RWD,M9T / M9T B7 (Euro 6),2016,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,2016,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,OPEL/VAUXHALL,MOVANO - RWD,M9T (Euro VI-D Temp),2019,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,09/2019,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG15079011,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - RWD (EURO 6D),M9T (Euro VI-D Temp),2019,,2019,Yes,,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Ø60
+2.533 rpm",,N,09/2019,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG17059021,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,2016,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG17059021,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,2014,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG17059021,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO VI-D),M9T (Euro VI-D Temp),2019,,2024,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG18059024,Kit generador,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 RU (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,,2019,,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.179,yes,"Poly-V 7K A Ø53
+2.580 r.p.m.",,N,09/2019,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KG20019029,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 2.298,yes,"Ø60
+2.493 rpm",,N,09/2019,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG21069036,Kit generador,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO VI-D),2.2 Euro 6d-full,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Ø53 6PK
+2.536 rpm",,N,02/2024,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KG24079040,Kit generador,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V Ø53
+11.094 r.p.m.",,N,05/2024,,"Generator ""G4-230V"" | Generator ""G4-400V"" "
+KH14127001,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T (Euro 4-5) | M9T (Euro 5b+) - Single Turbo -,2010,,2016,,Yes,,Yes,Yes,Yes,ok,,,,Yes,Yes,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,06/2010,,HPI 15cc
+KH15017002,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,2014,,HPI 12cc | HPI 15cc
+KH15017002,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,09/2019,,HPI 12cc | HPI 15cc
+KH15017002,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,09/2019,,HPI 12cc | HPI 15cc
+KH15017002,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,2016,,HPI 12cc | HPI 15cc
+KH17077007,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T B7 (Euro 5b+),2014,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 7K A Ø140
+4.000 rpm",,N,2014,,12 cc SALAMI | 16 cc SALAMI
+KH19037011,Kit bomba hidráulica,OPEL/VAUXHALL,VIVARO 2.0D,DW10 (Euro 6.3 / Euro 6.4),2021,,2021,,,Yes,Yes,Yes,,not,,,,,,,,,,,,,,,,4 / 1.997,any,"Poly-V 8PK Ø145
+2.552 rpm",,N,11/2021,,12 cc SALAMI | 16 cc SALAMI | 8 cc SALAMI
+KH19067012,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO - FWD,M9T / M9T B7 (Euro 6),2016,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,2016,,12 cc SALAMI | 16 cc SALAMI
+KH19067012,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD,M9T / M9T B7 (Euro 6),2016,,2016,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,2016,,12 cc SALAMI | 16 cc SALAMI
+KH19067012,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO - FWD,M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH19067012,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D temp) | M9T (Euro VI-D temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH20087018,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi,DW12 (Euro 6.2 / Euro 6.3 / Euro 6.4),2019,,2019,,,Yes,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 2.179,yes,"Poly-V Ø160
+800 r.p.m.",,N,09/2019,,12 cc SALAMI
+KH21087023,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.3 CDTI - FWD (EURO 6D),M9T (Euro 6D Temp) | M9T (Euro VI-D Temp),2019,,2019,,Yes,,Yes,Yes,Yes,ok,,Yes,,,,,,,,,,,,,,4 / 2.298,any,"Poly-V 8PK Ø145,5
+870 r.p.m.",,N,09/2019,,12 cc SALAMI | 16 cc SALAMI
+KH24087033,Kit bomba hidráulica,OPEL/VAUXHALL,MOVANO 2.2 BlueHDi MY2024,2.2 Euro 6.4,2024,,2024,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.184,yes,"Poly-V 8K A Ø135
+995 rpm",,N-E,05/2024,,12 cc SALAMI

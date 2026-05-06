@@ -1,0 +1,188 @@
+code,kit_type,brand,model_clean,engine_all,year_from_int,year_to_int,model_max_year,flag_rwd,flag_fwd,flag_awd,flag_rhd,flag_start_stop,flag_high_idle,flag_gearbox_v3,flag_sanden,flag_auto_tensioner,flag_two_auto_tensioners,flag_pfmot_yes,flag_pfmot_no,flag_urban_kit,flag_ind_belt,flag_n63_full_option,flag_n63_pulley_yes,flag_n63_pulley_no,flag_himatic,flag_allison_not,flag_zf_not,flag_man_option,flag_engine_sideways,cilinder,ac_filter,embrague_std,embrague_esp,tipus_embrague,year_from_v4,year_to_v4,compressors
+KA25105046,Kit alternador,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2024,,2024,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø54
+2429 r.p.m.",,N,09/2024,,SEG 150A 28V 
+KB12078043,Kit compresor A/C,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,Yes,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,any,"2A Ø135
+4.511 rpm",,N,06/2011,,SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100010,Kit compresor frío industrial,FORD,TRANSIT,2.4 Duratorq TDdi,2000,,2011,Yes,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.402,any,,"1A Ø150
+2.930 rpm",#¿NOMBRE?,2000,,SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100027,Kit compresor frío industrial,FORD,TRANSIT,2.0 Duratorq TDdi | (Euro 3),2000,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.998,no,"2A Ø135
+3.555 rpm",,N,2000,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC05100041,Kit compresor frío industrial,FORD,TRANSIT CONNECT,1.8 Duratorq TDdi | 1.8 Duratorq TDCi | (Euro 3 - Euro 4),2002,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.753,no,"2A Ø135
+3.260 rpm",,N,2002,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC06070081,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,,Yes,,,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,,"1A Ø150
+3.173 rpm",#¿NOMBRE?,06/2011,,TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC06100086,Kit compresor frío industrial,FORD,TRANSIT,2.4 Duratorq TDCi | (Euro 4),2006,,2011,Yes,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 2.402,any,,"1A Ø150
+3.550 rpm",#¿NOMBRE?,06/2006,,SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC07040109,Kit compresor frío industrial,FORD,TRANSIT CONNECT,DV6 ATED4 | (Euro 5),2013,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.560,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E,12/2013,,TM 08 / QP 08 | UP 90
+KC07040109,Kit compresor frío industrial,FORD,TRANSIT COURIER,Duratorq TDCI 1.6 (Euro 5b+),2014,,2014,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.560,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E,2014,,TM 08 / QP 08 | UP 90
+KC08010121,Kit compresor frío industrial,FORD,TRANSIT CONNECT,1.8 Duratorq TDCi | (Euro 3 / Euro 4 / Euro 5),2002,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.753,any,"Poly-V Ø119
+3.697 rpm","Poly-V 8K A Ø119
+3.697 rpm",N-E,2002,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08020122,Kit compresor frío industrial,FORD,TRANSIT CONNECT,1.8 Duratorq TDCi (Euro 3-4),2002,,2016,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.753,no,"Poly-V Ø119
+3.697 rpm","Poly-V 8K A Ø119
+3.697 rpm",N-E,2002,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC08030124,Kit compresor frío industrial,FORD,TRANSIT CONNECT,DV6 ATED4 | (Euro 5),2013,,2016,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.560,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,12/2013,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08030124,Kit compresor frío industrial,FORD,TRANSIT COURIER,Duratorq TDCI 1.6 (Euro 5b+),2014,,2014,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.560,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,2014,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC08070138,Kit compresor frío industrial,FORD,TRANSIT,3.2 Duratorq TDCi | (Euro 4),2008,,2011,Yes,,,Yes,,,,Yes,,,,,,,,,,,,,,,5 / 3.199,any,,"1A Ø150
+3.550 rpm",#¿NOMBRE?,06/2008,,SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11110252,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,Yes,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,,"1A Ø150
+4.060 rpm",#¿NOMBRE?,06/2011,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC11120254,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,Yes,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,any,,"1A Ø174
+3.500 rpm",#¿NOMBRE?,06/2011,,SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12010258,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,Yes,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,any,"2A Ø145
+4.200 rpm",,N,06/2011,,TM 21 / QP 21
+KC12010259,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,Yes,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,any,,"1A Ø174
+3.500 rpm",#¿NOMBRE?,06/2011,,TM 08 / QP 08
+KC12070286,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,06/2011,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12070286,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 4),2006,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,06/2006,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC12070286,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,2013,,TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13020316-D,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+2.955 rpm",,N,2013,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC13020316-E,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+2.955 rpm",,N,2013,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC13020316-F,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+2.955 rpm",,N,2013,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC13080340,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+3.530 rpm",,N,06/2011,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13080340,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 4),2006,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+3.530 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13080340,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+2.955 rpm",,N,2013,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC13080340-C,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 4),2006,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+3.530 rpm",,N,06/2006,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC13080340-C,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,yes,"2A Ø135
+3.530 rpm",,N,06/2011,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 08 / QP 08 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170 | UP 90
+KC14070370,Kit compresor frío industrial,FORD,TRANSIT CUSTOM,2.2 Duratorq TDCi | (Euro 5),2013,,2013,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,2013,,TM 08 / QP 08
+KC14070370,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 5),2011,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,06/2011,,TM 08 / QP 08
+KC14070370,Kit compresor frío industrial,FORD,TRANSIT,2.2 Duratorq TDCi | (Euro 4),2006,,2011,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 2.198,no,"Poly-V 8PK Ø119
+4.706 rpm","Poly-V 8PK Ø142
+3.943 rpm",N-E,06/2006,,TM 08 / QP 08
+KC16060408,Kit compresor frío industrial,FORD,TRANSIT CONNECT,DV5 (Euro 6),2016,2018,2016,,,,Yes,,,,Yes,,,,,,,,,,,,,,,4 / 1.498,no,"Poly-V Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E/S,2016,2018,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC16090414,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue,YLF6/YLFS (Euro 6) | YMF6/YMFS (Euro 6) | YNF6/YNFS (Euro 6),2016,2019,2016,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,2016,09/2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,FORD,TRANSIT CUSTOM 2.0 EcoBlue,YLF6/YLFS (Euro 6) | YMF6/YMFS (Euro 6) | YNF6/YNFS (Euro 6),2016,2019,2016,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,2016,09/2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,FORD,TRANSIT CUSTOM 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2023,,2024,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16090414,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB Euro 6EA,2023,,2024,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16110419,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue,YLF6/YLFS (Euro 6) | YMF6/YMFS (Euro 6) | YNF6/YNFS (Euro 6),2016,2019,2016,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,2016,09/2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16110419,Kit compresor frío industrial,FORD,TRANSIT CUSTOM 2.0 EcoBlue,YLF6/YLFS (Euro 6) | YMF6/YMFS (Euro 6) | YNF6/YNFS (Euro 6),2016,2019,2016,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,2016,09/2019,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16110419,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16110419,Kit compresor frío industrial,FORD,TRANSIT CUSTOM 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16110419,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2023,2024,2024,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2023,11/2024,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16120422,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue,YLR6 (Euro 6) | YMR6 (Euro 6) | YNR6 (Euro 6),2016,,2016,Yes,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø119
+3.823 rpm","Poly-V Ø119
+3.823 rpm",N-E,2016,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16120422,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLR6 (Euro 6D Temp) | YMR6 (Euro 6D Temp) | YNR6 (Euro 6D Temp),2019,,2019,Yes,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø119
+3.823 rpm","Poly-V 8PK Ø119
+3.823 rpm",N-E,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC16120422,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6EA / 6AR,BKFB Euro 6EA,2023,2024,2024,Yes,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø119
+3.823 rpm","Poly-V 8PK Ø119
+3.823 rpm",N-E,11/2023,11/2024,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17010424,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue,YLR6 (Euro 6) | YMR6 (Euro 6) | YNR6 (Euro 6),2016,,2016,Yes,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,2016,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17010424,Kit compresor frío industrial,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLR6 (Euro 6D Temp) | YMR6 (Euro 6D Temp) | YNR6 (Euro 6D Temp),2019,,2019,Yes,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17010424,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6EA / 6AR,BKFB Euro 6EA,2023,,2024,Yes,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø119
+4.647 rpm","Poly-V 8PK Ø157
+3.522 rpm",N-E,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC17030432,Kit compresor frío industrial,FORD,TRANSIT 3.7L V6,Ti-VCT V6,2019,,2019,,,,,,,,,,,,,,,,,,,,,,,3700-06-01 00:00:00,any,"Poly-V 8PK Ø119
+5224 rpm",,N,09/2019,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 120 / UPF 120 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC19040486,Kit compresor frío industrial,FORD,TRANSIT CONNECT 1.5,1.5 TDCI EcoBlue (Euro 6.2),2019,2023,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.498,yes,"Poly-V 8K A Ø119
+3.412 rpm","Poly-V 8K A Ø119
+3.412 rpm",N-E,2019,2023,TM 13 / QP 13
+KC19050487,Kit compresor frío industrial,FORD,TRANSIT CONNECT 1.5,1.5 TDCI EcoBlue (Euro 6.2),2019,2023,2019,,,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.498,no,"Poly-V 8K A Ø119
+5.109 rpm","Poly-V 6K A Ø142
+4.281 rpm",N-E,2019,2023,SD5H14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 120 / UPF 120 | UP 150 / UPF 150
+KC19090493,Kit compresor frío industrial,FORD,TRANSIT / CUSTOM 2.0 EcoBlue,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,2023,2019,,Yes,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,09/2019,2023,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150
+KC20010498,Kit compresor frío industrial,FORD,TRANSIT / CUSTOM 2.0 EcoBlue,YLR6 (Euro 6D Temp) | YMR6 (Euro 6D Temp) | YNR6 (Euro 6D Temp),2019,,2019,Yes,,,Yes,Yes,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.941 rpm","Poly-V 8PK Ø119
+3.941 rpm",N-E,09/2019,,SD5H14 | SD5L14 | SD7H15 | SD7L15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC21050517,Kit compresor frío industrial,FORD,TRANSIT CONNECT 2.0 EcoBoost,2.0 Euro 6e EcoBoost,2024,,2024,,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.968,no,,"Poly-V 6K A Ø125
+4.416 rpm",#¿NOMBRE?,2024,,SD5H14 | SD5L14 | TM 13 / QP 13 | TM 15 / QP 15 | UP 150 / UPF 150
+KC23070575,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2023,2024,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2023,11/2024,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23070575-A,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2023,,2024,,Yes,,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2023,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC23070575-C,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2023,2024,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2023,11/2024,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020607,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2024,,2024,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,11/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020608,Kit compresor frío industrial,FORD,TRANSIT 2.0 Euro 6EA / 6AR,BKFB Euro 6EA,2024,,2024,Yes,,Yes,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V Ø119
+3.823 rpm","Poly-V 8PK Ø119
+3.823 rpm",N-E,11/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020609,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020609-A,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,any,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25020609-B,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KC25060618,Kit compresor frío industrial,FORD,Transit Custom 2.0 EURO 6AR 260 / 280 / 290 - FWD -AWD,BKFB (Euro 6AR),2024,,2024,,Yes,Yes,,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø119
+3.617 rpm","Poly-V 8PK Ø119
+3.617 rpm",N-E,12/2024,,SD5H14 | SD7H15 | TM 13 / QP 13 | TM 15 / QP 15 | TM 16 / QP 16 | UP 150 / UPF 150 | UP 170 / UPF 170
+KG17109022,Kit generador,FORD,TRANSIT 2.0 EcoBlue,YLR6 (Euro 6) | YMR6 (Euro 6) | YNR6 (Euro 6),2016,,2016,Yes,,Yes,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,any,"Ø60
+2.600 rpm",,N,2016,,"Generator ""G3-230V"" | Generator ""G3-400V"" "
+KH21017020,Kit bomba hidráulica,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø134
+943 rpm",,N,09/2019,,12 cc SALAMI
+KH21017020,Kit bomba hidráulica,FORD,TRANSIT CUSTOM 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,,,,,,,,,,,,,,,,,4 / 1.995,no,"Poly-V 8PK Ø134
+943 rpm",,N,09/2019,,12 cc SALAMI
+KH21087022,Kit bomba hidráulica,FORD,TRANSIT 2.0 EcoBlue,YLF6/YLFS (Euro 6) | YMF6/YMFS (Euro 6) | YNF6/YNFS (Euro 6),2016,2019,2016,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø134
+950 r.p.m.",,N,2016,09/2019,12 cc SALAMI
+KH21087022,Kit bomba hidráulica,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø134
+950 r.p.m.",,N,09/2019,,12 cc SALAMI
+KH21087022-B,Kit bomba hidráulica,FORD,TRANSIT 2.0 EcoBlue Euro 6dtemp,YLF6/YLFS (Euro 6D Temp) | YMF6/YMFS (Euro 6D Temp) | YNF6/YNFS (Euro 6D Temp),2019,,2019,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø134
+950 r.p.m.",,N,09/2019,,12 cc SALAMI
+KH25107036,Kit bomba hidráulica,FORD,TRANSIT 2.0 Euro 6AR / 6EA,BKFB Euro 6EA,2024,,2024,,Yes,,Yes,,,ok,,,,,,,,,,,,,,,,4 / 1.995,yes,"Poly-V 8PK Ø134
+950 r.p.m.",,N,09/2024,,12 cc SALAMI
